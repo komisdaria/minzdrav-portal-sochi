@@ -1,9 +1,9 @@
-
+import Header from './components/Header/Header'
 
 function App() {
   return (
     <>
-      <h1>minzdrav sochi</h1>
+      <Header />
     </>
   );
 }
