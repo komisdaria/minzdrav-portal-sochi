@@ -1,10 +1,8 @@
-import React from 'react'
-import 'antd/dist/antd.css';
-import { Form, Input, Button, Checkbox } from 'antd';
+import React from "react";
+import "antd/dist/antd.css";
+import { Form, Input, Button, Checkbox } from "antd";
 
 const Login = () => {
-  
-
   return (
     <Form
       name="basic"
@@ -16,7 +14,7 @@ const Login = () => {
       <Form.Item
         label="Username"
         name="username"
-        rules={[{ required: true, message: 'Please input your username!' }]}
+        rules={[{ required: true, message: "Please input your username!" }]}
       >
         <Input />
       </Form.Item>
@@ -24,12 +22,16 @@ const Login = () => {
       <Form.Item
         label="Password"
         name="password"
-        rules={[{ required: true, message: 'Please input your password!' }]}
+        rules={[{ required: true, message: "Please input your password!" }]}
       >
         <Input.Password />
       </Form.Item>
 
-      <Form.Item name="remember" valuePropName="checked" wrapperCol={{ offset: 8, span: 16 }}>
+      <Form.Item
+        name="remember"
+        valuePropName="checked"
+        wrapperCol={{ offset: 8, span: 16 }}
+      >
         <Checkbox>Remember me</Checkbox>
       </Form.Item>
 
@@ -41,6 +43,5 @@ const Login = () => {
     </Form>
   );
 };
-
 
 export default Login;
