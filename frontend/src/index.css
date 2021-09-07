@@ -20,3 +20,12 @@ ul {
   justify-content: space-around;
   padding: 25px;
 }
+
+header {
+  background-color: #73d13d;
+  height: 85px;
+}
+
+.auth {
+  padding-top: 3rem;
+}
