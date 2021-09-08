@@ -1,0 +1,38 @@
+.right_item{
+  margin: 10px;
+  background-color: rgb(216, 159, 159);
+  border: solid;
+  width: 800px;
+  height: 290px;
+}
+
+.left_item{
+  margin: 10px;
+  background-color: rgb(219, 157, 157);
+  border: solid;
+  width: 300px;
+  min-height: inherit;
+}
+
+.account_container_item{
+  min-height: inherit;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.left_column{
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.container_right_items{
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+.account_container{
+  min-height: 600px;
+}
