@@ -1,4 +1,5 @@
 import React from 'react'
+import { OurNews } from '../newsPage/newsPage'
 import css from './FacePage.module.css'
 
 export default function FacePage() {
@@ -7,7 +8,7 @@ export default function FacePage() {
 
       <div className={css.main_container_item}>
         <div className={css.item}>
-          Новости
+          <OurNews/>
         </div>
         <div className={css.item}>
           Корона
