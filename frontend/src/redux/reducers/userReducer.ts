@@ -3,7 +3,7 @@ import { initialState } from "../initial/initState";
 import { State } from "../types/state";
 import { Actions } from "../types/userActions";
 
-export const reducer = (
+export const userReducer = (
   state: State = initialState,
   action: Actions
 ): State => {
