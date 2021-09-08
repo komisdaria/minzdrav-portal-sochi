@@ -12,10 +12,11 @@ const doctorSchema = mongoose.Schema({
   },
   raiting: {
     type: Number,
+    default: 0,
   },
-  rewiews: {
+  reviews: [{
     type: String,
-  },
+  }],
 });
 
 const Doctor = mongoose.model("Doctor", doctorSchema);
