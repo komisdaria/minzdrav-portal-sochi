@@ -1,16 +1,18 @@
 import { Switch, Route } from "react-router";
+import FacePage from "../FacePage/FacePage";
 import Login from "../Login/Login";
 import News from "../News/News";
 import Registration from "../Registration/Registration";
 import MedHelp from "../MedHelp/MedHelp";
 import Communication from "../Communication/Communication";
+import Account from "../account/account";
 
 export default function Main() {
   return (
     <div>
       <Switch>
         <Route exact path="/">
-          <h1>Главная страница</h1>
+          <FacePage/>
         </Route>
         <Route exact path="/login">
           <Login />
@@ -26,6 +28,9 @@ export default function Main() {
         </Route>
         <Route path='/communication' >
           <Communication />
+        </Route>
+        <Route path='/account' >
+          <Account/>
         </Route>
       </Switch>
     </div>

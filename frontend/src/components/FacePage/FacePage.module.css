@@ -1,0 +1,23 @@
+.main_container{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content:center;
+}
+
+.main_container_item{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  min-width: 400px;
+  min-height: 400px;
+  border: solid;
+  margin: 10px;
+}
+
+.item{
+  margin: 10px;
+  width: 300px;
+  background-color: rgb(150, 144, 144);
+}
