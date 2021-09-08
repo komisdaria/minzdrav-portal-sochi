@@ -5,6 +5,7 @@ import Registration from "../Registration/Registration";
 import MedHelp from "../MedHelp/MedHelp";
 import Communication from "../Communication/Communication";
 import Account from "../account/account";
+import NotFound from "../NotFound/NotFound";
 
 export default function Main() {
   return (
@@ -30,6 +31,7 @@ export default function Main() {
         <Route path='/account' >
           <Account/>
         </Route>
+        <Route component={NotFound} />
       </Switch>
     </div>
   )
