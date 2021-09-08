@@ -4,6 +4,7 @@ import { Form, Input, Button, Typography } from 'antd';
 import {useDispatch} from 'react-redux'
 import { useHistory} from "react-router-dom";
 import { useState } from "react";
+import { UserType } from "../../userTypes/userType";
 
 
 const Registration = () => {
@@ -13,7 +14,7 @@ const Registration = () => {
   // const dispatch = useDispatch();
 
   const [email, setEmail] = useState('');
-  const [oms, setOms] = useState('');//!!!!
+  const [oms, setOms] = useState(0);//!!!!
   const [password, setPassword] = useState('');
   const [repPassword, setRepPassword] = useState('');
 
@@ -23,7 +24,8 @@ const Registration = () => {
   }
 
   const omsHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setOms(event.target.value)
+
+    setOms(Number(event.target.value))
   }
 
   const passwordHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -66,6 +68,7 @@ const Registration = () => {
         >
         <Input 
         onChange={omsHandler}
+        type='number'
         value={oms}
         />
       </Form.Item>
