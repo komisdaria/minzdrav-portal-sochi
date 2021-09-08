@@ -1,11 +1,41 @@
 import React from "react";
 import "antd/dist/antd.css";
 import { Form, Input, Button, Typography } from 'antd';
+import {useDispatch} from 'react-redux'
+import { useHistory} from "react-router-dom";
+import { useState } from "react";
 
 
 const Registration = () => {
 
   const { Title } = Typography;
+  // const history = useHistory();
+  // const dispatch = useDispatch();
+
+  const [email, setEmail] = useState('');
+  const [oms, setOms] = useState('');//!!!!
+  const [password, setPassword] = useState('');
+  const [repPassword, setRepPassword] = useState('');
+
+  
+  const emailHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(event.target.value)
+  }
+
+  const omsHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setOms(event.target.value)
+  }
+
+  const passwordHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value)
+  }
+
+
+  const repPasswordHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setRepPassword(event.target.value)
+  }
+
+
 
   return (
     <div className='auth'>
@@ -20,18 +50,24 @@ const Registration = () => {
       >
       <Form.Item
         label="Почта"
-        name="username"
+        name="email"
         rules={[{ required: true, message: "Введите электронную почту" }]}
         >
-        <Input />
+        <Input 
+        onChange={emailHandler}
+        value={email}
+          />
       </Form.Item>
 
       <Form.Item
         label="Номер полиса ОМС"
-        name="username"
-        rules={[{ required: true, message: "Введите номер полиса ОМС" }]}
+        name="oms"
+        rules={[{ required: true, message: "Введите номер полиса ОМС", min:13 }]}
         >
-        <Input />
+        <Input 
+        onChange={omsHandler}
+        value={oms}
+        />
       </Form.Item>
 
       <Form.Item
@@ -39,14 +75,20 @@ const Registration = () => {
         name="password"
         rules={[{ required: true, message: "Введите пароль" }]}
         >
-        <Input.Password />
+        <Input.Password 
+        onChange={passwordHandler}
+        value={password}
+        />
       </Form.Item>
       <Form.Item
         label="Повторите пароль"
-        name="password"
+        name="passwordrepit"
         rules={[{ required: true, message: "Повторите пароль" }]}
         >
-        <Input.Password />
+        <Input.Password 
+        onChange={repPasswordHandler}
+        value={repPassword}
+        />
       </Form.Item>
 
 
