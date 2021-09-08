@@ -6,6 +6,7 @@ import MedHelp from "../MedHelp/MedHelp";
 import Communication from "../Communication/Communication";
 import Account from "../account/account";
 import NotFound from "../NotFound/NotFound";
+import Doctors from "../Doctors/Doctors";
 
 export default function Main() {
   return (
@@ -30,6 +31,9 @@ export default function Main() {
         </Route>
         <Route path='/account' >
           <Account/>
+        </Route>
+        <Route path='/doctors'>
+        <Doctors />
         </Route>
         <Route component={NotFound} />
       </Switch>
