@@ -1,10 +1,8 @@
 import React from "react";
 import "antd/dist/antd.css";
 import { Form, Input, Button, Typography } from 'antd';
-import {useDispatch} from 'react-redux'
-import { useHistory} from "react-router-dom";
 import { useState } from "react";
-import { UserType } from "../../userTypes/userType";
+
 
 
 const Registration = () => {

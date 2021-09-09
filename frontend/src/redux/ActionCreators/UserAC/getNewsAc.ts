@@ -1,5 +1,4 @@
 import { AppDispatch } from "../../store/store";
-import { Actions, DownloadNewsAction,  } from "../../types/userActions";
 
 export const getNewsAc = () => (dispatch: AppDispatch) => {
   const APIkey = '5562c7fab17e475e94915c1d788a8f5e';
@@ -12,12 +11,12 @@ export const getNewsAc = () => (dispatch: AppDispatch) => {
   })
     .then((response) => response.json()) // полученный ответ преобразуй в json
     .then((data) => {
+      console.log(data.articles)
       dispatch({
         type: 'DOWNLOAD_NEWS',
         payload: {
-          news: data
+          news: data.articles
         }
       })
     })
-
 }
