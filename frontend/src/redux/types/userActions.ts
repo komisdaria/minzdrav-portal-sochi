@@ -1,6 +1,7 @@
+import { NewsType } from "../../userTypes/newsType";
 import { UserType } from "../../userTypes/userType";
 
-type ActionTypes = "CREATE_USER" | "LOGIN_USER" | "LOGOUT_USER";
+type ActionTypes = "CREATE_USER" | "LOGIN_USER" | "LOGOUT_USER" | "DOWNLOAD_NEWS";
 
 export interface Action {
   type: ActionTypes;
@@ -23,4 +24,11 @@ export interface LogoutUserAction extends Action {
   };
 }
 
-export type Actions = CreateUserAction | LoginUserAction | LogoutUserAction;
+export interface DownloadNewsAction extends Action {
+  type: "DOWNLOAD_NEWS";
+  payload: {
+    news: NewsType[];
+  };
+}
+
+export type Actions = CreateUserAction | LoginUserAction | LogoutUserAction | DownloadNewsAction;

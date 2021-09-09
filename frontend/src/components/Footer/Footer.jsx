@@ -20,7 +20,7 @@ const Footer = () => {
           <li>
             <NavLink to='/medhelp'>
           <Title  style={{color:'white'}} level={4}>Запись к врачу</Title>
-
+            
         
             </NavLink>
             </li>

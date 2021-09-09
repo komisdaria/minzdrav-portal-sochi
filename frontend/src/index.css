@@ -29,3 +29,7 @@ header {
 .auth {
   padding-top: 3rem;
 }
+
+.notfound {
+  height: 17rem;
+}
