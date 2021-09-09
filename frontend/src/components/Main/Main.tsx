@@ -8,6 +8,7 @@ import Account from "../account/account";
 import NotFound from "../NotFound/NotFound";
 import Doctors from "../Doctors/Doctors";
 import { CovidInfo } from "../CovidInfo/CovidInfo";
+
 import css from "./main.module.css";
 
 export default function Main() {
