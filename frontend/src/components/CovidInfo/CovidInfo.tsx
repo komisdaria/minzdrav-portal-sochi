@@ -1,29 +1,21 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+
 import css from "./CovidInfo.module.css";
 import covid19 from "../img/covid19.png";
 import Simptomy from "../img/Simptomy.png";
 import { InfoCovidModel } from "../InfoCovidModel/InfoCovidModel";
+import { useDispatch } from "react-redux";
+import { useMySelector } from "../../hooks/customHook";
+import { getCovidAC } from "../../redux/ActionCreators/ApiAC/getCovidAC";
 
 export function CovidInfo() {
-  const [info, setInfo] = useState({});
-  useEffect(() => {
-    getInfo();
-  }, []);
+  const covidState = useMySelector((state) => state.covid[0]);
+  const dispatch = useDispatch();
+  console.log("===>", covidState);
 
-  async function getInfo() {
-    const response = await axios.get(
-      "https://covid.2gis.ru/covid19-global.json"
-    );
-    if (response.data.items) {
-      const value = response.data.items.filter(
-        (item) => item.countryCode === "Russia"
-      );
-      if (value.length === 1) {
-        setInfo(value[0]);
-      }
-    }
-  }
+  useEffect(() => {
+    dispatch(getCovidAC());
+  }, [dispatch]);
 
   return (
     <div>
@@ -37,33 +29,34 @@ export function CovidInfo() {
           <div className={css.date}>
             <div>Данные на {new Date().toLocaleDateString()}</div>
             <div>
-              {Object.keys(info).length > 0 ? (
-                <div>Общее количество зараженных : {info.confirmed} </div>
+              {covidState ? (
+                <div>Общее количество зараженных : {covidState.confirmed} </div>
               ) : (
                 <div>Загрузка...</div>
               )}
             </div>
 
             <div>
-              {Object.keys(info).length > 0 ? (
-                <div>Общее количество смертей : {info.deaths} </div>
+              {covidState ? (
+                <div>Общее количество смертей : {covidState.deaths} </div>
               ) : (
                 <div>Загрузка...</div>
               )}
             </div>
             <div>
-              {Object.keys(info).length > 0 ? (
+              {covidState ? (
                 <div>
-                  Количество смертей за последние сутки: {info.deathsInc}{" "}
+                  Количество смертей за последние сутки: {covidState.deathsInc}{" "}
                 </div>
               ) : (
                 <div>Загрузка...</div>
               )}
             </div>
             <div>
-              {Object.keys(info).length > 0 ? (
+              {covidState ? (
                 <div>
-                  Количество зараженных за последние сутки : {info.confirmedInc}{" "}
+                  Количество зараженных за последние сутки :{" "}
+                  {covidState.confirmedInc}{" "}
                 </div>
               ) : (
                 <div>Загрузка...</div>
