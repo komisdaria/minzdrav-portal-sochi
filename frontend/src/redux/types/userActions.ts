@@ -1,4 +1,5 @@
 import { DoctorType } from "../../userTypes/doctorsType";
+import { CovidType } from "../../userTypes/covidType";
 import { NewsType } from "../../userTypes/newsType";
 import { UserType } from "../../userTypes/userType";
 
@@ -7,7 +8,8 @@ type ActionTypes =
   | "LOGIN_USER"
   | "LOGOUT_USER"
   | "DOWNLOAD_NEWS"
-  | "GET_DOCTORS";
+  | "GET_DOCTORS"
+  | "DOWLOAD_COVID_API";
 
 export interface Action {
   type: ActionTypes;
@@ -43,10 +45,17 @@ export interface GetDoctorsAction extends Action {
     doctors: DoctorType[];
   };
 }
+export interface DowloadCovidAction extends Action {
+  type: "DOWLOAD_COVID_API";
+  payload: {
+    covid: CovidType[];
+  };
+}
 
 export type Actions =
   | CreateUserAction
   | LoginUserAction
   | LogoutUserAction
   | DownloadNewsAction
-  | GetDoctorsAction;
+  | GetDoctorsAction
+  | DowloadCovidAction;

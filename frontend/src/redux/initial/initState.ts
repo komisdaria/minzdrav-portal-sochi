@@ -4,4 +4,5 @@ export const initialState: State = {
   user: null,
   news: [],
   doctors: [],
+  covid: [],
 };

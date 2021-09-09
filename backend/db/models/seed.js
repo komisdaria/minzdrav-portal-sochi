@@ -1,11 +1,15 @@
 const { connect, connection } = require("mongoose");
 const Doctor = require("./doctorModel");
+require("dotenv").config();
 
 async function seed() {
-  await connect("urlmongo", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  connect(
+    "mongodb+srv://User1:fktrctq95@cluster0.tnp6y.mongodb.net/medPortal",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  );
 
   const doctorDB = [
     {
@@ -38,7 +42,7 @@ async function seed() {
     },
   ];
 
-  await Doctor.insertMany(seed);
+  await Doctor.insertMany(doctorDB);
   console.log("done seed");
   await connection.close();
 }

@@ -7,10 +7,13 @@ import Communication from "../Communication/Communication";
 import Account from "../account/account";
 import NotFound from "../NotFound/NotFound";
 import Doctors from "../Doctors/Doctors";
+import { CovidInfo } from "../CovidInfo/CovidInfo";
+
+import css from "./main.module.css";
 
 export default function Main() {
   return (
-    <div>
+    <div className={css.main}>
       <Switch>
         <Route exact path="/">
           <FacePage />
@@ -25,14 +28,17 @@ export default function Main() {
         <Route path="/medhelp">
           <MedHelp />
         </Route>
-        <Route path="/doctors">
-          <Doctors />
-        </Route>
         <Route path="/communication">
           <Communication />
         </Route>
         <Route path="/account">
           <Account />
+        </Route>
+        <Route path="/doctors">
+          <Doctors />
+        </Route>
+        <Route path="/covid">
+          <CovidInfo />
         </Route>
         <Route component={NotFound} />
       </Switch>
