@@ -12,7 +12,7 @@ export default function Main() {
     <div>
       <Switch>
         <Route exact path="/">
-          <FacePage/>
+          <FacePage />
         </Route>
         <Route exact path="/login">
           <Login />
@@ -20,19 +20,19 @@ export default function Main() {
         <Route exact path="/registration">
           <Registration />
         </Route>
-        <Route path='/news'>
+        <Route path="/news">
           <News />
         </Route>
-        <Route path='/medhelp'>
-        <MedHelp />
+        <Route path="/medhelp">
+          <MedHelp />
         </Route>
-        <Route path='/communication' >
+        <Route path="/communication">
           <Communication />
         </Route>
-        <Route path='/account' >
-          <Account/>
+        <Route path="/account">
+          <Account />
         </Route>
       </Switch>
     </div>
-  )
+  );
 }
