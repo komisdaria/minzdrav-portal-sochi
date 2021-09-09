@@ -27,7 +27,7 @@ export interface LogoutUserAction extends Action {
 export interface DownloadNewsAction extends Action {
   type: "DOWNLOAD_NEWS";
   payload: {
-    news: NewsType;
+    news: NewsType[];
   };
 }
 

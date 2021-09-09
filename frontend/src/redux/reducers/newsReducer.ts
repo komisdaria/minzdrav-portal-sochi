@@ -1,24 +1,14 @@
-import { NewsType } from "../../userTypes/newsType";
-import { newsInitialState } from "../initial/newsInitialState";
-import { NewsState } from "../types/state";
+import { State } from "../types/state";
 import { Actions } from "../types/userActions";
 
 export const newsReducer = (
-  state: NewsState = newsInitialState,
+  state: State['news'] = [],
   action: Actions
-): NewsState => {
+): State['news'] => {
   switch (action.type) {
     case "DOWNLOAD_NEWS":
-      const news: NewsType = {
-        title: action.payload.news.title,
-        description: action.payload.news.description
-      };
-      return {
-        ...state,
-        news: [...state.news, news],
-      }
-      
+      return [...state, ...action.payload.news]
     default:
-    return state;
+      return state;
   }
 }

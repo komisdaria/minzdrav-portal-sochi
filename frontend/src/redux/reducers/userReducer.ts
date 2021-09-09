@@ -1,42 +1,17 @@
-import { UserType } from "../../userTypes/userType";
-import { initialState } from "../initial/initState";
 import { State } from "../types/state";
 import { Actions } from "../types/userActions";
 
 export const userReducer = (
-  state: State = initialState,
+  state: State['user'] = null,
   action: Actions
-): State => {
+): State['user'] => {
   switch (action.type) {
     case "CREATE_USER":
-      const user: UserType = {
-        email: action.payload.email,
-        oms: action.payload.oms,
-        id: action.payload.id,
-      };
-      return {
-        ...state,
-        user: [...state.user, user],
-      };
+      return action.payload;
     case "LOGIN_USER":
-      const userLogin: UserType = {
-        email: action.payload.email,
-        oms: action.payload.oms,
-        id: action.payload.id,
-      };
-      return {
-        ...state,
-        user: [...state.user, userLogin],
-      };
+      return action.payload;
     case "LOGOUT_USER":
-      const userLogout: { id: string } = {
-        id: action.payload.id,
-      };
-      return {
-        ...state,
-        user: state.user.filter((user) => user.id !== userLogout.id),
-      };
-
+      return null;
     default:
       return state;
   }
