@@ -1,0 +1,64 @@
+.board {
+  background-color: #bae7f5;
+  height: 600px;
+  margin: 5%;
+  padding: 3%;
+}
+
+.date {
+  border: 4px outset rgb(25, 187, 19);
+  border-radius: 5px;
+  padding: 10px;
+  width: 400px;
+}
+
+.telSk {
+  font-family: Geneva, Arial, Helvetica, sans-serif;
+  display: flex;
+}
+
+.info {
+  width: 600px;
+  font-style: italic;
+}
+
+.covid {
+  color: red;
+  display: flex;
+}
+
+.covid19 {
+  height: 480px;
+  width: 500px;
+  position: absolute;
+}
+
+.textSimptomy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+}
+
+.Simptomy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sign {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-style: italic;
+}
+
+.Textsign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: underline;
+  color: rgb(247, 101, 17);
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 18px;
+}

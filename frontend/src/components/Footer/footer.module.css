@@ -1,8 +1,8 @@
 .footer {
   background-color: #096dd9;
-  position:absolute;
+  position: absolute;
   height: 80px;
-  top: 110%;
+  /* top: 110%; */
   width: 100%;
 }
 
