@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useMySelector } from '../../hooks/customHook';
-import { getNewsAc } from '../../redux/ActionCreators/UserAC/getNewsAc';
+import { getNewsAc } from '../../redux/ActionCreators/ApiAC/getNewsAc';
 import Spinner from '../Spinner/Spinner';
 require('dotenv').config()
 
