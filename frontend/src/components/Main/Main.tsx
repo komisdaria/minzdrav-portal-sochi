@@ -2,7 +2,7 @@ import { Switch, Route } from "react-router";
 import FacePage from "../FacePage/FacePage";
 import Login from "../Login/Login";
 import Registration from "../Registration/Registration";
-// import MedHelp from "../MedHelp/MedHelp";
+import MedHelp from "../MedHelp/MedHelp";
 import Communication from "../Communication/Communication";
 import Account from "../account/account";
 import NotFound from "../NotFound/NotFound";
@@ -26,8 +26,7 @@ export default function Main() {
         </Route>
         <Route path="/news"></Route>
         <Route path="/medhelp">
-          {/* <MedHelp /> */}
-          <Doctors />
+          <MedHelp />
         </Route>
         <Route path="/communication">
           <Communication />
@@ -41,9 +40,6 @@ export default function Main() {
         <Route path="/covid">
           <CovidInfo />
         </Route>
-        {/* <Route path='/medhelp'>
-        <Doctors />
-        </Route> */}
         <Route component={NotFound} />
       </Switch>
     </div>
