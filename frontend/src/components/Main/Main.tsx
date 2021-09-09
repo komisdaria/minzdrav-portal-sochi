@@ -25,14 +25,14 @@ export default function Main() {
         <Route path="/medhelp">
           <MedHelp />
         </Route>
+        <Route path="/doctors">
+          <Doctors />
+        </Route>
         <Route path="/communication">
           <Communication />
         </Route>
         <Route path="/account">
           <Account />
-        </Route>
-        <Route path="/doctors">
-          <Doctors />
         </Route>
         <Route component={NotFound} />
       </Switch>

@@ -7,6 +7,7 @@ const session = require("express-session");
 const cookieParser = require("cookie-parser");
 const MongoStore = require("connect-mongo");
 const userRouter = require("../backend/Router/userRouter");
+const doctorRouter = require("../backend/Router/doctorRouter");
 
 const App = express();
 
@@ -52,6 +53,7 @@ App.use((req, res, next) => {
 });
 
 App.use("/", userRouter);
+App.use("/doctors", doctorRouter);
 
 const PORT = 8080;
 

@@ -1,9 +1,8 @@
 const { connect, connection } = require("mongoose");
 const Doctor = require("./doctorModel");
 
-
 async function seed() {
-  await connect('urlmongo', {
+  await connect("urlmongo", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
@@ -12,35 +11,35 @@ async function seed() {
     {
       name: "Калинов Александр Васильевич",
       specialization: "Терапевт",
-      work: [9-18],
+      work: "9-18",
       raiting: 4.6,
-      reviews: ['быстро принимает', 'настоящий профи медицины'],
+      reviews: ["быстро принимает", "настоящий профи медицины"],
     },
     {
       name: "Денисова Марина Дмитриевна",
       specialization: "Терапевт",
-      work: [10-16],
+      work: "10-16",
       raiting: 4.8,
-      reviews: ['отличный врач'],
+      reviews: ["отличный врач"],
     },
     {
       name: "Калинов Александр Васильевич",
       specialization: "Ортопед",
-      work: [12-14],
+      work: "12-14",
       raiting: 4.1,
-      reviews: ['принимает долго',],
-    },    {
+      reviews: ["принимает долго"],
+    },
+    {
       name: "Миронова Снеженна Денисовна",
       specialization: "Хирург",
-      work: [16-20],
+      work: "16-20",
       raiting: 3.2,
-      reviews: ['справку в санаторий не дает'],
+      reviews: ["справку в санаторий не дает"],
     },
-    
   ];
 
   await Doctor.insertMany(seed);
-  console.log('done seed');
+  console.log("done seed");
   await connection.close();
 }
 
