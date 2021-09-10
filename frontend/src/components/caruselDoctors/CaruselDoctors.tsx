@@ -1,68 +1,45 @@
 import { Carousel } from "antd";
-import React from "react";
-import doctor from "../img/doctor.jpeg";
-import doctor2 from "../img/doctor2.jpeg";
-import doctor3 from "../img/doctor3.jpeg";
-import doctor4 from "../img/doctor4.jpeg";
-import doctor5 from "../img/doctor5.jpeg";
-import doctor6 from "../img/doctor6.jpeg";
+import React, { useEffect } from "react";
+import { useMySelector } from "../../hooks/customHook";
+import { useDispatch } from "react-redux";
+import { getDoctorAC } from "../../redux/ActionCreators/UserAC/getDoctor";
 import css from "./caruselDocrot.module.css";
 
 export function CaruselDoctors() {
+  const doctorsState = useMySelector((state) => state.doctors);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getDoctorAC());
+  }, [dispatch]);
+
   return (
     <div>
       <Carousel autoplay>
-        <div>
-          <div>
-            <h3 className={css.contentStyle}>
-              <img src={doctor} alt="doc" className={css.fotoDoc} />
+        {doctorsState.length ? (
+          doctorsState.map((doctor) => (
+            <div>
+              <div>
+                <h3 className={css.contentStyle}>
+                  <img
+                    src={`./img/${doctor.img}`}
+                    alt="doc"
+                    className={css.fotoDoc}
+                  />
 
-              <div className={css.wrapper}>
-                <p>Виктор Семенов хирург</p>
+                  <div className={css.wrapper}>
+                    <p>{doctor.name}</p>
+                  </div>
+                  <div>
+                    <p>{doctor.specialization}</p>
+                  </div>
+                </h3>
               </div>
-            </h3>
-          </div>
-        </div>
-        <div>
-          <h3 className={css.contentStyle}>
-            <img src={doctor2} alt="doc" className={css.fotoDoc} />
-            <div className={css.wrapper}>
-              <p>Семен Петров терапевт</p>
             </div>
-          </h3>
-        </div>
-        <div>
-          <h3 className={css.contentStyle}>
-            <img src={doctor3} alt="doc" className={css.fotoDoc} />
-            <div className={css.wrapper}>
-              <p>Дмитрий Сидоров психотерапевт</p>
-            </div>
-          </h3>
-        </div>
-        <div>
-          <h3 className={css.contentStyle}>
-            <img src={doctor4} alt="doc" className={css.fotoDoc} />
-            <div className={css.wrapper}>
-              <p>Юлия Брежнева генеколог</p>
-            </div>
-          </h3>
-        </div>
-        <div>
-          <h3 className={css.contentStyle}>
-            <img src={doctor5} alt="doc" className={css.fotoDoc} />
-            <div className={css.wrapper}>
-              <p>Елена Головая акушер-гинеколог</p>
-            </div>
-          </h3>
-        </div>
-        <div>
-          <h3 className={css.contentStyle}>
-            <img src={doctor6} alt="doc" className={css.fotoDoc} />
-            <div className={css.wrapper}>
-              <p>Юрий Архипов главВрач</p>
-            </div>
-          </h3>
-        </div>
+          ))
+        ) : (
+          <div>врачи в отпуске :(</div>
+        )}
       </Carousel>
     </div>
   );

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { OurNews } from "../newsPage/newsPage";
 import css from "./FacePage.module.css";
-import Corona_g from "../img/Corona_g.png";
 import { CaruselDoctors } from "../caruselDoctors/CaruselDoctors";
 
 export default function FacePage() {
@@ -14,7 +13,11 @@ export default function FacePage() {
         </div>
         <div className={css.item}>
           <Link to="/covid">
-            <img src={Corona_g} className={css.Corona_g} alt="unnamed" />
+            <img
+              src={"/img/Corona_g.png"}
+              className={css.Corona_g}
+              alt="unnamed"
+            />
           </Link>
         </div>
         <div className={css.item}>
