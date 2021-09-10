@@ -27,9 +27,9 @@ export interface LoginUserAction extends Action {
 
 export interface LogoutUserAction extends Action {
   type: "LOGOUT_USER";
-  payload: {
-    id: UserType["id"];
-  };
+  // payload: {
+  //   id: UserType["id"];
+  // };
 }
 
 export interface DownloadNewsAction extends Action {

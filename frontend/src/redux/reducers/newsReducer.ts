@@ -1,5 +1,5 @@
 import { State } from "../types/state";
-import { Actions } from "../types/userActions";
+import { Actions } from "../types/Action";
 
 export const newsReducer = (
   state: State['news'] = [],
