@@ -1,24 +1,18 @@
 import { Calendar } from 'antd';
 import styles from './calendar.module.css';
-
+import moment from "moment"
+import { CalendarMode } from 'antd/lib/calendar/generateCalendar';
 
 export const CalendarForUser = () => {
 
-  // function onPanelChange(value, mode) {
-  //   console.log(value, mode);
-  // }
-
-  // value?: DateType;
-  // defaultValue?: DateType;
-  // mode?: CalendarMode;
-  // fullscreen?: boolean;
-  // onChange?: (date: DateType) => void;
-  // onPanelChange?: (date: DateType, mode: CalendarMode) => void;
+  function onPanelChange(date: moment.Moment, mode: CalendarMode) {
+    console.log(date, mode);
+  }
   
   return (
     <div className={styles.calendar}>
     <Calendar fullscreen={false} 
-    // onPanelChange={onPanelChange}
+    onPanelChange={onPanelChange}
     />
   </div>
   )
