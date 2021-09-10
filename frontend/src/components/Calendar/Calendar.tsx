@@ -1,7 +1,9 @@
 import { Calendar } from 'antd';
 import styles from './calendar.module.css';
-import moment from "moment"
+import moment from "moment";
 import { CalendarMode } from 'antd/lib/calendar/generateCalendar';
+// import 'moment/locale/ru-Ru';
+// moment.locale('ru-Ru');
 
 export const CalendarForUser = () => {
 
