@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { OurNews } from "../newsPage/newsPage";
 import css from "./FacePage.module.css";
 import Corona_g from "../img/Corona_g.png";
+import { CaruselDoctors } from "../caruselDoctors/CaruselDoctors";
 
 export default function FacePage() {
   return (
@@ -25,10 +26,8 @@ export default function FacePage() {
         <div className={css.item}>номера телефонов</div>
       </div>
 
-      <div className={css.main_container_item}>
-        <div className={css.item}>Наши врачи</div>
-        <div className={css.item}>Наши проекты</div>
-        <div className={css.item}>Наши партнеры</div>
+      <div className={css.carusel}>
+        <CaruselDoctors />
       </div>
     </div>
   );

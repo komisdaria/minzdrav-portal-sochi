@@ -1,9 +1,9 @@
 import { UserType } from "../../../userTypes/userType";
-import { LogoutUserAction } from "../../types/userActions";
+import { LogoutUserAction } from "../../types/Action";
 
-export const LogOutAC = (id: UserType["id"]): LogoutUserAction => ({
+export const LogOutAC = (): LogoutUserAction => ({
   type: "LOGOUT_USER",
-  payload: {
-    id,
-  },
+  // payload: {
+  //   id,
+  // },
 });

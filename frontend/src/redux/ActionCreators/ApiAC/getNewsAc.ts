@@ -11,7 +11,6 @@ export const getNewsAc = () => (dispatch: AppDispatch) => {
   })
     .then((response) => response.json()) // полученный ответ преобразуй в json
     .then((data) => {
-      console.log(data.articles)
       dispatch({
         type: 'DOWNLOAD_NEWS',
         payload: {

@@ -20,6 +20,7 @@ router.route("/register").post(async (req, res) => {
       repeatPassword,
       oms,
     });
+    
     const userId = user._id.toString();
     console.log(user);
     req.session.user = user;

@@ -8,10 +8,12 @@ import Account from "../account/account";
 import NotFound from "../NotFound/NotFound";
 import Doctors from "../Doctors/Doctors";
 import { CovidInfo } from "../CovidInfo/CovidInfo";
+import { useMySelector } from "../../hooks/customHook";
 
 import css from "./main.module.css";
-
 export default function Main() {
+  const state = useMySelector(state => state)
+  console.log(state);
   return (
     <div className={css.main}>
       <Switch>
