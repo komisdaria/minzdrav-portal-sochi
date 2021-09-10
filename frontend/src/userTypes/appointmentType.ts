@@ -5,4 +5,5 @@ export interface AppointmentType {
   status: boolean,
   comments: string,
   patientsOms: number,
+  id: string;
 }
