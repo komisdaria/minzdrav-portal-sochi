@@ -18,7 +18,7 @@ export const OurNews = () => {
       {
         newsState.length ? newsState.map((el) => (
           <div>
-            <h3>{el.title}</h3>
+            <h3>{el.title.slice(0, 50)}...</h3>
             {/* <div>{el.description}</div> */}
           </div>
         )) : <Spinner />
