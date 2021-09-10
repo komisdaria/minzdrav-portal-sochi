@@ -17,7 +17,11 @@ export default function FacePage() {
             <img src={Corona_g} className={css.Corona_g} alt="unnamed" />
           </Link>
         </div>
-        <div className={css.item}>Запись</div>
+        <div className={css.item}>
+        <Link to="/appointments">
+        Запись
+          </Link>
+      </div>
       </div>
 
       <div className={css.main_container_item}>

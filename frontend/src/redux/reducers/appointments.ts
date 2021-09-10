@@ -7,7 +7,9 @@ export const appointmentsReducer = (
 ): State['appointments'] => {
   switch(action.type) {
     case 'GET_APPOINTMENTS':
-      return [...state, ...action.payload.appointments];
+      // console.log('from reducer  ----', action.payload.appointments);
+      
+      return action.payload.appointments;
       default:
         return state;
   }

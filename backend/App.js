@@ -58,7 +58,7 @@ App.use((req, res, next) => {
 
 App.use("/", userRouter);
 App.use("/doctors", doctorRouter);
-App.use("/appointments", appointmentRouter);
+App.use("/", appointmentRouter);
 
 const PORT = 8080;
 
