@@ -24,7 +24,7 @@ const Doctors = () => {
           <div key={doctor.id}>
             <h2>{doctor.name}</h2>
             <p>{doctor.specialization}</p>
-            <p>{doctor.work}</p>
+            <p>Свободное время: <button>{doctor.work}</button></p>
           </div>
         ))
       ) : (

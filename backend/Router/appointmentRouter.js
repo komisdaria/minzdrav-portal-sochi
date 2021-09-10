@@ -3,10 +3,10 @@ const router = express.Router();
 const Appointment = require("../db/models/appointmentModel");
 
 router
-  .route("/")
+  .route("/appointments")
   .get(async (req, res) => {
   try {
-    let allAppointments = await doctorsModel.find().lean();
+    let allAppointments = await Appointment.find().lean();
     res.status(200).json({
       allAppointments: allAppointments.map(({ _id, ...rest }) => ({ ...rest, id: _id })),
     });

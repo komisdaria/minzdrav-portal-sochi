@@ -2,7 +2,6 @@ import React from 'react'
 import css from './account.module.css';
 import {CalendarForUser} from '../Calendar/Calendar'
 import { useMySelector } from '../../hooks/customHook';
-import Appointments from '../Appointments/Appointments';
 
 export default function Account() {
   
@@ -21,7 +20,7 @@ console.log('STATE v accounte', state);
         </div>
         <div className={css.container_right_items}>
           <div className={css.right_item}>
-                <Appointments />
+                инфа о приемах
           </div>
           <div className={css.right_item}>
                 Архив приемов и вся инфа о них
