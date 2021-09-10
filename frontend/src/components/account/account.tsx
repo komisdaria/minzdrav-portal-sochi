@@ -1,9 +1,11 @@
 import React from 'react'
-import css from './account.module.css'
+import css from './account.module.css';
+import {CalendarForUser} from '../Calendar/Calendar'
 
 export default function Account() {
 
   return (
+    <>
     <div className={css.account_container}>
       <div className={css.account_container_item}>
         <div className={css.left_column}>
@@ -19,7 +21,9 @@ export default function Account() {
                 Архив приемов и вся инфа о них
           </div>
         </div>
+                <CalendarForUser />
       </div>
     </div>
+    </>
   )
 }
