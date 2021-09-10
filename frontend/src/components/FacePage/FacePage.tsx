@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { OurNews } from "../newsPage/newsPage";
 import css from "./FacePage.module.css";
+import Corona_g from "../img/Corona_g.png";
 
 export default function FacePage() {
   return (
@@ -11,7 +12,9 @@ export default function FacePage() {
           <OurNews />
         </div>
         <div className={css.item}>
-          <Link to="/covid">Новости о короновирусе</Link>
+          <Link to="/covid">
+            <img src={Corona_g} className={css.Corona_g} alt="unnamed" />
+          </Link>
         </div>
         <div className={css.item}>Запись</div>
       </div>

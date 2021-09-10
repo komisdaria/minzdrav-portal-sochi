@@ -50,14 +50,13 @@
   flex-direction: row;
   justify-content: space-evenly;
   font-style: italic;
+  text-decoration: underline;
 }
 
 .Textsign {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: underline;
-  color: rgb(247, 101, 17);
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
   font-size: 18px;

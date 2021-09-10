@@ -1,0 +1,14 @@
+.prevention_Main {
+  width: 300px;
+}
+
+.models {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.main_models {
+  display: flex;
+  justify-content: space-around;
+}
