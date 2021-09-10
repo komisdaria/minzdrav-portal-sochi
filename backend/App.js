@@ -8,6 +8,7 @@ const cookieParser = require("cookie-parser");
 const MongoStore = require("connect-mongo");
 const userRouter = require("../backend/Router/userRouter");
 const doctorRouter = require("../backend/Router/doctorRouter");
+const appointmentRouter = require("./Router/appointmentRouter")
 
 const App = express();
 
@@ -57,6 +58,7 @@ App.use((req, res, next) => {
 
 App.use("/", userRouter);
 App.use("/doctors", doctorRouter);
+App.use("/", appointmentRouter);
 
 const PORT = 8080;
 

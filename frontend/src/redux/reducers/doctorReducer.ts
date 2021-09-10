@@ -7,7 +7,7 @@ export const doctorsReducer = (
 ): State["doctors"] => {
   switch (action.type) {
     case "GET_DOCTORS":
-      return [...state, ...action.payload.doctors];
+      return action.payload.doctors;
     default:
       return state;
   }

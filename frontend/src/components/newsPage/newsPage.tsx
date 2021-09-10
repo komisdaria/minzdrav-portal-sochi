@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux';
 import { useMySelector } from '../../hooks/customHook';
 import { getNewsAc } from '../../redux/ActionCreators/ApiAC/getNewsAc';
 import Spinner from '../Spinner/Spinner';
-require('dotenv').config()
+import styles from './newspage.module.css';
+require('dotenv').config();
 
 export const OurNews = () => {
   const newsState = useMySelector(state => state.news)
@@ -14,12 +15,12 @@ export const OurNews = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={styles.newsblock}>
       {
         newsState.length ? newsState.map((el) => (
-          <div>
-            <h3>{el.title}</h3>
-            {/* <div>{el.description}</div> */}
+          <div >
+            <h3>{el.title.slice(0, 50)}...</h3>
+            {/* <div>{el.description.slice(0, 50)}</div> */}
           </div>
         )) : <Spinner />
       }

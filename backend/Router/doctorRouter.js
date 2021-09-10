@@ -5,6 +5,7 @@ const doctorsModel = require("../db/models/doctorModel");
 router.route("/").get(async (req, res) => {
   try {
     const doctors = await doctorsModel.find().lean();
+    console.log("doctors", doctors);
     res.status(200).json({
       doctors: doctors.map(({ _id, ...rest }) => ({ ...rest, id: _id })),
     });

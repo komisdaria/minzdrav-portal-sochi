@@ -29,6 +29,10 @@ const Header = () => {
               <Title style={{ color: 'white' }} level={2}>Главная</Title>
             </NavLink>
           </li>
+          <NavLink exact to='/appointments'>
+             <Title style={{ color: 'white' }} level={2}>Записи к врачам</Title>
+          </NavLink>
+
           {isLogin?.name ? 
           <>
           <li>
@@ -53,6 +57,7 @@ const Header = () => {
                 <NavLink exact to='/registration'>
                   <Title style={{ color: 'white' }} level={2}>Регистрация</Title>
                 </NavLink>
+              
               </li>
             </>
           }

@@ -1,0 +1,21 @@
+.fotoDoc {
+  height: 300px;
+  width: 268px;
+  display: flex;
+  align-items: center;
+}
+
+.contentStyle {
+  height: 400px;
+  color: rgb(0, 0, 0);
+  line-height: 160px;
+  text-align: center;
+  background: #7982e6;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+}
