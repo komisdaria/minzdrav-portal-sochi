@@ -51,7 +51,9 @@ router.route("/login").post(async (req, res) => {
 });
 
 router.get("/logout", (req, res) => {
+  console.log('1',req.session);
   req.session.destroy();
+  console.log('2',req.session);
   res.clearCookie("sid");
   return res.status(200).json({ message: "юзер покинул аккаунт" });
 });

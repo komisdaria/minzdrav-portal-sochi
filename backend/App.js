@@ -15,7 +15,10 @@ const App = express();
 App.use(morgan("dev")); // записываем в консоль запросы
 App.use(express.json()); //распарсит тело запроса из формата json
 App.use(express.urlencoded({ extended: true })); // распарсит тело запроса из формата form data
-App.use(cors());
+App.use(cors({
+  origin: true,
+  credentials: true,
+}));
 
 const options = {
   // указываем где храним сессии
