@@ -5,4 +5,5 @@ export interface DoctorType {
   raiting: number;
   reviews: [];
   id: string;
+  img: string;
 }

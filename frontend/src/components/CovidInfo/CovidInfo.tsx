@@ -1,8 +1,5 @@
 import React, { useEffect } from "react";
-
 import css from "./CovidInfo.module.css";
-import covid19 from "../img/covid19.png";
-import Simptomy from "../img/Simptomy.png";
 import { InfoCovidModel } from "../InfoCovidModel/InfoCovidModel";
 import { useDispatch } from "react-redux";
 import { useMySelector } from "../../hooks/customHook";
@@ -11,7 +8,6 @@ import { getCovidAC } from "../../redux/ActionCreators/ApiAC/getCovidAC";
 export function CovidInfo() {
   const covidState = useMySelector((state) => state.covid[0]);
   const dispatch = useDispatch();
-  console.log("===>", covidState);
 
   useEffect(() => {
     dispatch(getCovidAC());
@@ -20,7 +16,7 @@ export function CovidInfo() {
   return (
     <div>
       <div className={css.board}>
-        <img src={covid19} className={css.covid19} alt="covid" />
+        <img src={"/img/covid19.png"} className={css.covid19} alt="covid" />
         <div className={css.text}>
           <div>
             <h1 className={css.covid}>Коронавирус COVID-19:</h1>
@@ -93,7 +89,11 @@ export function CovidInfo() {
         <h1>Основные симптомы короновируса :</h1>
       </div>
       <div className={css.Simptomy}>
-        <img src={Simptomy} className={css.Simptomy} alt="Simptomy" />
+        <img
+          src={"/img/Simptomy.png"}
+          className={css.Simptomy}
+          alt="Simptomy"
+        />
       </div>
 
       <div className={css.Textsign}>

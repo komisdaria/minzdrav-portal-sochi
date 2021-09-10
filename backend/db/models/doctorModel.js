@@ -14,9 +14,14 @@ const doctorSchema = mongoose.Schema({
     type: Number,
     default: 0,
   },
-  reviews: [{
+  reviews: [
+    {
+      type: String,
+    },
+  ],
+  img: {
     type: String,
-  }],
+  },
 });
 
 const Doctor = mongoose.model("Doctor", doctorSchema);
