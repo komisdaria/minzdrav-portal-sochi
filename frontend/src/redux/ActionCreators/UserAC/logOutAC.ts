@@ -1,5 +1,3 @@
-import { UserType } from "../../../userTypes/userType";
-import { LogoutUserAction } from "../../types/Action";
 import { AppDispatch } from "../../store/store";
 
 export const LogOutAC = () => async (dispatch: AppDispatch)=> {

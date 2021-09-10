@@ -1,6 +1,5 @@
 import { UserType } from "../../../userTypes/userType";
 import { AppDispatch } from "../../store/store";
-import { LoginUserAction } from "../../types/Action";
 
 export const LoginUserAC = (
   email: UserType["email"],
