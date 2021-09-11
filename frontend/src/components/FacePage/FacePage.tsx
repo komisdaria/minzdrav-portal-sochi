@@ -23,12 +23,14 @@ export default function FacePage() {
         </div>
         <div className={css.item}>
           <ModalAppointments />
-      </div>
+        </div>
       </div>
 
       <div className={css.main_container_item}>
         <div className={css.item}>Наши услуги</div>
-        <div className={css.item}>Карта</div>
+        <div className={css.item}>
+          <Link to="/maps">карты</Link>
+        </div>
         <div className={css.item}>номера телефонов</div>
       </div>
 

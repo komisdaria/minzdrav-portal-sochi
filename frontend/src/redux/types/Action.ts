@@ -3,7 +3,7 @@ import { CovidType } from "../../userTypes/covidType";
 import { NewsType } from "../../userTypes/newsType";
 import { UserType } from "../../userTypes/userType";
 import { AppointmentType } from "../../userTypes/appointmentType";
-
+import { YandexMapType } from "../../userTypes/yandexMapType";
 
 type ActionTypes =
   | "CREATE_USER"
@@ -12,7 +12,8 @@ type ActionTypes =
   | "DOWNLOAD_NEWS"
   | "GET_DOCTORS"
   | "DOWLOAD_COVID_API"
-  | "GET_APPOINTMENTS";
+  | "GET_APPOINTMENTS"
+  | "GET_YANDEXMAP";
 
 export interface Action {
   type: ActionTypes;
@@ -63,6 +64,12 @@ export interface GetAppointment extends Action {
   };
 }
 
+export interface GetYandexMap extends Action {
+  type: "GET_YANDEXMAP";
+  payload: {
+    yandexmap: YandexMapType;
+  };
+}
 
 export type Actions =
   | CreateUserAction
@@ -71,5 +78,5 @@ export type Actions =
   | DownloadNewsAction
   | GetDoctorsAction
   | DowloadCovidAction
-  | GetAppointment;
- 
+  | GetAppointment
+  | GetYandexMap;
