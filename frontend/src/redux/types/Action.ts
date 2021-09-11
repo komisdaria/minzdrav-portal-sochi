@@ -4,6 +4,7 @@ import { NewsType } from "../../userTypes/newsType";
 import { UserType } from "../../userTypes/userType";
 import { AppointmentType } from "../../userTypes/appointmentType";
 
+
 type ActionTypes =
   | "CREATE_USER"
   | "LOGIN_USER"
@@ -59,8 +60,9 @@ export interface GetAppointment extends Action {
   type: "GET_APPOINTMENTS";
   payload: {
     appointments: AppointmentType[];
-  }
+  };
 }
+
 
 export type Actions =
   | CreateUserAction
@@ -70,3 +72,4 @@ export type Actions =
   | GetDoctorsAction
   | DowloadCovidAction
   | GetAppointment;
+ 

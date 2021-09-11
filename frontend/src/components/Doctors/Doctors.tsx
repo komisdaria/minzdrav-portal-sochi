@@ -5,13 +5,12 @@ import { getDoctorAC } from "../../redux/ActionCreators/UserAC/getDoctor";
 import Spinner from "../Spinner/Spinner";
 
 const Doctors = () => {
-  // const [doctors, setDoctors] = useState(dbDoc);
   const doctorsState = useMySelector((state) => state.doctors);
   const dispatch = useDispatch();
-  console.log(doctorsState);
+  
 
   useEffect(() => {
-    console.log("----->");
+   
 
     dispatch(getDoctorAC());
   }, [dispatch]);
