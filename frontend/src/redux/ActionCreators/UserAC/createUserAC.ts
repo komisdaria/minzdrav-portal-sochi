@@ -1,7 +1,5 @@
-import { resolveModuleName } from "typescript";
 import { UserType } from "../../../userTypes/userType";
 import { AppDispatch } from "../../store/store";
-import { CreateUserAction } from "../../types/Action";
 
 export const CreateUserAC = (
   name: UserType['name'],

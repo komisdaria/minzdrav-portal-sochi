@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { OurNews } from "../newsPage/newsPage";
 import css from "./FacePage.module.css";
 import { CaruselDoctors } from "../caruselDoctors/CaruselDoctors";
+import ModalAppointments from "../Appointments/ModalAppointment";
 
 export default function FacePage() {
   return (
@@ -21,9 +22,7 @@ export default function FacePage() {
           </Link>
         </div>
         <div className={css.item}>
-        <Link to="/appointments">
-        Запись
-          </Link>
+          <ModalAppointments />
       </div>
       </div>
 
