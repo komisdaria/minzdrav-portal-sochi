@@ -9,11 +9,14 @@ import NotFound from "../NotFound/NotFound";
 import Doctors from "../Doctors/Doctors";
 import { CovidInfo } from "../CovidInfo/CovidInfo";
 import { useMySelector } from "../../hooks/customHook";
+import Appointments from "../Appointments/Appointments";
 
 import css from "./main.module.css";
+
 export default function Main() {
   const state = useMySelector(state => state)
-  console.log(state);
+  console.log('state Main', state);
+
   return (
     <div className={css.main}>
       <Switch>
@@ -41,6 +44,9 @@ export default function Main() {
         </Route>
         <Route path="/covid">
           <CovidInfo />
+        </Route>
+        <Route path="/appointments">
+          <Appointments />
         </Route>
         <Route component={NotFound} />
       </Switch>

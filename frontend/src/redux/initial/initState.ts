@@ -5,4 +5,5 @@ export const initialState: State = {
   news: [],
   doctors: [],
   covid: [],
+  appointments: [],
 };

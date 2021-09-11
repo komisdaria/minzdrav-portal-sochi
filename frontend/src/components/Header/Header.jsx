@@ -2,12 +2,20 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Typography } from 'antd';
 import { useMySelector } from '../../hooks/customHook';
+import { useDispatch } from 'react-redux';
+import { LogOutAC } from '../../redux/ActionCreators/UserAC/logOutAC';
 
 
 
 const Header = () => {
   const { Title } = Typography;
   const isLogin = useMySelector(state => state.user)
+  const dispatch = useDispatch()
+
+  const logOut = () => {
+    // console.log(isLogin);
+    dispatch(LogOutAC())
+  }
 
   return (
     <div>
@@ -21,10 +29,14 @@ const Header = () => {
               <Title style={{ color: 'white' }} level={2}>Главная</Title>
             </NavLink>
           </li>
+          <NavLink exact to='/appointments'>
+             <Title style={{ color: 'white' }} level={2}>Записи к врачам</Title>
+          </NavLink>
+
           {isLogin?.name ? 
           <>
           <li>
-          <NavLink exact to='/'>
+          <NavLink exact to='/' onClick={logOut}>
             <Title style={{ color: 'white' }} level={2}>Выход</Title>
           </NavLink>
           </li> 
@@ -45,6 +57,7 @@ const Header = () => {
                 <NavLink exact to='/registration'>
                   <Title style={{ color: 'white' }} level={2}>Регистрация</Title>
                 </NavLink>
+              
               </li>
             </>
           }

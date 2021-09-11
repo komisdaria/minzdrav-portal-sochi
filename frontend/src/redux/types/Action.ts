@@ -2,6 +2,7 @@ import { DoctorType } from "../../userTypes/doctorsType";
 import { CovidType } from "../../userTypes/covidType";
 import { NewsType } from "../../userTypes/newsType";
 import { UserType } from "../../userTypes/userType";
+import { AppointmentType } from "../../userTypes/appointmentType";
 
 type ActionTypes =
   | "CREATE_USER"
@@ -9,7 +10,8 @@ type ActionTypes =
   | "LOGOUT_USER"
   | "DOWNLOAD_NEWS"
   | "GET_DOCTORS"
-  | "DOWLOAD_COVID_API";
+  | "DOWLOAD_COVID_API"
+  | "GET_APPOINTMENTS";
 
 export interface Action {
   type: ActionTypes;
@@ -45,11 +47,19 @@ export interface GetDoctorsAction extends Action {
     doctors: DoctorType[];
   };
 }
+
 export interface DowloadCovidAction extends Action {
   type: "DOWLOAD_COVID_API";
   payload: {
     covid: CovidType[];
   };
+}
+
+export interface GetAppointment extends Action {
+  type: "GET_APPOINTMENTS";
+  payload: {
+    appointments: AppointmentType[];
+  }
 }
 
 export type Actions =
@@ -58,4 +68,5 @@ export type Actions =
   | LogoutUserAction
   | DownloadNewsAction
   | GetDoctorsAction
-  | DowloadCovidAction;
+  | DowloadCovidAction
+  | GetAppointment;
