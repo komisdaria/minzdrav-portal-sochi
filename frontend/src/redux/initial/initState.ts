@@ -6,4 +6,5 @@ export const initialState: State = {
   doctors: [],
   covid: [],
   appointments: [],
+  yandexmap: [],
 };

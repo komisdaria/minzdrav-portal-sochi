@@ -13,6 +13,7 @@ import Appointments from "../Appointments/Appointments";
 
 import css from "./main.module.css";
 import { DocInfo } from "../docInfo/docInfo";
+import YandexMap from "../YandexMap/YandexMap";
 
 export default function Main() {
   const state = useMySelector((state) => state);
@@ -48,6 +49,9 @@ export default function Main() {
         </Route>
         <Route path="/appointments">
           <Appointments />
+        </Route>
+        <Route path="/maps">
+          <YandexMap />
         </Route>
         <Route path="/docInfo/:doctorId">
           <DocInfo />

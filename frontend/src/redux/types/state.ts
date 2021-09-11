@@ -3,6 +3,7 @@ import { CovidType } from "../../userTypes/covidType";
 import { NewsType } from "../../userTypes/newsType";
 import { UserType } from "../../userTypes/userType";
 import { AppointmentType } from "../../userTypes/appointmentType";
+import { YandexMapType } from "../../userTypes/yandexMapType";
 
 export interface State {
   user: UserType | null;
@@ -10,4 +11,5 @@ export interface State {
   doctors: DoctorType[];
   covid: CovidType[];
   appointments: AppointmentType[];
+  yandexmap: YandexMapType[];
 }
