@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useMySelector } from "../../hooks/customHook";
 import { useParams } from "react-router-dom";
+import css from "./docInfo.module.css";
+import { DoctorType } from "../../userTypes/doctorsType";
 
 export function DocInfo() {
   interface ParamTypes {
@@ -8,19 +10,36 @@ export function DocInfo() {
   }
   const { doctorId } = useParams<ParamTypes>();
   const FinddoctorsState = useMySelector((state) => state.doctors);
-  const doctor = FinddoctorsState.filter((el) => el.id === doctorId);
+  // const [doctor, setDoctor] = useState({});
+
+  // useEffect(() => {
+  //   const carDoc = FinddoctorsState.filter((el) => el.id === doctorId);
+  //   let test = carDoc[0];
+  //   setDoctor(test);
+  // }, [FinddoctorsState, doctorId]);
+
+  const carDoc = FinddoctorsState.filter((el) => el.id === doctorId);
+  let doctor = carDoc[0];
 
   return (
     <div>
-      <div>Тут будет врач</div>
-      {doctor[0] ? (
-        <div key={doctor[0].id}>
-          <div>
-            <img src={`/img/${doctor[0].img}`} alt="doc" />
+      {doctor ? (
+        <div key={doctor.id}>
+          <div className={css.wrapper}>
+            <div className={css.border}>
+              <img src={`/img/${doctor.img}`} alt="doc" className={css.img} />
+              <div className={css.info}>
+                <div>ФИО: {doctor.name}</div>
+                <div>Специализация:{doctor.specialization}</div>
+                <div>Рейтинг: {doctor.raiting}</div>
+                <div>Отзывы:{doctor.reviews}</div>
+                <div>
+                  <button>{doctor.work}</button>
+                </div>
+              </div>
+            </div>
           </div>
-          <div>{doctor[0].name}</div>
-          <div>{doctor[0].specialization}</div>
-          <div>{doctor[0].work}</div>
+          <button>Записаться</button>
         </div>
       ) : null}
     </div>
