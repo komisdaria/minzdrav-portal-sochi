@@ -20,7 +20,9 @@ export function DocInfo() {
 
   const carDoc = FinddoctorsState.filter((el) => el.id === doctorId);
   let doctor = carDoc[0];
-
+  console.log(doctor.work);
+  // const a = doctor.map((el: { work: string }) => el.work);
+  // console.log(a);
   return (
     <div>
       {doctor ? (
