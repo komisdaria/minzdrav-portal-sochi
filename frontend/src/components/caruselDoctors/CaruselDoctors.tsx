@@ -4,39 +4,44 @@ import { useMySelector } from "../../hooks/customHook";
 import { useDispatch } from "react-redux";
 
 import css from "./caruselDocrot.module.css";
-import { getDoctorAC } from "../../redux/ActionCreators/UserAC/getDoctor";
+import { NavLink } from "react-router-dom";
 
 export function CaruselDoctors() {
   const doctorsState = useMySelector((state) => state.doctors);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getDoctorAC());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getDoctorAC());
+  // }, [dispatch]);
 
   return (
     <div>
       <Carousel autoplay>
         {doctorsState.length ? (
           doctorsState.map((doctor) => (
-            <div>
+            <NavLink
+              exact
+              to={`/docInfo/${doctor.id}`}
+              className={css.link}
+              activeClassName={css.activeLink}
+            >
               <div>
-                <h3 className={css.contentStyle}>
-                  <img
-                    src={`./img/${doctor.img}`}
-                    alt="doc"
-                    className={css.fotoDoc}
-                  />
+                <div>
+                  <h3 className={css.contentStyle}>
+                    <img
+                      src={`./img/${doctor.img}`}
+                      alt="doc"
+                      className={css.fotoDoc}
+                    />
 
-                  <div className={css.wrapper}>
-                    <p>{doctor.name}</p>
-                  </div>
-                  <div>
-                    <p>{doctor.specialization}</p>
-                  </div>
-                </h3>
+                    <div>
+                      <div>{doctor.name}</div>
+                    </div>
+                    <div>{doctor.specialization}</div>
+                  </h3>
+                </div>
               </div>
-            </div>
+            </NavLink>
           ))
         ) : (
           <div>врачи в отпуске :</div>

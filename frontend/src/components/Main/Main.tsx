@@ -12,10 +12,11 @@ import { useMySelector } from "../../hooks/customHook";
 import Appointments from "../Appointments/Appointments";
 
 import css from "./main.module.css";
+import { DocInfo } from "../docInfo/docInfo";
 
 export default function Main() {
-  const state = useMySelector(state => state)
-  console.log('state Main', state);
+  const state = useMySelector((state) => state);
+  console.log("state Main", state);
 
   return (
     <div className={css.main}>
@@ -47,6 +48,9 @@ export default function Main() {
         </Route>
         <Route path="/appointments">
           <Appointments />
+        </Route>
+        <Route path="/docInfo/:doctorId">
+          <DocInfo />
         </Route>
         <Route component={NotFound} />
       </Switch>

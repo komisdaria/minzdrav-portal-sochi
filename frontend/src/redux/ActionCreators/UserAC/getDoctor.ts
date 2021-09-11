@@ -5,7 +5,6 @@ export const getDoctorAC = () => async (dispatch: AppDispatch) => {
     method: "GET",
   });
   const result = await response.json();
-  console.log("result doctor ----->", result.doctors);
   dispatch({
     type: "GET_DOCTORS",
     payload: {

@@ -24,7 +24,8 @@ const appointmentSchema = mongoose.Schema({
   patientsOms: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
-},
+  },
+  
 });
 
 const Appointment = mongoose.model("Appointment", appointmentSchema);
