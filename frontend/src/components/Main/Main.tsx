@@ -17,7 +17,6 @@ import YandexMap from "../YandexMap/YandexMap";
 
 export default function Main() {
   const state = useMySelector((state) => state);
-  console.log("state Main", state);
 
   return (
     <div className={css.main}>
