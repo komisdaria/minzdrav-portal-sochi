@@ -3,6 +3,8 @@ import { useMySelector } from "../../hooks/customHook";
 import { useParams } from "react-router-dom";
 import css from "./docInfo.module.css";
 import { DoctorType } from "../../userTypes/doctorsType";
+import Spinner from "../Spinner/Spinner";
+import { Spin } from "antd";
 
 export function DocInfo() {
   interface ParamTypes {
@@ -20,7 +22,7 @@ export function DocInfo() {
 
   const carDoc = FinddoctorsState.filter((el) => el.id === doctorId);
   let doctor = carDoc[0];
-  console.log(doctor.work);
+  // console.log(doctor.work);
   // const a = doctor.map((el: { work: string }) => el.work);
   // console.log(a);
   return (
@@ -43,7 +45,11 @@ export function DocInfo() {
           </div>
           <button>Записаться</button>
         </div>
-      ) : null}
+      ) : (
+        <div className={css.spin}>
+          <Spinner />
+        </div>
+      )}
     </div>
   );
 }
