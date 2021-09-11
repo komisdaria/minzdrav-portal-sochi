@@ -21,6 +21,10 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  appointment: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Appointment',
+  },
 });
 const User = mongoose.model("User", userSchema);
 

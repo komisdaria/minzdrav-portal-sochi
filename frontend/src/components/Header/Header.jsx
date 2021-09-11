@@ -13,7 +13,7 @@ const Header = () => {
   const dispatch = useDispatch()
 
   const logOut = () => {
-    // console.log(isLogin);
+
     dispatch(LogOutAC())
   }
 
