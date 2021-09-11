@@ -22,9 +22,8 @@ export function DocInfo() {
 
   const carDoc = FinddoctorsState.filter((el) => el.id === doctorId);
   let doctor = carDoc[0];
-  // console.log(doctor.work);
-  // const a = doctor.map((el: { work: string }) => el.work);
-  // console.log(a);
+  // console.log(doctor.map((el: { work: string }) => el.work));
+
   return (
     <div>
       {doctor ? (
@@ -38,6 +37,7 @@ export function DocInfo() {
                 <div>Рейтинг: {doctor.raiting}</div>
                 <div>Отзывы:{doctor.reviews}</div>
                 <div>
+                  {/* <button>{doctor.map((el: { work: string; }) => el.work)}</button> */}
                   <button>{doctor.work}</button>
                 </div>
               </div>

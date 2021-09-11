@@ -30,7 +30,7 @@ export default function FacePage() {
       <div className={css.main_container_item}>
         <div className={css.item}>Наши услуги</div>
         <div className={css.item}>
-          <Link to="/maps">карты</Link>
+          <Link to="/maps">Карты</Link>
         </div>
         <div className={css.item}>
           <TelNumModal />{" "}
