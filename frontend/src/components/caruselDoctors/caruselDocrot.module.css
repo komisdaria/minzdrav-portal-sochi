@@ -16,6 +16,9 @@
   align-items: center;
 }
 
-.wrapper {
-  display: flex;
+.link {
+  margin: 0 10px;
+}
+.activeLink {
+  color: rgb(251, 126, 24);
 }
