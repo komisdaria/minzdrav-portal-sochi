@@ -33,3 +33,7 @@ header {
 .notfound {
   height: 17rem;
 }
+
+.selected {
+  color:rgb(210, 87, 30);
+}
