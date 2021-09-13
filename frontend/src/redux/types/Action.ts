@@ -1,4 +1,4 @@
-git import { DoctorType } from "../../userTypes/doctorsType";
+import { DoctorType } from "../../userTypes/doctorsType";
 import { CovidType } from "../../userTypes/covidType";
 import { NewsType } from "../../userTypes/newsType";
 import { UserType } from "../../userTypes/userType";
@@ -15,6 +15,7 @@ type ActionTypes =
   | "GET_APPOINTMENTS"
   | "UPDATE_USER"
   | "UPDATE_APPOINTMENT"
+  | "GET_YANDEXMAP";
 
 export interface Action {
   type: ActionTypes;
@@ -37,7 +38,6 @@ export interface LogoutUserAction extends Action {
 export interface UpdateUserAction extends Action {
   type: "UPDATE_USER";
   payload: UserType;
-
 }
 
 export interface DownloadNewsAction extends Action {
@@ -90,5 +90,5 @@ export type Actions =
   | DowloadCovidAction
   | GetAppointment
   | UpdateAppointment
-  | UpdateUserAction;
- 
+  | UpdateUserAction
+  | GetYandexMap;
