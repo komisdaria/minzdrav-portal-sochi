@@ -14,7 +14,8 @@ type ActionTypes =
   | "DOWLOAD_COVID_API"
   | "GET_APPOINTMENTS"
   | "UPDATE_USER"
-  | "UPDATE_APPOINTMENT"c
+  | "UPDATE_APPOINTMENT"
+  | "GET_YANDEXMAP";
 
 export interface Action {
   type: ActionTypes;
@@ -37,7 +38,6 @@ export interface LogoutUserAction extends Action {
 export interface UpdateUserAction extends Action {
   type: "UPDATE_USER";
   payload: UserType;
-
 }
 
 export interface DownloadNewsAction extends Action {
@@ -90,5 +90,5 @@ export type Actions =
   | DowloadCovidAction
   | GetAppointment
   | UpdateAppointment
-  | UpdateUserAction;
- 
+  | UpdateUserAction
+  | GetYandexMap;

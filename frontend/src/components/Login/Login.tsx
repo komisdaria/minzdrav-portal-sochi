@@ -1,33 +1,37 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "antd/dist/antd.css";
-import { Form, Input, Button, Typography } from "antd";
+import { Form, Input, Button, Typography, Result } from "antd";
 import { useDispatch } from "react-redux";
 import { LoginUserAC } from "../../redux/ActionCreators/UserAC/loginUserAC";
 import { useHistory } from "react-router";
+import { useMySelector } from "../../hooks/customHook";
 
 const Login = () => {
   const { Title } = Typography;
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const dispatch = useDispatch()
-  const history = useHistory()
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const UserState = useMySelector((state) => state.user);
+  console.log(UserState);
 
   const emailHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value)
-  }
+    setEmail(event.target.value);
+  };
 
   const passwordHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value)
-  }
+    setPassword(event.target.value);
+  };
 
-  const onSubmit = (event: { preventDefault: () => void; }) => {
-    event.preventDefault()
-    
-    
-    dispatch(LoginUserAC(email,password))
-    history.push('/')
-  }
+  const onSubmit = (event: { preventDefault: () => void }) => {
+    event.preventDefault();
 
+    dispatch(LoginUserAC(email, password));
+    history.push("/");
+    //  dispatch(LoginUserAC(email, password));
+    //  if(result.message)
+    // history.push("/");
+  };
 
   return (
     <div className="auth">
@@ -47,10 +51,7 @@ const Login = () => {
           name="email"
           rules={[{ required: true, message: "Введите электронную почту" }]}
         >
-          <Input 
-          onChange={emailHandler}
-          value={email}
-          />
+          <Input onChange={emailHandler} value={email} />
         </Form.Item>
 
         <Form.Item
@@ -58,10 +59,7 @@ const Login = () => {
           name="password"
           rules={[{ required: true, message: "Введите пароль" }]}
         >
-          <Input.Password 
-          onChange={passwordHandler}
-          value={password}
-          />
+          <Input.Password onChange={passwordHandler} value={password} />
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 8 }}>
