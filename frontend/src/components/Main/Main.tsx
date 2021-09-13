@@ -13,11 +13,11 @@ import Appointments from "../Appointments/Appointments";
 
 import css from "./main.module.css";
 import { DocInfo } from "../docInfo/docInfo";
-import YandexMap from "../YandexMap/YandexMap";
+// import YandexMap from "../YandexMap/YandexMap";
+import { Map } from "../Map/Map";
 
 export default function Main() {
   const state = useMySelector((state) => state);
-  console.log("state Main", state);
 
   return (
     <div className={css.main}>
@@ -50,8 +50,11 @@ export default function Main() {
         <Route path="/appointments">
           <Appointments />
         </Route>
-        <Route path="/maps">
+        {/* <Route path="/maps">
           <YandexMap />
+        </Route> */}
+        <Route path="/maps">
+          <Map />
         </Route>
         <Route path="/docInfo/:doctorId">
           <DocInfo />

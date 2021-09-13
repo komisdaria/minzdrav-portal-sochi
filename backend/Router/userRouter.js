@@ -6,6 +6,18 @@ router.route("/register").post(async (req, res) => {
   try {
     const { name, email, password, repeatPassword, oms } = req.body;
     const userCreated = await userModel.findOne({ email });
+    if (name.length === 0) {
+      return res.status(500).json({ message: "Заполните имя" });
+    }
+    if (email.length === 0) {
+      return res.status(500).json({ message: "Заполните почту" });
+    }
+    if (password.length === 0) {
+      return res.status(500).json({ message: "Введите пароль" });
+    }
+    if (oms.length !== 16) {
+      return res.status(500).json({ message: "Введите корректный номер ОМС" });
+    }
 
     if (userCreated) {
       return res.status(500).json({ message: "Такой юзер уже существует" });
@@ -20,7 +32,7 @@ router.route("/register").post(async (req, res) => {
       repeatPassword,
       oms,
     });
-    
+
     const userId = user._id.toString();
     console.log(user);
     req.session.user = user;

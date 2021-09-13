@@ -1,4 +1,5 @@
 export interface DoctorType {
+  [x: string]: any;
   name: string;
   specialization: string;
   work: string;

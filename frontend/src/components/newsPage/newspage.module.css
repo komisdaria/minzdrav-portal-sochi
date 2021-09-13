@@ -8,8 +8,8 @@
 }
 .news_item{
   overflow: hidden;
+  
 }
-
 
 .newsblock::-webkit-scrollbar {
   width: 10px;

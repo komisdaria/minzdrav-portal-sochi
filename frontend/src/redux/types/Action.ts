@@ -13,6 +13,8 @@ type ActionTypes =
   | "GET_DOCTORS"
   | "DOWLOAD_COVID_API"
   | "GET_APPOINTMENTS"
+  | "UPDATE_USER"
+  | "UPDATE_APPOINTMENT"
   | "GET_YANDEXMAP";
 
 export interface Action {
@@ -31,9 +33,11 @@ export interface LoginUserAction extends Action {
 
 export interface LogoutUserAction extends Action {
   type: "LOGOUT_USER";
-  // payload: {
-  //   id: UserType["id"];
-  // };
+}
+
+export interface UpdateUserAction extends Action {
+  type: "UPDATE_USER";
+  payload: UserType;
 }
 
 export interface DownloadNewsAction extends Action {
@@ -63,6 +67,12 @@ export interface GetAppointment extends Action {
     appointments: AppointmentType[];
   };
 }
+export interface UpdateAppointment extends Action {
+  type: "UPDATE_APPOINTMENT";
+  payload: {
+    appointments: AppointmentType[];
+  };
+}
 
 export interface GetYandexMap extends Action {
   type: "GET_YANDEXMAP";
@@ -79,4 +89,6 @@ export type Actions =
   | GetDoctorsAction
   | DowloadCovidAction
   | GetAppointment
+  | UpdateAppointment
+  | UpdateUserAction
   | GetYandexMap;
