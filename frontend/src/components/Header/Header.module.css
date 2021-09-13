@@ -1,3 +1,14 @@
+.header{
+  display: flex;
+  justify-content: space-around;
+}
+
 .selected {
   color:darkorange;
+}
+
+.fontstyles {
+  color: rgb(246, 239, 231);
+  font-size: 1.8rem;
+
 }
