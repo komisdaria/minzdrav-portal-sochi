@@ -4,6 +4,7 @@ import { useMySelector } from "../../hooks/customHook";
 import { getAppointmentsAC } from "../../redux/ActionCreators/AppointmentsAC/AppointmentsAC";
 import { Card } from "antd";
 import styles from "./appointments.module.css";
+import Search from "antd/lib/transfer/search";
 
 const Appointments = () => {
   const appointmentsState = useMySelector((state) => state.appointments);
@@ -20,6 +21,7 @@ const Appointments = () => {
   return (
     <div>
       <h1>Записи к врачу</h1>
+      {/* <Search /> */}
       <div className={styles.cardwrapper}>
         {appointmentsState.length ? (
           appointmentsState.map((appoint) => (
