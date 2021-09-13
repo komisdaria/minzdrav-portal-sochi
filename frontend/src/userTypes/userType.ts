@@ -3,5 +3,5 @@ export interface UserType {
   email: string;
   oms: number;
   id: string;
-  appoint: [];
+  appoint:  Array<string>;
 }
