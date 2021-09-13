@@ -88,12 +88,13 @@ const Registration = () => {
         <Form.Item
           label="Номер полиса ОМС"
           name="oms"
-          rules={[{ required: true, message: "Введите номер полиса ОМС", min: 13 }]}
+          rules={[{ required: true, message: "Введите номер полиса ОМС", min: 15 , max: 16}]}
         >
           <Input
             onChange={omsHandler}
             type='number'
             value={oms}
+            maxLength = {16}
           />
         </Form.Item>
 

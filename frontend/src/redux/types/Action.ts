@@ -12,7 +12,9 @@ type ActionTypes =
   | "DOWNLOAD_NEWS"
   | "GET_DOCTORS"
   | "DOWLOAD_COVID_API"
-  | "GET_APPOINTMENTS";
+  | "GET_APPOINTMENTS"
+  | "UPDATE_USER"
+  | "UPDATE_APPOINTMENT"
 
 export interface Action {
   type: ActionTypes;
@@ -30,9 +32,12 @@ export interface LoginUserAction extends Action {
 
 export interface LogoutUserAction extends Action {
   type: "LOGOUT_USER";
-  // payload: {
-  //   id: UserType["id"];
-  // };
+}
+
+export interface UpdateUserAction extends Action {
+  type: "UPDATE_USER";
+  payload: UserType;
+
 }
 
 export interface DownloadNewsAction extends Action {
@@ -62,6 +67,12 @@ export interface GetAppointment extends Action {
     appointments: AppointmentType[];
   };
 }
+export interface UpdateAppointment extends Action {
+  type: "UPDATE_APPOINTMENT";
+  payload: {
+    appointments: AppointmentType[];
+  };
+}
 
 
 export type Actions =
@@ -71,5 +82,7 @@ export type Actions =
   | DownloadNewsAction
   | GetDoctorsAction
   | DowloadCovidAction
-  | GetAppointment;
+  | GetAppointment
+  | UpdateAppointment
+  | UpdateUserAction;
  
