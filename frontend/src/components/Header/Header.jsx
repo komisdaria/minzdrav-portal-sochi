@@ -18,97 +18,68 @@ const Header = () => {
 
   return (
     <div>
-      <header>
-        <ul>
-          <li>
-            <Title style={{ color: "white" }} level={2}>
-              ГОРЗДРАВ СОЧИ
-            </Title>
-          </li>
-          <li>
-            <NavLink activeclassname={css.selected} exact to="/">
-              <Title
-                style={{ color: "white" }}
-                level={2}
-              >
-                Главная
-              </Title>
+      <header className={css.header}>
+          <div   activeClassName={css.selected} >
+            <NavLink 
+            activeClassName={css.selected} 
+            className={css.fontstyles}
+            exact to="/">
+            ГОРЗДРАВ СОЧИ
             </NavLink>
-          </li>
-          <NavLink activeclassname={css.selected} exact to="/appointments">
-            <Title
-              activeClassName={css.selected}
-              style={{ color: "white" }}
-              level={2}
-            >
-              Записи к врачам
-            </Title>
+          </div>
+          <div>
+          <NavLink activeClassName={css.selected}
+           className={css.fontstyles}
+          exact to="/appointments">
+              Записаться
           </NavLink>
+          </div>
 
           {isLogin?.name ? (
             <>
-              <li>
+              <div>
                 <NavLink
                   activeClassName={css.selected}
+                  className={css.fontstyles}
                   exact
                   to="/"
                   onClick={logOut}
-                >
-                  <Title
-                    style={(isActive) => ({
-                      color: isActive ? "red" : "blue",
-                    })}
-                    level={2}
-                  >
+                >                 
                     Выход
-                  </Title>
                 </NavLink>
-              </li>
-              <li>
-                <NavLink activeClassName={css.selected} exact to="/account">
-                  <Title
-                    style={(isActive) => ({
-                      color: isActive ? "green" : "blue",
-                    })}
-                    level={2}
-                  >
+              </div>
+              <div>
+                <NavLink activeClassName={css.selected}
+                 className={css.fontstyles}
+                exact to="/account">
                     Личный кабинет
-                  </Title>
                 </NavLink>
-              </li>
+              </div>
             </>
           ) : (
             <>
-              <li>
-                <NavLink activeClassName={css.selected} exact to="/login">
-                  <Title
-                    activeClassName={css.selected}
-                    style={{ color: "white" }}
-                    level={2}
-                  >
+              <div>
+                <NavLink 
+                 className={css.fontstyles}
+                activeClassName={css.selected} exact to="/login">
                     Логин
-                  </Title>
                 </NavLink>
-              </li>
-              <li>
+              </div>
+              <div>
                 <NavLink
                   activeClassName={css.selected}
+                  className={css.fontstyles}
                   exact
                   to="/registration"
                 >
-                  <Title
-                    activeClassName={css.selected}
-                    style={{ color: "white" }}
-                    level={2}
-                  >
                     Регистрация
-                  </Title>
                 </NavLink>
-              </li>
+              </div>
+              <div>
               <TelefonHeader />
+              </div>
             </>
           )}
-        </ul>
       </header>
     </div>
   );
