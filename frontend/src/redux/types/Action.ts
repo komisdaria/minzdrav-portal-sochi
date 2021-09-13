@@ -15,7 +15,8 @@ type ActionTypes =
   | "GET_APPOINTMENTS"
   | "UPDATE_USER"
   | "UPDATE_APPOINTMENT"
-  | "GET_YANDEXMAP";
+  | "GET_YANDEXMAP"
+  | "GET_USER";
 
 export interface Action {
   type: ActionTypes;
@@ -81,6 +82,10 @@ export interface GetYandexMap extends Action {
   };
 }
 
+export interface GetUser extends Action {
+  type: "GET_USER";
+  payload: UserType;
+}
 export type Actions =
   | CreateUserAction
   | LoginUserAction
@@ -91,4 +96,5 @@ export type Actions =
   | GetAppointment
   | UpdateAppointment
   | UpdateUserAction
-  | GetYandexMap;
+  | GetYandexMap
+  | GetUser;

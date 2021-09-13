@@ -5,6 +5,9 @@ const appointsmentModel = require("../db/models/appointmentModel");
 router.route("/register").post(async (req, res) => {
   try {
     const { name, email, password, repeatPassword, oms } = req.body;
+    console.log("oms ===>", oms.length);
+    console.log("name ===>", name.length);
+
     const userCreated = await userModel.findOne({ email });
     if (name.length === 0) {
       return res.status(500).json({ message: "Заполните имя" });
@@ -15,7 +18,7 @@ router.route("/register").post(async (req, res) => {
     if (password.length === 0) {
       return res.status(500).json({ message: "Введите пароль" });
     }
-    if (oms.length !== 16) {
+    if (oms.toString().length !== 16) {
       return res.status(500).json({ message: "Введите корректный номер ОМС" });
     }
 
@@ -62,6 +65,21 @@ router.route("/login").post(async (req, res) => {
   }
 });
 
+router.route("/checkUser").post(async (req, res) => {
+  try {
+    console.log(req.session.user);
+    if (req.session.user) {
+      const user = req.session.user;
+      res.status(200).json({ message: "Пользователь авторизован", user });
+    } else {
+      res.status(200).json({ message: "Пользователь не авторизован" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500).json({ message: "Ошибка check" });
+  }
+});
+
 router.get("/logout", (req, res) => {
   req.session.destroy();
   res.clearCookie("sid");
@@ -78,7 +96,6 @@ router.post("/update", async (req, res) => {
       { appoint: id },
       { new: true }
     );
-    console.log("appointId------->", updateUser);
     return res.json({ updateUser });
   } catch (error) {
     console.error(error);

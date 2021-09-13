@@ -3,6 +3,7 @@ import { AppDispatch } from "../../store/store";
 export const getDoctorAC = () => async (dispatch: AppDispatch) => {
   const response = await fetch("http://localhost:8080/doctors", {
     method: "GET",
+    credentials: "include",
   });
   const result = await response.json();
   dispatch({
