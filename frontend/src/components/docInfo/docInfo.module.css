@@ -1,0 +1,26 @@
+.img {
+  height: 300px;
+  width: 270px;
+}
+
+.border {
+  border: 4px outset #fc3;
+  padding: 10px;
+  width: 800px;
+  height: 400px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 170px;
+}
