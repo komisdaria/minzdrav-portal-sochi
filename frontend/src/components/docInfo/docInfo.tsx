@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import css from "./docInfo.module.css";
 import { DoctorType } from "../../userTypes/doctorsType";
 import Spinner from "../Spinner/Spinner";
-import { Spin } from "antd";
 
 export function DocInfo() {
   interface ParamTypes {
@@ -22,7 +21,11 @@ export function DocInfo() {
 
   const carDoc = FinddoctorsState.filter((el) => el.id === doctorId);
   let doctor = carDoc[0];
-  // console.log(doctor.map((el: { work: string }) => el.work));
+  // console.log(doctor.work.map((el: { work: string }) => el));
+
+  // let a = doctor.work.map((el: string | []) => el);
+  // console.log(a);
+  console.log(typeof doctor.work);
 
   return (
     <div>
@@ -37,8 +40,10 @@ export function DocInfo() {
                 <div>Рейтинг: {doctor.raiting}</div>
                 <div>Отзывы:{doctor.reviews}</div>
                 <div>
-                  {/* <button>{doctor.map((el: { work: string; }) => el.work)}</button> */}
                   <button>{doctor.work}</button>
+                  {/* {doctor.work.map((el: { work: string }) => (
+                    <button>{el}</button>
+                  ))} */}
                 </div>
               </div>
             </div>
