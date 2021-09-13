@@ -21,10 +21,12 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  appoint: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Appointment',
-  },
+  appoint: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Appointment",
+    },
+  ],
 });
 const User = mongoose.model("User", userSchema);
 
