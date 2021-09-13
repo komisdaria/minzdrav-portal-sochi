@@ -5,13 +5,12 @@ import css from "./docInfo.module.css";
 import { DoctorType } from "../../userTypes/doctorsType";
 import Spinner from "../Spinner/Spinner";
 import { workerData } from "worker_threads";
-import { Button } from 'antd';
-import { Typography, Rate } from 'antd';
-
+import { Button } from "antd";
+import { Typography, Rate } from "antd";
 
 export function DocInfo() {
   const { Title } = Typography;
-  
+
   interface ParamTypes {
     doctorId: string;
   }
@@ -31,7 +30,7 @@ export function DocInfo() {
 
   // let a = doctor.work.map((el: string | []) => el);
   // console.log(a);
-  console.log(typeof doctor.work);
+  // console.log(typeof doctor.work);
 
   return (
     <div>
@@ -41,27 +40,29 @@ export function DocInfo() {
             <div className={css.border}>
               <img src={`/img/${doctor.img}`} alt="doc" className={css.img} />
               <div className={css.info}>
-                <div><Title level={4}>{doctor.name}</Title></div>
-                <div><Title level={5}>Специальность</Title> {doctor.specialization}</div>
-                <div><Rate allowHalf defaultValue={doctor.raiting} />{doctor.raiting}</div>
-                <div><Title level={5}>Отзывы</Title>{doctor.reviews}</div>
                 <div>
-                  <Button 
-                  className={css.btn}>{doctor.work[0]}</Button>
-                  <Button 
-                  className={css.btn} >{doctor.work[1]}</Button>
-                  <Button
-                  className={css.btn}>{doctor.work[2]}</Button>
-                  <Button
-                  className={css.btn}>{doctor.work[3]}</Button>
-                  <Button
-                  className={css.btn}>{doctor.work[4]}</Button>
-                  {
-                    doctor.work[5] ? (
-                      <Button
-                      className={css.btn}>{doctor.work[5]}</Button>
-                    ) : null
-                  }
+                  <Title level={4}>{doctor.name}</Title>
+                </div>
+                <div>
+                  <Title level={5}>Специальность</Title> {doctor.specialization}
+                </div>
+                <div>
+                  <Rate allowHalf defaultValue={doctor.raiting} />
+                  {doctor.raiting}
+                </div>
+                <div>
+                  <Title level={5}>Отзывы</Title>
+                  {doctor.reviews}
+                </div>
+                <div>
+                  <Button className={css.btn}>{doctor.work[0]}</Button>
+                  <Button className={css.btn}>{doctor.work[1]}</Button>
+                  <Button className={css.btn}>{doctor.work[2]}</Button>
+                  <Button className={css.btn}>{doctor.work[3]}</Button>
+                  <Button className={css.btn}>{doctor.work[4]}</Button>
+                  {doctor.work[5] ? (
+                    <Button className={css.btn}>{doctor.work[5]}</Button>
+                  ) : null}
 
                   {/* {doctor.work.map((el: string)=>(
                     <button>{el}</button>
@@ -70,9 +71,9 @@ export function DocInfo() {
               </div>
             </div>
           </div>
-          <Button
-           className={css.btnprimery}
-          type="primary">Записаться</Button>
+          <Button className={css.btnprimery} type="primary">
+            Записаться
+          </Button>
         </div>
       ) : (
         <div className={css.spin}>

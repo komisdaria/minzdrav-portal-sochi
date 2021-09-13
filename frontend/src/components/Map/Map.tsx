@@ -6,9 +6,9 @@ export function Map() {
     <div>
       <div className={css.wrap}>
         <iframe
-          src="https://yandex.ru/map-widget/v1/?um=constructor%3Ae607268bc695162b6a239dd21c11e0b6c476d5d3c2471e9a323ba5ccd55c938b&amp;source=constructor"
-          width="1145"
-          height="720"
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A2633b641342313356918aafc0bce97a28bf43af18ae835bb765b2fdbd46cd6e6&amp;source=constructor"
+          width="664"
+          height="436"
           title="map"
         ></iframe>
       </div>
