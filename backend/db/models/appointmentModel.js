@@ -7,19 +7,17 @@ const appointmentSchema = mongoose.Schema({
   },
   date: {
     type: String,
-    required: true,
   },
   time: {
     type: String,
-    required: true,
   },
   status: {
     type: Boolean,
-    required: true,
+    default: false,
   },
   comments: {
     type: Array,
-    required: false,
+    default: '',
   },
   patientsOms: {
     type: mongoose.Schema.Types.ObjectId,
