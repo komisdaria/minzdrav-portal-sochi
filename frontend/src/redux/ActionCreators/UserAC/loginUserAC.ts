@@ -29,6 +29,7 @@ export const LoginUserAC =
         email,
         oms: result.user.oms,
         id: result.user._id,
+        appoint: result.appoint,
       },
     });
   };

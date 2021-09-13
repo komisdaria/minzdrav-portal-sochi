@@ -37,6 +37,7 @@ export const CreateUserAC =
         email: result.user.email,
         oms: result.user.oms,
         id: result.user._id,
+        appoint: [],
       },
     });
   };
