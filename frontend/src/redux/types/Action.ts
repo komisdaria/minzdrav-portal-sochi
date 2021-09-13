@@ -1,4 +1,4 @@
-git import { DoctorType } from "../../userTypes/doctorsType";
+import { DoctorType } from "../../userTypes/doctorsType";
 import { CovidType } from "../../userTypes/covidType";
 import { NewsType } from "../../userTypes/newsType";
 import { UserType } from "../../userTypes/userType";
@@ -14,7 +14,7 @@ type ActionTypes =
   | "DOWLOAD_COVID_API"
   | "GET_APPOINTMENTS"
   | "UPDATE_USER"
-  | "UPDATE_APPOINTMENT"
+  | "UPDATE_APPOINTMENT"c
 
 export interface Action {
   type: ActionTypes;
