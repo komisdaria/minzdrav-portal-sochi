@@ -15,6 +15,8 @@ export const CreateUserAC =
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include",
+
       body: JSON.stringify({
         name,
         email,

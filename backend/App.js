@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 const MongoStore = require("connect-mongo");
 const userRouter = require("../backend/Router/userRouter");
 const doctorRouter = require("../backend/Router/doctorRouter");
-const appointmentRouter = require("./Router/appointmentRouter")
+const appointmentRouter = require("./Router/appointmentRouter");
 
 const App = express();
 
@@ -16,10 +16,12 @@ const App = express();
 App.use(morgan("dev")); // записываем в консоль запросы
 App.use(express.json()); //распарсит тело запроса из формата json
 App.use(express.urlencoded({ extended: true })); // распарсит тело запроса из формата form data
-App.use(cors({
-  origin: true,
-  credentials: true,
-}));
+App.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    credentials: true,
+  })
+);
 
 const options = {
   // указываем где храним сессии
