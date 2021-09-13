@@ -21,7 +21,7 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  appointment: {
+  appoint: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Appointment',
   },

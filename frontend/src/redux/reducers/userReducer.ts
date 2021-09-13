@@ -13,6 +13,8 @@ export const userReducer = (
       return action.payload;
     case "LOGOUT_USER":
       return null;
+    case "UPDATE_USER":   // обновления записей 
+      return action.payload
     default:
       return state;
   }

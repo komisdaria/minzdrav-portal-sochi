@@ -36,8 +36,9 @@ export function CaruselDoctors() {
 
                     <div>
                       <div>{doctor.name}</div>
+                      <div>Описание каждого специалиста(стаж, награды и т.д.)</div>
+                      <div>{doctor.specialization}</div>
                     </div>
-                    <div>{doctor.specialization}</div>
                   </h3>
                 </div>
               </div>

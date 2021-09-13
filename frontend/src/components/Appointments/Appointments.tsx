@@ -13,6 +13,10 @@ const Appointments = () => {
     dispatch(getAppointmentsAC());
   }, [dispatch]);
 
+  const reservedAppoint = () => {
+    
+  }
+
   return (
     <div>
       <h1>Записи к врачу</h1>
@@ -27,8 +31,9 @@ const Appointments = () => {
               >
                 <p>Дата: {appoint.date}</p>
                 <p>Время: {appoint.time}</p>
-                <p>Статус приема: {appoint.status ? "Прием завершен" : "прием предстоит"}</p>
-                <p className={styles.comments}>{appoint.comments.length >=1 ? `Назначения врача: ${appoint.comments}` : null}</p>
+                <button onClick={reservedAppoint}>Записаться на прием</button>
+                {/* <p>Статус приема: {appoint.status ? "Прием завершен" : "прием предстоит"}</p>
+                <p className={styles.comments}>{appoint.comments.length >=1 ? `Назначения врача: ${appoint.comments}` : null}</p> */}
                 {/* <p>{appoint.patientsOms}</p> */}
               </Card>
             </div>

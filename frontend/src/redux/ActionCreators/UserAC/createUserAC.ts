@@ -31,7 +31,8 @@ export const CreateUserAC = (
       name: result.user.name,
       email: result.user.email,
       oms: result.user.oms,
-      id: result.user._id
+      id: result.user._id,
+      appoint: []
     }
   })
 
