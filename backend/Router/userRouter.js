@@ -96,7 +96,6 @@ router.post("/update", async (req, res) => {
       { appoint: id },
       { new: true }
     );
-    console.log("appointId------->", updateUser);
     return res.json({ updateUser });
   } catch (error) {
     console.error(error);
