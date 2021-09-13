@@ -26,9 +26,8 @@ const Header = () => {
             </Title>
           </li>
           <li>
-            <NavLink activeClassName={css.selected} exact to="/">
+            <NavLink activeclassname={css.selected} exact to="/">
               <Title
-                activeClassName={css.selected}
                 style={{ color: "white" }}
                 level={2}
               >
@@ -36,7 +35,7 @@ const Header = () => {
               </Title>
             </NavLink>
           </li>
-          <NavLink activeClassName={css.selected} exact to="/appointments">
+          <NavLink activeclassname={css.selected} exact to="/appointments">
             <Title
               activeClassName={css.selected}
               style={{ color: "white" }}
