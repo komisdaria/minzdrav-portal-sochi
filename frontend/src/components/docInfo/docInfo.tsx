@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useMySelector } from "../../hooks/customHook";
 import { useParams } from "react-router-dom";
 import css from "./docInfo.module.css";
-import { DoctorType } from "../../userTypes/doctorsType";
 import Spinner from "../Spinner/Spinner";
-import { workerData } from "worker_threads";
 import { Button } from 'antd';
 import { Typography, Rate } from 'antd';
+import { Card } from 'antd';
+
 
 
 export function DocInfo() {
@@ -31,10 +31,17 @@ export function DocInfo() {
 
   // let a = doctor.work.map((el: string | []) => el);
   // console.log(a);
-  console.log(typeof doctor.work);
+  // console.log(typeof doctor.work);
 
+  // const gridStyle = {
+  //   width: '25%',
+  //   textAlign: 'center',
+  // };
+  
+  
   return (
     <div>
+   
       {doctor ? (
         <div key={doctor.id}>
           <div className={css.wrapper}>
@@ -42,10 +49,16 @@ export function DocInfo() {
               <img src={`/img/${doctor.img}`} alt="doc" className={css.img} />
               <div className={css.info}>
                 <div><Title level={4}>{doctor.name}</Title></div>
-                <div><Title level={5}>Специальность</Title> {doctor.specialization}</div>
-                <div><Rate allowHalf defaultValue={doctor.raiting} />{doctor.raiting}</div>
-                <div><Title level={5}>Отзывы</Title>{doctor.reviews}</div>
+                <div className={css.content}><div><Title level={5}>Специализация</Title></div> <div className={css.afterheader}>{doctor.specialization}</div> </div>
+                <div className={css.content}><div><Title level={5}>Стаж</Title></div> <div className={css.afterheader}>в разработке</div> </div>
+                <div className={css.content}><div><Title level={5}>Опыт работы</Title></div> <div className={css.afterheader}>в разработке</div> </div>
+               
+                <div><Rate allowHalf defaultValue={doctor.raiting} /> {doctor.raiting}</div>
+                
                 <div>
+                  <br />
+                  Доступное время для записи
+                  <br />
                   <Button 
                   className={css.btn}>{doctor.work[0]}</Button>
                   <Button 
