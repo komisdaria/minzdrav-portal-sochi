@@ -2,17 +2,17 @@ import { Carousel } from "antd";
 import React, { useEffect } from "react";
 import { useMySelector } from "../../hooks/customHook";
 import { useDispatch } from "react-redux";
-import { getDoctorAC } from "../../redux/ActionCreators/UserAC/getDoctor";
+
 import css from "./caruselDocrot.module.css";
 import { NavLink } from "react-router-dom";
 
 export function CaruselDoctors() {
   const doctorsState = useMySelector((state) => state.doctors);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getDoctorAC());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(getDoctorAC());
+  // }, [dispatch]);
 
   return (
     <div>
@@ -45,7 +45,7 @@ export function CaruselDoctors() {
             </NavLink>
           ))
         ) : (
-          <div>врачи в отпуске :(</div>
+          <div>врачи в отпуске :</div>
         )}
       </Carousel>
     </div>

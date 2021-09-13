@@ -1,9 +1,9 @@
-import { DoctorType } from "../../userTypes/doctorsType";
+git import { DoctorType } from "../../userTypes/doctorsType";
 import { CovidType } from "../../userTypes/covidType";
 import { NewsType } from "../../userTypes/newsType";
 import { UserType } from "../../userTypes/userType";
 import { AppointmentType } from "../../userTypes/appointmentType";
-
+import { YandexMapType } from "../../userTypes/yandexMapType";
 
 type ActionTypes =
   | "CREATE_USER"
@@ -74,6 +74,12 @@ export interface UpdateAppointment extends Action {
   };
 }
 
+export interface GetYandexMap extends Action {
+  type: "GET_YANDEXMAP";
+  payload: {
+    yandexmap: YandexMapType;
+  };
+}
 
 export type Actions =
   | CreateUserAction
