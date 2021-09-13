@@ -12,18 +12,21 @@ code {
     monospace;
 }
 
+
+
 li {
   list-style-type: none;
+
 }
 ul {
   display: flex;
   justify-content: space-around;
-  padding: 25px;
+
 }
 
 header {
   background-color: #4cab57;
-  height: 85px;
+  height: 3rem;
 }
 
 .auth {
@@ -34,6 +37,3 @@ header {
   height: 17rem;
 }
 
-.selected {
-  color:rgb(210, 87, 30);
-}

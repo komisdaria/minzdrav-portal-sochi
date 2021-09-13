@@ -4,18 +4,18 @@
 }
 
 .border {
-  border: 4px outset #fc3;
+  /* border: 4px outset #fc3;
   padding: 10px;
   width: 800px;
-  height: 400px;
+  height: 400px; */
   display: flex;
   justify-content: space-evenly;
 }
 
 .info {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
 }
 
 .wrapper {
@@ -35,4 +35,13 @@
 
 .btnprimery {
   margin-top: 25px;
+}
+
+.content {
+  display: flex;
+  justify-content:start;
+}
+
+.afterheader {
+  padding-left: 6rem;
 }
