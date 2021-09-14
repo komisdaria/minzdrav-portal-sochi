@@ -1,5 +1,5 @@
 .footer {
-  background-color: #096dd9;
+  background-color: #1890ff;
   position: absolute;
   height: 80px;
   /* top: 110%; */
@@ -16,5 +16,5 @@ li {
 ul {
   display: flex;
   justify-content: space-around;
-  padding: 25px;
+  padding-top: 25px;
 }

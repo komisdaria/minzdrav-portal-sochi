@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.text {
+  width: 700px;
+  text-align: left;
+  padding-top: 10px;
+}
+.text_h1 {
+  color: red;
+}
+
+.direction_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.direction {
+  display: flex;
+  flex-direction: row;
+}

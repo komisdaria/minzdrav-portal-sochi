@@ -7,4 +7,7 @@ export interface DoctorType {
   reviews: [];
   id: string;
   img: string;
+  experience: string,
+  education: string,
+  function: string,
 }

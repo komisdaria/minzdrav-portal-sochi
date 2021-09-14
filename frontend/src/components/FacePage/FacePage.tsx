@@ -25,7 +25,7 @@ export default function FacePage() {
         </div>
         <div className={css.item}>
           <Link to="/donor">
-            <img src={"/img/donor.png"} className={css.Corona_g} alt="donor" />
+            <img src={"/img/donor.png"} className={css.donor} alt="donor" />
           </Link>
         </div>
         <div className={css.item}>
@@ -34,12 +34,28 @@ export default function FacePage() {
       </div>
 
       <div className={css.main_container_item}>
+        <div className={css.main_container_item}>
+          <Link to="/volunteer">
+            <img
+              src={"/img/volunteer.jpg"}
+              className={css.volunteer}
+              alt="volunteer"
+            />
+          </Link>
+        </div>
+        <div className={css.main_container_item}>
+          <Link to="/sport">
+            <img
+              src={"/img/work-out.jpg"}
+              className={css.work_out}
+              alt="work-out"
+            />
+          </Link>
+        </div>
+        <div className={css.main_container_item}>Добавить что-то</div>
         <div className={css.item}>
           <TelNumModal />{" "}
         </div>
-        <div className={css.main_container_item}>Добавить что-то</div>
-        <div className={css.main_container_item}>Добавить что-то</div>
-        <div className={css.main_container_item}>Добавить что-то</div>
       </div>
       <div className={css.main_container_map}>
         <div>
