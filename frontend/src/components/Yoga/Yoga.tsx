@@ -5,14 +5,9 @@ export default function Yoga() {
   return (
     <div className={css.maindiv}>
       <div className={css.main}>
-        <h1>Влияние йоги и медитации на организм человека</h1>
-        <p className={css.text}>
-          <img
-            src={"/img/reason_yoga.jpeg"}
-            className={css.imgyoga}
-            alt="reasonsforyoga"
-          />
-          <h2>О йоге</h2>
+        {/* <h1>Влияние йоги и медитации на организм человека</h1> */}
+        <p className={css.main}>
+          <h2>Влияние йоги на организм человека</h2>
           <p>
             Бешеный ритм жизни, многозадачность, избыток информации — всё это
             способствует саморазрушению, стрессам, напряжению, блокам и зажимам
@@ -35,14 +30,21 @@ export default function Yoga() {
       </div>
       <div className={css.main}>
         <h2>Противопоказания</h2>
-        <p className={css.text}>
+        <p className={css.main}>
           Исключение составляют некоторые заболевания, при которых польза йоги
           подвергается сомнению и её практика даже может навредить: инфекции
           мозга и позвоночника, злокачественные опухоли, психические болезни,
           острые заболевания внутренних органов.
         </p>
-       
+       <div>
+       <img
+        src={"/img/reason_yoga.jpeg"}
+        className={css.imgyoga}
+        alt="reasonsforyoga"
+      />
+       </div>
       </div>
     </div>
+
   );
 }
