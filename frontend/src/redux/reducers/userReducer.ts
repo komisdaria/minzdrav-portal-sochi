@@ -21,7 +21,7 @@ export const userReducer = (
       if (state === null) {
         return null
       }
-      return {...state , appoint:[...(state.appoint ?? []) , action.payload]}
+      return { ...state, appoint: [...(state.appoint ?? []), action.payload] }
     default:
       return state;
   }

@@ -8,7 +8,7 @@ router
   try {
     let allAppointments = await Appointment.find().lean();
     res.status(200).json({
-      allAppointments: allAppointments.map(({ _id, ...rest }) => ({ ...rest, id: _id })),
+      allAppointments: allAppointments.map(({ _id, ...rest }) => ({ ...rest, id: _id })).slice(20,30),
     });
   } catch (error) {
     console.log(error);
@@ -83,6 +83,24 @@ router
         { changeDate },
         { changeTime },
         { comments },
+        { new: true },
+      );
+      console.log('appointment back edit', appointment);
+      res.json({ appointment });
+    } catch (error) {
+      console.log(error);
+      res.sendStatus(500);
+    }
+  });
+
+  router
+  .route('/updateStatus')
+  .put(async (req, res) => {
+    try {
+      const { id } = req.body;
+      const appointment = await Appointment.findByIdAndUpdate(
+        { _id: id },
+        { status: true },
         { new: true },
       );
       console.log('appointment back edit', appointment);

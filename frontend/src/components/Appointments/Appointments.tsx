@@ -8,6 +8,7 @@ import { Select } from "antd";
 import { AppointmentType } from "../../userTypes/appointmentType";
 import { addToUserAppointmentAC } from "../../redux/ActionCreators/AppointmentsAC/addToUserAppointmentAC";
 import { idText } from "typescript";
+import { updateStatusAppoinmentAC } from "../../redux/ActionCreators/AppointmentsAC/updateStatusAppointmentAC";
 
 const Appointments = () => {
 
@@ -16,7 +17,7 @@ const Appointments = () => {
   const [search, setSearch] = useState('');
   const [findSpecial, setFindSpecial] = useState<AppointmentType[]>([])
 
-  console.log(appointmentsState);
+  console.log('STATE=',appointmentsState);
 
 
 
@@ -42,7 +43,7 @@ const Appointments = () => {
 
   const reservedAppoint = (id: AppointmentType['id']) => {
     dispatch(addToUserAppointmentAC(id))
-
+    dispatch(updateStatusAppoinmentAC(id))
   }
 
   return (
@@ -78,25 +79,25 @@ const Appointments = () => {
 
       <div className={styles.cardwrapper}>
         {findSpecial.length ? (
-          findSpecial.map((appoint: { id: string; date: string, time: string, doctorSpecialization: string }) => (
-            <div key={appoint.id}>
-              <Card
+          findSpecial.map((appoint: { id: string; date: string, time: string, doctorSpecialization: string, status: boolean }) => (
+            <div key={appoint.id} >
+              <Card className={`${appoint.status ? styles.appoint_item : ''}`}
                 title={`Запись к врачу: ${appoint.doctorSpecialization}`}
                 bordered={true}
                 style={{ width: 300 }}
+                
               >
-                <p>Дата: {appoint.date}</p>
+                <p >Дата: {appoint.date}</p>
                 <p>Время: {appoint.time}</p>
+                {appoint.status ? <div>Время забронировано</div> :
                 <button onClick={() => reservedAppoint(appoint.id)}>Записаться на прием</button>
-                {/* <p>Статус приема: {appoint.status ? "Прием завершен" : "прием предстоит"}</p>
-                <p className={styles.comments}>{appoint.comments.length >=1 ? `Назначения врача: ${appoint.comments}` : null}</p> */}
-                {/* <p>{appoint.patientsOms}</p> */}
+                }
               </Card>
             </div>
           ))
         ) : (
-          appointmentsState.map((appoint: { id: string; date: string, time: string, doctorSpecialization: string }) => (
-            <div key={appoint.id}>
+          appointmentsState.map((appoint: { id: string; date: string, time: string, doctorSpecialization: string, status: boolean }) => (
+            <div key={appoint.id} className={`${appoint.status ? styles.appoint_item : ''}`}>
               <Card
                 title={`Запись к врачу: ${appoint.doctorSpecialization}`}
                 bordered={true}
@@ -104,7 +105,9 @@ const Appointments = () => {
               >
                 <p>Дата: {appoint.date}</p>
                 <p>Время: {appoint.time}</p>
+                {appoint.status ? <div>Время забронировано</div> :
                 <button onClick={() => reservedAppoint(appoint.id)}>Записаться на прием</button>
+                } 
               </Card>
             </div>
           ))

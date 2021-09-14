@@ -11,7 +11,6 @@ export const getUserAC = () => async (dispatch: AppDispatch) => {
   });
 
   const result = await response.json();
-  console.log(result);
   if (result.user) {
     dispatch({
       type: "GET_USER",
