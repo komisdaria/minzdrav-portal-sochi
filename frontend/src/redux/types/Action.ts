@@ -123,11 +123,8 @@ export type Actions =
   | UpdateUserAction
   | GetYandexMap
   | GetUser
-<<<<<<< HEAD
   | getUserAppointment
   | ShowAppointInAccount
-  | updateStatusAppointment;
-=======
+  | updateStatusAppointment
   | SetErrorMessage
   | getUserAppointment;
->>>>>>> 39e7174c74ca9d59b7fe43e02b6109fea82b3c3f
