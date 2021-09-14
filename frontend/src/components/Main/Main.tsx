@@ -15,6 +15,7 @@ import css from "./main.module.css";
 import { DocInfo } from "../docInfo/docInfo";
 import { Map } from "../Map/Map";
 import Donor from "../Donor/Donor";
+import Volunteer from "../volunteer/Volunteer";
 
 export default function Main() {
   const state = useMySelector((state) => state);
@@ -58,6 +59,9 @@ export default function Main() {
         </Route>
         <Route path="/donor">
           <Donor />
+        </Route>
+        <Route path="/volunteer">
+          <Volunteer />
         </Route>
         <Route component={NotFound} />
       </Switch>

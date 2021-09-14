@@ -37,7 +37,15 @@ export default function FacePage() {
         <div className={css.item}>
           <TelNumModal />{" "}
         </div>
-        <div className={css.main_container_item}>Добавить что-то</div>
+        <div className={css.main_container_item}>
+          <Link to="/volunteer">
+            <img
+              src={"/img/volunteer.jpg"}
+              className={css.volunteer}
+              alt="volunteer"
+            />
+          </Link>
+        </div>
         <div className={css.main_container_item}>Добавить что-то</div>
         <div className={css.main_container_item}>Добавить что-то</div>
       </div>
