@@ -14,7 +14,7 @@ const Appointments = () => {
   const appointmentsState = useMySelector((state) => state.appointments);
   const dispatch = useDispatch();
   const [search, setSearch] = useState('');
-  const [findSpecial, setFindSpecial] = useState([])
+  const [findSpecial, setFindSpecial] = useState<AppointmentType[]>([])
 
   console.log(appointmentsState);
 
@@ -30,7 +30,7 @@ const Appointments = () => {
 
   const handleKey = (event: { key: string; }) => {
     if (event.key === "Enter") {
-      const filteredSpecial: any = appointmentsState.filter((el) => el.doctorSpecialization === search)
+      const filteredSpecial = appointmentsState.filter((el) => el.doctorSpecialization === search)
       console.log('filteredSpecial', filteredSpecial);
       setFindSpecial(filteredSpecial);
 
@@ -40,7 +40,7 @@ const Appointments = () => {
     dispatch(getAppointmentsAC());
   }, [dispatch]);
 
-  const reservedAppoint = (id : AppointmentType['id']) => {
+  const reservedAppoint = (id: AppointmentType['id']) => {
     dispatch(addToUserAppointmentAC(id))
 
   }
@@ -58,8 +58,12 @@ const Appointments = () => {
           optionFilterProp="children"
           onChange={onChange}
           // onSearch={onSearch}
-          filterOption={(input, option: any) =>
-            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+          filterOption={(input, option: any) => {
+            if (typeof option.value === 'string') {
+              return option.value.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            }
+            return false
+          }
           }
         >
           <Option value="Терапевт">Терапевт</Option>
