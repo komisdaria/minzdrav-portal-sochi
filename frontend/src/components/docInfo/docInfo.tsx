@@ -11,7 +11,7 @@ import { Card } from 'antd';
 
 export function DocInfo() {
   const { Title } = Typography;
-  
+
   interface ParamTypes {
     doctorId: string;
   }
@@ -83,9 +83,9 @@ export function DocInfo() {
               </div>
             </div>
           </div>
-          <Button
-           className={css.btnprimery}
-          type="primary">Записаться</Button>
+          <Button className={css.btnprimery} type="primary">
+            Записаться
+          </Button>
         </div>
       ) : (
         <div className={css.spin}>

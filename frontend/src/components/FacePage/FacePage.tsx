@@ -5,6 +5,7 @@ import css from "./FacePage.module.css";
 import { CaruselDoctors } from "../caruselDoctors/CaruselDoctors";
 import ModalAppointments from "../Appointments/ModalAppointment";
 import { TelNumModal } from "../TelNumbersModal/TelNumModal";
+import { Map } from "../Map/Map";
 
 export default function FacePage() {
   return (
@@ -23,17 +24,26 @@ export default function FacePage() {
           </Link>
         </div>
         <div className={css.item}>
+          <Link to="/donor">
+            <img src={"/img/donor.png"} className={css.Corona_g} alt="donor" />
+          </Link>
+        </div>
+        <div className={css.item}>
           <ModalAppointments />
         </div>
       </div>
 
       <div className={css.main_container_item}>
-        <div className={css.item}>Наши услуги</div>
-        <div className={css.item}>
-          <Link to="/maps">Карты</Link>
-        </div>
         <div className={css.item}>
           <TelNumModal />{" "}
+        </div>
+        <div className={css.main_container_item}>Добавить что-то</div>
+        <div className={css.main_container_item}>Добавить что-то</div>
+        <div className={css.main_container_item}>Добавить что-то</div>
+      </div>
+      <div className={css.main_container_map}>
+        <div>
+          <Map />
         </div>
       </div>
 
