@@ -17,6 +17,11 @@ export const userReducer = (
       return action.payload;
     case "GET_USER":
       return action.payload;
+    case "ADD_TO_USER_APPOINTMENT":
+      if (state === null) {
+        return null
+      }
+      return {...state , appoint:[...(state.appoint ?? []) , action.payload]}
     default:
       return state;
   }
