@@ -25,7 +25,7 @@ export default function FacePage() {
         </div>
         <div className={css.item}>
           <Link to="/donor">
-            <img src={"/img/donor.png"} className={css.Corona_g} alt="donor" />
+            <img src={"/img/donor.png"} className={css.donor} alt="donor" />
           </Link>
         </div>
         <div className={css.item}>
