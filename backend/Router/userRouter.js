@@ -67,7 +67,6 @@ router.route("/login").post(async (req, res) => {
 
 router.route("/checkUser").post(async (req, res) => {
   try {
-    console.log(req.session.user);
     if (req.session.user) {
       const user = req.session.user;
       res.status(200).json({ message: "Пользователь авторизован", user });
@@ -88,7 +87,6 @@ router.get("/logout", (req, res) => {
 
 router.post("/update", async (req, res) => {
   try {
-    console.log("========>", req.session.user);
     const { _id } = req.session.user;
     const { id } = req.body;
     const updateUser = await userModel.findByIdAndUpdate(
