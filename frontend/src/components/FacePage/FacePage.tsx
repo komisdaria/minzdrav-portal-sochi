@@ -54,21 +54,17 @@ export default function FacePage() {
         </div>
         <div className={css.main_container_item}>
           <Link to="/yoga">
-            <img
-            src={"/img/doyoga.jpg"}
-            className={css.doyoga}
-            alt="yoga"
-            />
+            <img src={"/img/doyoga.jpg"} className={css.doyoga} alt="yoga" />
           </Link>
         </div>
         <div className={css.item}>
           <TelNumModal />{" "}
         </div>
       </div>
-      <div className={css.main_container_map}>
-        <div>
-          <Map />
-        </div>
+
+      <div className={css.map}>
+        <Map />
+        <h3>Адрес: Виноградная ул., 43/2, Центральный район, Сочи, Россия</h3>
       </div>
 
       <div className={css.carusel}>

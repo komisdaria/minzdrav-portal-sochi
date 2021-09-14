@@ -56,11 +56,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .text_treb {
   width: 700px;
-  margin-left: 25%;
+  text-align: center;
+}
+.text_treb_h3 {
+  width: 700px;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: red;
 }
 
 .help_donor {
@@ -75,6 +82,14 @@
 .help_donor_h1 {
   color: #ff5722;
 }
-.hero_main {
-  padding-top: 50px;
+
+.donation_main {
+  display: flex;
+  justify-content: center;
+}
+
+.hero_main_main {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }

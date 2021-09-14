@@ -6,6 +6,7 @@ export const initialState: State = {
   doctors: [],
   covid: [],
   appointments: [],
+  userAppoints: [],
   yandexmap: [],
   loginErrorMessage: null,
 };

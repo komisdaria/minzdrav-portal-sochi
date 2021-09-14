@@ -4,7 +4,7 @@ import { covidReducer } from "./covidReducer";
 import { newsReducer } from "./newsReducer";
 import { userReducer } from "./userReducer";
 import { appointmentsReducer } from "./appointments";
-import { yandexMapReducer } from "./yandexmap";
+import { showAppointReducer } from "./showAppoint";
 import { loginErrorReducer } from "./loginErrorReducer";
 
 export const rootReducer = combineReducers({
@@ -13,6 +13,6 @@ export const rootReducer = combineReducers({
   doctors: doctorsReducer,
   covid: covidReducer,
   appointments: appointmentsReducer,
-  // yandexmap: yandexMapReducer,
+  userAppoints: showAppointReducer,
   loginErrorMessage: loginErrorReducer,
 });

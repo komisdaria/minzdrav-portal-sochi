@@ -3,7 +3,13 @@
   background-color: rgb(216, 159, 159);
   border: solid;
   width: 800px;
-  height: 290px;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.appoint_item{
+  margin: 20px;
 }
 
 .left_item{
@@ -31,6 +37,7 @@
   min-height: inherit;
   display: flex;
   flex-direction: column;
+  height: fit-content;
 }
 
 .account_container{
