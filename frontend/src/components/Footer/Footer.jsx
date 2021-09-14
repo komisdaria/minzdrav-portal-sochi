@@ -31,8 +31,8 @@ const Footer = () => {
               </Title>
             </NavLink>
           </li>
-        </ul>
         © 2021 ГОРЗДРАВ г.Сочи. Все права защищены
+        </ul>
       </footer>
     </div>
   );
