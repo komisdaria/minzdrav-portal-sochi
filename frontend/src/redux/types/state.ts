@@ -12,5 +12,6 @@ export interface State {
   covid: CovidType[];
   appointments: AppointmentType[];
   yandexmap: YandexMapType[];
+  userAppoints: AppointmentType[];
   loginErrorMessage: string | null;
 }
