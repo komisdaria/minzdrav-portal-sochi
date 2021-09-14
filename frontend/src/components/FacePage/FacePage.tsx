@@ -52,7 +52,15 @@ export default function FacePage() {
             />
           </Link>
         </div>
-        <div className={css.main_container_item}>Добавить что-то</div>
+        <div className={css.main_container_item}>
+          <Link to="/yoga">
+            <img
+            src={"/img/doyoga.jpg"}
+            className={css.doyoga}
+            alt="yoga"
+            />
+          </Link>
+        </div>
         <div className={css.item}>
           <TelNumModal />{" "}
         </div>

@@ -17,6 +17,7 @@ import { Map } from "../Map/Map";
 import Donor from "../Donor/Donor";
 import Volunteer from "../volunteer/Volunteer";
 import Sport from "../Sport/Sport";
+import Yoga from "../Yoga/Yoga";
 
 export default function Main() {
   const state = useMySelector((state) => state);
@@ -66,6 +67,9 @@ export default function Main() {
         </Route>
         <Route path="/sport">
           <Sport />
+        </Route>
+        <Route path="/yoga">
+          <Yoga />
         </Route>
         <Route component={NotFound} />
       </Switch>
