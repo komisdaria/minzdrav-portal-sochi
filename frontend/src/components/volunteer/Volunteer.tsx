@@ -50,7 +50,7 @@ export default function Volunteer() {
   return (
     <div>
       <div className={css.main}>
-        <div>
+        <div className={css.main}>
           <img src={"/img/vol.jpg"} alt="vol.jpg" />
           <h1 className={css.text_h1}>1.Кто может стать волонтером?</h1>
           <p className={css.text}>
