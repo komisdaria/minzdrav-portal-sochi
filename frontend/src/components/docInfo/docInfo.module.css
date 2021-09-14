@@ -23,6 +23,9 @@
   align-items: center;
   justify-content: center;
   margin-top: 170px;
+  margin-left: 170px;
+  margin-right: 170px;
+
 }
 
 .spin {
@@ -38,6 +41,7 @@
 }
 
 .content {
+  margin-left: 15px;
   display: flex;
   justify-content:start;
 }

@@ -22,6 +22,15 @@ const doctorSchema = mongoose.Schema({
   img: {
     type: String,
   },
+  experience: {
+    type: String,
+  },
+  education: {
+    type: String,
+  },
+  function: {
+    type: String,
+  }
 });
 
 const Doctor = mongoose.model("Doctor", doctorSchema);

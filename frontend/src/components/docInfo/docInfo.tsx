@@ -48,15 +48,18 @@ export function DocInfo() {
             <div className={css.border}>
               <img src={`/img/${doctor.img}`} alt="doc" className={css.img} />
               <div className={css.info}>
-                <div><Title level={4}>{doctor.name}</Title></div>
+                <div className={css.content}><Title level={4}>{doctor.name}</Title></div>
                 <div className={css.content}><div><Title level={5}>Специализация</Title></div> <div className={css.afterheader}>{doctor.specialization}</div> </div>
-                <div className={css.content}><div><Title level={5}>Стаж</Title></div> <div className={css.afterheader}>в разработке</div> </div>
-                <div className={css.content}><div><Title level={5}>Опыт работы</Title></div> <div className={css.afterheader}>в разработке</div> </div>
-               
+                <div className={css.content}><div><Title level={5}>Стаж</Title></div> <div className={css.afterheader}>{doctor.experience}</div> </div>  
+                <br />  
+                <div className={css.content}><div><Title level={5}>Образование</Title></div> <div className={css.afterheader}>{doctor.education}</div> </div>
+                <br />
+                <div className={css.content}><div><Title level={5}>Функционал работ</Title></div> <div className={css.afterheader}>{doctor.function}</div> </div>
+                <br />
                 <div><Rate allowHalf defaultValue={doctor.raiting} /> {doctor.raiting}</div>
                 
-                <div>
                   <br />
+                <div>
                   Доступное время для записи
                   <br />
                   <Button 
@@ -69,24 +72,30 @@ export function DocInfo() {
                   className={css.btn}>{doctor.work[3]}</Button>
                   <Button
                   className={css.btn}>{doctor.work[4]}</Button>
+                   <Button
+                  className={css.btn}>{doctor.work[5]}</Button>
+                   <Button
+                  className={css.btn}>{doctor.work[6]}</Button>
+                   <Button
+                  className={css.btn}>{doctor.work[7]}</Button>
                   {
-                    doctor.work[5] ? (
+                    doctor.work[8] ? (
                       <Button
-                      className={css.btn}>{doctor.work[5]}</Button>
+                      className={css.btn}>{doctor.work[8]}</Button>
                     ) : null
                   }
 
                   {/* {doctor.work.map((el: string)=>(
                     <button>{el}</button>
                   ))} */}
-                </div>
-              </div>
-            </div>
           </div>
           <Button className={css.btnprimery} type="primary">
             Записаться
           </Button>
         </div>
+                </div>
+              </div>
+            </div>
       ) : (
         <div className={css.spin}>
           <Spinner />
