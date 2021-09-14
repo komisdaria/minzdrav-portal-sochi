@@ -16,21 +16,35 @@ export const LoginUserAC =
         password,
       }),
     });
-
     const result = await response.json();
-    if (result.message) {
-      // сделать нормальную проверку
-      alert(result.message);
-      return;
+    console.log(response);
+
+    if (response.ok) {
+      dispatch({
+        type: "LOGIN_USER",
+        payload: {
+          name: result.user.name,
+          email,
+          oms: result.user.oms,
+          id: result.user._id,
+          appoint: result.appoint,
+        },
+      });
+      // dispatch({
+      //   type: "SET_LOGIN_ERROR",
+      //   payload: null,
+      // });
+    } else {
+      dispatch({
+        type: "SET_LOGIN_ERROR",
+        payload: result.message,
+      });
     }
-    dispatch({
-      type: "LOGIN_USER",
-      payload: {
-        name: result.user.name,
-        email,
-        oms: result.user.oms,
-        id: result.user._id,
-        appoint: result.appoint,
-      },
-    });
+
+    // console.log("result.message----->>>", result);
+    // if (result.message) {
+    //   // сделать нормальную проверку
+    //   alert(result.message);
+    //   return;
+    // }
   };
