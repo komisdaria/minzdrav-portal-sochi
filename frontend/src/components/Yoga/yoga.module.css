@@ -1,0 +1,21 @@
+.text {
+  width: 800px;
+  margin-top: 0.5rem;
+}
+
+.main {
+  margin-top: 2rem;
+}
+
+.imgyoga {
+  width: 40rem;
+  margin-left: 50%;
+}
+
+.maindiv {
+  margin-left: 2rem;
+}
+
+h1, h2 {
+  text-align: center;
+}

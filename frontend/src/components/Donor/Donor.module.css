@@ -39,9 +39,42 @@
 }
 
 .treb {
-  width: 600px;
-  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+.pamatka {
+  width: 680px;
+  height: 680px;
+  margin-top: 30px;
+}
+
+.text_treb_h1 {
+  color: #ff5722;
+}
+
+.text_treb_main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.text_treb {
+  width: 700px;
+  margin-left: 25%;
+}
+
+.help_donor {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.help_donor_main {
+  margin-top: 30px;
+}
+
+.help_donor_h1 {
+  color: #ff5722;
+}
+.hero_main {
+  padding-top: 50px;
 }

@@ -34,3 +34,22 @@
 .carusel {
   max-width: 900px;
 }
+
+.donor {
+  width: 280px;
+  height: 130px;
+}
+.volunteer {
+  width: 280px;
+  height: 130px;
+}
+
+.work_out {
+  width: 260px;
+  height: 130px;
+}
+
+.doyoga {
+  width: 280px;
+  height: 130px;
+}

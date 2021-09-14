@@ -53,8 +53,14 @@ router.route("/login").post(async (req, res) => {
     if (!user) {
       return res.status(500).json({ message: "Такого юзера не существует" });
     }
+    if (password.length === 0) {
+      return res.status(500).json({ message: "заполните это поле" });
+    }
     if (user.password !== password) {
       return res.status(500).json({ message: "Не вверный пароль" });
+    }
+    if (email.length === 0) {
+      return res.status(500).json({ message: "Поле не должно быть пустым." });
     }
     const userId = user._id.toString();
     req.session.user = user;
@@ -67,7 +73,6 @@ router.route("/login").post(async (req, res) => {
 
 router.route("/checkUser").post(async (req, res) => {
   try {
-    console.log(req.session.user);
     if (req.session.user) {
       const user = req.session.user;
       res.status(200).json({ message: "Пользователь авторизован", user });

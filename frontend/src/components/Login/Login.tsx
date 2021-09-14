@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "antd/dist/antd.css";
 import { Form, Input, Button, Typography, Result } from "antd";
 import { useDispatch } from "react-redux";
@@ -13,7 +13,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const history = useHistory();
   const UserState = useMySelector((state) => state.user);
-  console.log(UserState);
+  const errorMessage = useMySelector((state) => state.loginErrorMessage);
 
   const emailHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
@@ -27,11 +27,13 @@ const Login = () => {
     event.preventDefault();
 
     dispatch(LoginUserAC(email, password));
-    history.push("/");
-    //  dispatch(LoginUserAC(email, password));
-    //  if(result.message)
-    // history.push("/");
   };
+
+  useEffect(() => {
+    if (UserState) {
+      history.push("/");
+    }
+  }, [UserState, history]);
 
   return (
     <div className="auth">
@@ -60,6 +62,7 @@ const Login = () => {
           rules={[{ required: true, message: "Введите пароль" }]}
         >
           <Input.Password onChange={passwordHandler} value={password} />
+          {errorMessage && <div>{errorMessage}</div>}
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 8 }}>

@@ -13,4 +13,5 @@ export interface State {
   appointments: AppointmentType[];
   yandexmap: YandexMapType[];
   userAppoints: AppointmentType[];
+  loginErrorMessage: string | null;
 }

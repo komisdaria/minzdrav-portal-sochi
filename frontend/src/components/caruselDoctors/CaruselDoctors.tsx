@@ -27,19 +27,22 @@ export function CaruselDoctors() {
             >
               <div>
                 <div>
-                  <h3 className={css.contentStyle}>
+                  <div className={css.contentStyle}>
                     <img
                       src={`./img/${doctor.img}`}
                       alt="doc"
                       className={css.fotoDoc}
                     />
 
-                    <div>
-                      <div>{doctor.name}</div>
-                      <div>Описание каждого специалиста(стаж, награды и т.д.)</div>
-                      <div>{doctor.specialization}</div>
+                    <div className={css.content}>
+                      <div><span className={css.specialization}>{doctor.specialization} </span>
+                      <br/><strong> {doctor.name}</strong></div>
+                      <br />
+                      <div> {doctor.function}
+                       </div>
+                       <div className={css.aboute}>Подробнее</div>
                     </div>
-                  </h3>
+                  </div>
                 </div>
               </div>
             </NavLink>

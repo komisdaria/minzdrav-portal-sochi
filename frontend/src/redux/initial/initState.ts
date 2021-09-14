@@ -8,4 +8,5 @@ export const initialState: State = {
   appointments: [],
   userAppoints: [],
   yandexmap: [],
+  loginErrorMessage: null,
 };
