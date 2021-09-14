@@ -18,6 +18,8 @@ type ActionTypes =
   | "GET_YANDEXMAP"
   | "GET_USER"
   | "ADD_TO_USER_APPOINTMENT"
+  | "SHOW_APPOINT_IN_ACCOUNT"
+  | "UPDATE_STATUS_APPOINTMENT";
 
 export interface Action {
   type: ActionTypes;
@@ -40,6 +42,16 @@ export interface LogoutUserAction extends Action {
 export interface UpdateUserAction extends Action {
   type: "UPDATE_USER";
   payload: UserType;
+}
+
+export interface ShowAppointInAccount extends Action {
+  type: "SHOW_APPOINT_IN_ACCOUNT"
+  payload: AppointmentType[];
+}
+
+export interface updateStatusAppointment extends Action {
+  type: "UPDATE_STATUS_APPOINTMENT"
+  payload: AppointmentType;
 }
 
 export interface DownloadNewsAction extends Action {
@@ -105,4 +117,6 @@ export type Actions =
   | UpdateUserAction
   | GetYandexMap
   | GetUser
-  | getUserAppointment;
+  | getUserAppointment
+  | ShowAppointInAccount
+  | updateStatusAppointment;

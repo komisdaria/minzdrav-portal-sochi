@@ -8,3 +8,7 @@
 .comments {
   text-overflow: clip;
 }
+
+.appoint_item{
+  color: red;
+}

@@ -5,6 +5,7 @@ import { newsReducer } from "./newsReducer";
 import { userReducer } from "./userReducer";
 import { appointmentsReducer } from "./appointments";
 import { yandexMapReducer } from "./yandexmap";
+import { showAppointReducer } from "./showAppoint";
 
 export const rootReducer = combineReducers({
   user: userReducer,
@@ -12,5 +13,6 @@ export const rootReducer = combineReducers({
   doctors: doctorsReducer,
   covid: covidReducer,
   appointments: appointmentsReducer,
+  userAppoints: showAppointReducer,
   // yandexmap: yandexMapReducer,
 });
