@@ -6,12 +6,14 @@ import "antd/dist/antd.css";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { getUserAC } from "./redux/ActionCreators/UserAC/getUserAC";
+import { getDoctorAC } from "./redux/ActionCreators/UserAC/getDoctor";
 
 function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getUserAC());
+    dispatch(getDoctorAC());
   }, [dispatch]);
 
   return (
