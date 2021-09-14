@@ -53,3 +53,9 @@
   width: 280px;
   height: 130px;
 }
+
+.map {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
