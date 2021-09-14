@@ -16,7 +16,8 @@ type ActionTypes =
   | "UPDATE_USER"
   | "UPDATE_APPOINTMENT"
   | "GET_YANDEXMAP"
-  | "GET_USER";
+  | "GET_USER"
+  | "SET_LOGIN_ERROR";
 
 export interface Action {
   type: ActionTypes;
@@ -86,6 +87,11 @@ export interface GetUser extends Action {
   type: "GET_USER";
   payload: UserType;
 }
+export interface SetErrorMessage extends Action {
+  type: "SET_LOGIN_ERROR";
+  payload: string | null;
+}
+
 export type Actions =
   | CreateUserAction
   | LoginUserAction
@@ -97,4 +103,5 @@ export type Actions =
   | UpdateAppointment
   | UpdateUserAction
   | GetYandexMap
-  | GetUser;
+  | GetUser
+  | SetErrorMessage;
