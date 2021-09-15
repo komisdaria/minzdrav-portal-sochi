@@ -10,7 +10,7 @@
   color: rgb(0, 0, 0);
   /* line-height: 160px; */
   /* text-align: center; */
-  background: #afd1f0;
+  /* background: #afd1f0; */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -29,6 +29,10 @@
 
 .content {
   padding-left: 10px;
+}
+
+.slick-active{
+  background-color: red;
 }
 
 .aboute {

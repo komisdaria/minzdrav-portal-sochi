@@ -16,8 +16,10 @@ code {
 
 li {
   list-style-type: none;
-
+  background-color: black;
+  min-height: 5px;
 }
+
 ul {
   display: flex;
   justify-content: space-around;

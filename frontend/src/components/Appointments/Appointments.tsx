@@ -19,8 +19,6 @@ const Appointments = () => {
 
   console.log('STATE=',appointmentsState);
 
-
-
   const { Option } = Select;
 
   // функции, относящиеся к select
@@ -42,6 +40,7 @@ const Appointments = () => {
   }, [dispatch]);
 
   const reservedAppoint = (id: AppointmentType['id']) => {
+    console.log(id);
     dispatch(addToUserAppointmentAC(id))
     dispatch(updateStatusAppoinmentAC(id))
   }
@@ -97,8 +96,8 @@ const Appointments = () => {
           ))
         ) : (
           appointmentsState.map((appoint: { id: string; date: string, time: string, doctorSpecialization: string, status: boolean }) => (
-            <div key={appoint.id} className={`${appoint.status ? styles.appoint_item : ''}`}>
-              <Card
+            <div key={appoint.id} >
+              <Card className={`${appoint.status ? styles.appoint_item : ''}`}
                 title={`Запись к врачу: ${appoint.doctorSpecialization}`}
                 bordered={true}
                 style={{ width: 300 }}

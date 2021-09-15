@@ -8,7 +8,7 @@ router
   try {
     let allAppointments = await Appointment.find().lean();
     res.status(200).json({
-      allAppointments: allAppointments.map(({ _id, ...rest }) => ({ ...rest, id: _id })).slice(20,30),
+      allAppointments: allAppointments.map(({ _id, ...rest }) => ({ ...rest, id: _id })),
     });
   } catch (error) {
     console.log(error);
