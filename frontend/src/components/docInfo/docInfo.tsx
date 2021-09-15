@@ -19,6 +19,8 @@ export function DocInfo() {
     doctorId: string;
   }
   const { doctorId } = useParams<ParamTypes>();
+  // console.log('doctorId',doctorId);
+  
   const FinddoctorsState = useMySelector((state) => state.doctors);
   // const [doctor, setDoctor] = useState({});
 
@@ -59,15 +61,15 @@ export function DocInfo() {
                 <br />
                 <div><Rate allowHalf 
                 // defaultValue={doctor.raiting}
-                 /> {doctor.raiting}</div>
+                 /> {doctor.sumRaiting}</div>
                 
 
                 <div className='rate'>
-         <div  onClick={() => handleRait(1)}><h2>💛</h2></div>
-         <div  onClick={() => handleRait(2)}><h2>💛</h2></div>
-         <div  onClick={() => handleRait(3)}><h2>💛</h2></div>
-         <div  onClick={() => handleRait(4)}><h2>💛</h2></div>
-         <div  onClick={() => handleRait(5)}><h2>💛</h2></div>
+         <div  onClick={() => handleRait(1)}><h2>⭐</h2></div>
+         <div  onClick={() => handleRait(2)}><h2>⭐</h2></div>
+         <div  onClick={() => handleRait(3)}><h2>⭐</h2></div>
+         <div  onClick={() => handleRait(4)}><h2>⭐</h2></div>
+         <div  onClick={() => handleRait(5)}><h2>⭐</h2></div>
 
        </div>
                   <br />

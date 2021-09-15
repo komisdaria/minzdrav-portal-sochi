@@ -12,7 +12,11 @@ const doctorSchema = mongoose.Schema({
   },
   raiting: {
     type: Array,
-    default: [0],
+    default: [],
+  },
+  sumRaiting: {
+    type: Number,
+    default: 0,
   },
   reviews: [
     {

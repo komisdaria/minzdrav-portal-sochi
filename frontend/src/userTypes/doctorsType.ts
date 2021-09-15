@@ -4,6 +4,7 @@ export interface DoctorType {
   specialization: string;
   work: string;
   raiting: [];
+  sumRaiting: number;
   reviews: [];
   id: string;
   img: string;

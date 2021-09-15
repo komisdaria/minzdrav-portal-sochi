@@ -10,10 +10,9 @@ export const doctorsReducer = (
       return action.payload.doctors;
 
     case "UPDATE_RAITING":
-      
       const newDoctorsRaiting = state.map((el) => {
         if (el.id === action.payload.id) {
-          return { ...el, raiting:  action.payload.raiting};
+          return { ...el, sumRaiting:  action.payload.sumRaiting};
         }
         return el;
       });
