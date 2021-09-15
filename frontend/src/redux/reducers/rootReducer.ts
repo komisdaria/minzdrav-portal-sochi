@@ -6,6 +6,7 @@ import { userReducer } from "./userReducer";
 import { appointmentsReducer } from "./appointments";
 import { showAppointReducer } from "./showAppoint";
 import { loginErrorReducer } from "./loginErrorReducer";
+import { currentDoctorsReducer } from "./currentDoctorReducer";
 
 export const rootReducer = combineReducers({
   user: userReducer,
@@ -15,4 +16,5 @@ export const rootReducer = combineReducers({
   appointments: appointmentsReducer,
   userAppoints: showAppointReducer,
   loginErrorMessage: loginErrorReducer,
+  currentDoctor: currentDoctorsReducer,
 });

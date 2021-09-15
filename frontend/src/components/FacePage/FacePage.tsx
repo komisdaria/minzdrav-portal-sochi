@@ -20,7 +20,7 @@ export default function FacePage() {
           <div className={css.cards_container}>
             <div className={css.cards_item}>
               <Link to="/covid">
-                <img 
+                <img
                   src={"/img/Corona_g.png"}
                   className={css.Corona_g}
                   alt="unnamed"
@@ -58,8 +58,8 @@ export default function FacePage() {
               ФОТКИ
             </div>
           </div>
-          
-          {/* /* 123123123  */ }
+
+          {/* /* 123123123  */}
           {/* <div className={css.item_card_container}>
             <div className={css.cards_item}>
               <Link to="/yoga">
@@ -79,7 +79,7 @@ export default function FacePage() {
         </div>
       </div>
       <div className={css.main_bottom}>
-
+        <Map />
       </div>
 
     </div>

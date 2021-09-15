@@ -12,15 +12,8 @@ code {
     monospace;
 }
 
-
-
-li {
-  list-style-type: none;
-  background-color: black;
-  min-height: 5px;
-}
-
 ul {
+  background-color: rgb(223, 215, 215);
   display: flex;
   justify-content: space-around;
 

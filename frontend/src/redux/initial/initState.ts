@@ -9,4 +9,5 @@ export const initialState: State = {
   userAppoints: [],
   yandexmap: [],
   loginErrorMessage: null,
+  currentDoctor: null,
 };

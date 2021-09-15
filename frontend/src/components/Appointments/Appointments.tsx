@@ -12,6 +12,8 @@ import { updateStatusAppoinmentAC } from "../../redux/ActionCreators/Appointment
 
 const Appointments = () => {
   const appointmentsState = useMySelector((state) => state.appointments);
+  const isLogin = useMySelector((state) => state.user?.name);
+
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
   const [pageSize, setPageSize] = useState(15);
@@ -57,6 +59,8 @@ const Appointments = () => {
   };
 
   return (
+    <>
+    { isLogin ? 
     <div>
       <h1>Для вашего удобства выберите нужного специалиста</h1>
       <form onKeyDown={handleKey}>
@@ -155,6 +159,10 @@ const Appointments = () => {
         />
       </div>
     </div>
+      :
+      <div>Чтобы записаться нужно войти в аккаунт!</div>
+      }
+    </>
   );
 };
 

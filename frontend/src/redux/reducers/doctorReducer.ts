@@ -9,14 +9,14 @@ export const doctorsReducer = (
     case "GET_DOCTORS":
       return action.payload.doctors;
 
-    case "UPDATE_RAITING":
-      const newDoctorsRaiting = state.map((el) => {
-        if (el.id === action.payload.id) {
-          return { ...el, sumRaiting:  action.payload.sumRaiting};
-        }
-        return el;
-      });
-     return  state;
+    // case "UPDATE_RAITING":
+    //   const newDoctorsRaiting = state.map((el) => {
+    //     if (el.id === action.payload.id) {
+    //       return { ...el, sumRaiting:  action.payload.sumRaiting};
+    //     }
+    //     return el;
+    //   });
+    //  return  state;
 
     default:
       return state;

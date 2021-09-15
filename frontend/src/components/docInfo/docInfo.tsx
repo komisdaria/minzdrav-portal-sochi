@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useMySelector } from "../../hooks/customHook";
 import { useParams } from "react-router-dom";
 import css from "./docInfo.module.css";
@@ -7,6 +7,7 @@ import { Button } from 'antd';
 import { Typography, Rate } from 'antd';
 import { RaitingUpdatedAC } from "../../redux/ActionCreators/RaitingUpdateAC";
 import { useDispatch } from "react-redux";
+import { currentDoctorAC } from "../../redux/ActionCreators/DoctorsAC/CurrentDoctorAC";
 
 
 
@@ -19,102 +20,60 @@ export function DocInfo() {
     doctorId: string;
   }
   const { doctorId } = useParams<ParamTypes>();
-  // console.log('doctorId',doctorId);
-  
-  const FinddoctorsState = useMySelector((state) => state.doctors);
-  // const [doctor, setDoctor] = useState({});
 
-  // useEffect(() => {
-  //   const carDoc = FinddoctorsState.filter((el) => el.id === doctorId);
-  //   let test = carDoc[0];
-  //   setDoctor(test);
-  // }, [FinddoctorsState, doctorId]);
+  const FinddoctorsState = useMySelector((state) => state.currentDoctor);
+  const isLogin = useMySelector((state) => state.user?.name);
 
-  const carDoc = FinddoctorsState.filter((el) => el.id === doctorId);
-  let doctor = carDoc[0];
-  // console.log(doctor.work.map((el: { work: string }) => el));
 
-  // let a = doctor.work.map((el: string | []) => el);
-  // console.log(a);
-  // console.log(typeof doctor.work);
+  useEffect(() => {
+    dispatch(currentDoctorAC(doctorId))
+  }, [dispatch, doctorId])
 
   const handleRait = (rait: number) => {
+    console.log(FinddoctorsState);
     dispatch(RaitingUpdatedAC(doctorId, rait))
   }
-  
+
   return (
+    <>
+    {isLogin ? 
     <div>
-   
-      {doctor ? (
-        <div key={doctor.id}>
+      {FinddoctorsState ? (
+        <div key={FinddoctorsState.id}>
           <div className={css.wrapper}>
             <div className={css.border}>
-              <img src={`/img/${doctor.img}`} alt="doc" className={css.img} />
+              <img src={`/img/${FinddoctorsState.img}`} alt="doc" className={css.img} />
               <div className={css.info}>
-                <div className={css.content}><Title level={4}>{doctor.name}</Title></div>
-                <div className={css.content}><div><Title level={5}>Специализация</Title></div> <div className={css.afterheader}>{doctor.specialization}</div> </div>
-                <div className={css.content}><div><Title level={5}>Стаж</Title></div> <div className={css.afterheader}>{doctor.experience}</div> </div>  
-                <br />  
-                <div className={css.content}><div><Title level={5}>Образование</Title></div> <div className={css.afterheader}>{doctor.education}</div> </div>
+                <div className={css.content}><Title level={4}>{FinddoctorsState.name}</Title></div>
+                <div className={css.content}><div><Title level={5}>Специализация</Title></div> <div className={css.afterheader}>{FinddoctorsState.specialization}</div> </div>
+                <div className={css.content}><div><Title level={5}>Стаж</Title></div> <div className={css.afterheader}>{FinddoctorsState.experience}</div> </div>
                 <br />
-                <div className={css.content}><div><Title level={5}>Функционал работ</Title></div> <div className={css.afterheader}>{doctor.function}</div> </div>
+                <div className={css.content}><div><Title level={5}>Образование</Title></div> <div className={css.afterheader}>{FinddoctorsState.education}</div> </div>
                 <br />
-                <div><Rate allowHalf 
-                // defaultValue={doctor.raiting}
-                 /> {doctor.sumRaiting}</div>
-                
+                <div className={css.content}><div><Title level={5}>Функционал работ</Title></div> <div className={css.afterheader}>{FinddoctorsState.function}</div> </div>
+                <br />
+                <div><Rate allowHalf
+                /> {FinddoctorsState.sumRaiting}</div>
+
 
                 <div className='rate'>
-         <div  onClick={() => handleRait(1)}><h2>⭐</h2></div>
-         <div  onClick={() => handleRait(2)}><h2>⭐</h2></div>
-         <div  onClick={() => handleRait(3)}><h2>⭐</h2></div>
-         <div  onClick={() => handleRait(4)}><h2>⭐</h2></div>
-         <div  onClick={() => handleRait(5)}><h2>⭐</h2></div>
-
-       </div>
-                  <br />
-                <div>
-                  Доступное время для записи
-                  <br />
-                  <Button 
-                  className={css.btn}>{doctor.work[0]}</Button>
-                  <Button 
-                  className={css.btn} >{doctor.work[1]}</Button>
-                  <Button
-                  className={css.btn}>{doctor.work[2]}</Button>
-                  <Button
-                  className={css.btn}>{doctor.work[3]}</Button>
-                  <Button
-                  className={css.btn}>{doctor.work[4]}</Button>
-                   <Button
-                  className={css.btn}>{doctor.work[5]}</Button>
-                   <Button
-                  className={css.btn}>{doctor.work[6]}</Button>
-                   <Button
-                  className={css.btn}>{doctor.work[7]}</Button>
-                  {
-                    doctor.work[8] ? (
-                      <Button
-                      className={css.btn}>{doctor.work[8]}</Button>
-                    ) : null
-                  }
-
-                  {/* {doctor.work.map((el: string)=>(
-                    <button>{el}</button>
-                  ))} */}
-          </div>
-          <Button className={css.btnprimery} type="primary">
-            Записаться
-          </Button>
-        </div>
+                  <div onClick={() => handleRait(1)}><h2>⭐</h2></div>
+                  <div onClick={() => handleRait(2)}><h2>⭐</h2></div>
+                  <div onClick={() => handleRait(3)}><h2>⭐</h2></div>
+                  <div onClick={() => handleRait(4)}><h2>⭐</h2></div>
+                  <div onClick={() => handleRait(5)}><h2>⭐</h2></div>
                 </div>
+                <br />
               </div>
             </div>
+          </div>
+        </div>
       ) : (
         <div className={css.spin}>
           <Spinner />
         </div>
       )}
-    </div>
+    </div> : <div> Чтобы видеть подробную информацию о враче нужно войти в аккаунт! </div>}
+    </>
   );
 }
