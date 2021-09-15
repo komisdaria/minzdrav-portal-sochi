@@ -7,6 +7,7 @@ import { Button } from 'antd';
 import { Typography, Rate } from 'antd';
 import { RaitingUpdatedAC } from "../../redux/ActionCreators/RaitingUpdateAC";
 import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 
 
 
@@ -41,6 +42,10 @@ export function DocInfo() {
   const handleRait = (rait: number) => {
     dispatch(RaitingUpdatedAC(doctorId, rait))
   }
+
+  useEffect(() => {
+
+  }, [dispatch])
   
   return (
     <div>
@@ -53,24 +58,29 @@ export function DocInfo() {
               <div className={css.info}>
                 <div className={css.content}><Title level={4}>{doctor.name}</Title></div>
                 <div className={css.content}><div><Title level={5}>Специализация</Title></div> <div className={css.afterheader}>{doctor.specialization}</div> </div>
-                <div className={css.content}><div><Title level={5}>Стаж</Title></div> <div className={css.afterheader}>{doctor.experience}</div> </div>  
+                <div className={css.content}><div><Title className={css.stag} level={5}>Стаж</Title></div> <div className={css.afterheader}>{doctor.experience}</div> </div>  
                 <br />  
                 <div className={css.content}><div><Title level={5}>Образование</Title></div> <div className={css.afterheader}>{doctor.education}</div> </div>
                 <br />
                 <div className={css.content}><div><Title level={5}>Функционал работ</Title></div> <div className={css.afterheader}>{doctor.function}</div> </div>
                 <br />
-                <div><Rate allowHalf 
-                // defaultValue={doctor.raiting}
-                 /> {doctor.sumRaiting}</div>
+
                 
 
-                <div className='rate'>
-         <div  onClick={() => handleRait(1)}><h2>⭐</h2></div>
-         <div  onClick={() => handleRait(2)}><h2>⭐</h2></div>
-         <div  onClick={() => handleRait(3)}><h2>⭐</h2></div>
-         <div  onClick={() => handleRait(4)}><h2>⭐</h2></div>
-         <div  onClick={() => handleRait(5)}><h2>⭐</h2></div>
+                <div className={css.rate}>
+                <div className={css.content}> <Title level={5}>Рейтинг</Title> 
+                <div className={css.allstar}> 
+         <div className={css.star} onClick={() => handleRait(1)}><h2>⭐</h2></div>
+         <div className={css.star} onClick={() => handleRait(2)}><h2>⭐</h2></div>
+         <div className={css.star} onClick={() => handleRait(3)}><h2>⭐</h2></div>
+         <div className={css.star} onClick={() => handleRait(4)}><h2>⭐</h2></div>
+         <div className={css.star} onClick={() => handleRait(5)}><h2>⭐</h2></div>
+                <div>
+         <h1 className={css.sumrait}>{doctor.sumRaiting}</h1>
+         </div>
+ </div>
 
+       </div>
        </div>
                   <br />
                 <div>
