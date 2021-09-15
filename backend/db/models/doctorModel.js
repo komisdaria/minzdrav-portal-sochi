@@ -11,6 +11,10 @@ const doctorSchema = mongoose.Schema({
     type: [],
   },
   raiting: {
+    type: Array,
+    default: [],
+  },
+  sumRaiting: {
     type: Number,
     default: 0,
   },
