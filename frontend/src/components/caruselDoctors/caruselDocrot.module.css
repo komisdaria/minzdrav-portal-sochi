@@ -10,7 +10,7 @@
   color: rgb(0, 0, 0);
   /* line-height: 160px; */
   /* text-align: center; */
-  background: #afd1f0;
+  /* background: #afd1f0; */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -31,6 +31,10 @@
   padding-left: 10px;
 }
 
+.slick-active{
+  background-color: red;
+}
+
 .aboute {
   padding-left: 30px;
   padding-top: 5px;
@@ -41,7 +45,10 @@
   border-radius: 5px;
   background-color: skyblue;
 }
+<<<<<<< HEAD
+=======
 
 .function {
   padding-right: 15px;
 }
+>>>>>>> ec23d1fb6bc92bcf4311b24b0a4467b77e4f4ca4

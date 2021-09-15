@@ -12,7 +12,7 @@ export const addToUserAppointmentAC = (id: AppointmentType['id']) => async (disp
   });
   const result = await response.json();
   const addAppointId = result.updateUser.appoint.pop()
-  console.log(typeof addAppointId)
+  console.log(addAppointId)
   dispatch({
     type: "ADD_TO_USER_APPOINTMENT",
     payload:  addAppointId,
