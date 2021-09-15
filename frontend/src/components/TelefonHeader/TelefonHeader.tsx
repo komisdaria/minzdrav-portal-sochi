@@ -5,7 +5,7 @@ export default function TelefonHeader() {
   return (
     <div>
       <div className={css.TelefonHeader}>
-        <a href="tel:+79205678901"> Звоните нам бесплатно! </a>
+        <a href="tel:+79066452546"> Звоните нам бесплатно! </a>
       </div>
     </div>
   );
