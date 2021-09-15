@@ -21,7 +21,8 @@ type ActionTypes =
   | "SHOW_APPOINT_IN_ACCOUNT"
   | "UPDATE_STATUS_APPOINTMENT"
   | "SET_LOGIN_ERROR"
-  | "ADD_TO_USER_APPOINTMENT";
+  | "ADD_TO_USER_APPOINTMENT"
+  | "UPDATE_RAITING";
 
 export interface Action {
   type: ActionTypes;
@@ -106,9 +107,15 @@ export interface GetUser extends Action {
   type: "GET_USER";
   payload: UserType;
 }
+
 export interface SetErrorMessage extends Action {
   type: "SET_LOGIN_ERROR";
   payload: string | null;
+}
+
+export interface UpdateRaiting extends Action {
+  type: "UPDATE_RAITING";
+  payload: DoctorType;
 }
 
 export type Actions =
@@ -127,4 +134,5 @@ export type Actions =
   | ShowAppointInAccount
   | updateStatusAppointment
   | SetErrorMessage
-  | getUserAppointment;
+  | getUserAppointment
+  | UpdateRaiting;

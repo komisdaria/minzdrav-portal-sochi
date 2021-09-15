@@ -11,8 +11,8 @@ const doctorSchema = mongoose.Schema({
     type: [],
   },
   raiting: {
-    type: Number,
-    default: 0,
+    type: Array,
+    default: [0],
   },
   reviews: [
     {
