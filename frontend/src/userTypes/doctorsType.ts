@@ -3,7 +3,8 @@ export interface DoctorType {
   name: string;
   specialization: string;
   work: string;
-  raiting: number;
+  raiting: [];
+  sumRaiting: number;
   reviews: [];
   id: string;
   img: string;

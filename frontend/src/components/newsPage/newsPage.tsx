@@ -14,7 +14,7 @@ export const OurNews = () => {
     dispatch(getNewsAc())
   }, [dispatch]);
 
-  console.log('news',newsState);
+  // console.log('news',newsState);
   
   return (
     <div className={css.newsblock}>
