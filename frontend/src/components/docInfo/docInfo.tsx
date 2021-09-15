@@ -5,17 +5,22 @@ import css from "./docInfo.module.css";
 import Spinner from "../Spinner/Spinner";
 import { Button } from 'antd';
 import { Typography, Rate } from 'antd';
-import { Card } from 'antd';
+import { RaitingUpdatedAC } from "../../redux/ActionCreators/RaitingUpdateAC";
+import { useDispatch } from "react-redux";
 
 
 
 export function DocInfo() {
   const { Title } = Typography;
 
+  const dispatch = useDispatch();
+
   interface ParamTypes {
     doctorId: string;
   }
   const { doctorId } = useParams<ParamTypes>();
+  // console.log('doctorId',doctorId);
+  
   const FinddoctorsState = useMySelector((state) => state.doctors);
   // const [doctor, setDoctor] = useState({});
 
@@ -33,11 +38,9 @@ export function DocInfo() {
   // console.log(a);
   // console.log(typeof doctor.work);
 
-  // const gridStyle = {
-  //   width: '25%',
-  //   textAlign: 'center',
-  // };
-  
+  const handleRait = (rait: number) => {
+    dispatch(RaitingUpdatedAC(doctorId, rait))
+  }
   
   return (
     <div>
@@ -56,8 +59,19 @@ export function DocInfo() {
                 <br />
                 <div className={css.content}><div><Title level={5}>Функционал работ</Title></div> <div className={css.afterheader}>{doctor.function}</div> </div>
                 <br />
-                <div><Rate allowHalf defaultValue={doctor.raiting} /> {doctor.raiting}</div>
+                <div><Rate allowHalf 
+                // defaultValue={doctor.raiting}
+                 /> {doctor.sumRaiting}</div>
                 
+
+                <div className='rate'>
+         <div  onClick={() => handleRait(1)}><h2>⭐</h2></div>
+         <div  onClick={() => handleRait(2)}><h2>⭐</h2></div>
+         <div  onClick={() => handleRait(3)}><h2>⭐</h2></div>
+         <div  onClick={() => handleRait(4)}><h2>⭐</h2></div>
+         <div  onClick={() => handleRait(5)}><h2>⭐</h2></div>
+
+       </div>
                   <br />
                 <div>
                   Доступное время для записи

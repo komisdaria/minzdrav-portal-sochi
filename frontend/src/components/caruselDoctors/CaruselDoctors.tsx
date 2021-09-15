@@ -38,7 +38,7 @@ export function CaruselDoctors() {
                       <div><span className={css.specialization}>{doctor.specialization} </span>
                       <br/><strong> {doctor.name}</strong></div>
                       <br />
-                      <div> {doctor.function}
+                      <div className={css.function}> {doctor.function}
                        </div>
                        <div className={css.aboute}>Подробнее</div>
                     </div>
