@@ -20,7 +20,7 @@ export default function FacePage() {
           <div className={css.cards_container}>
             <div className={css.cards_item}>
               <Link to="/covid">
-                <img 
+                <img
                   src={"/img/Corona_g.png"}
                   className={css.Corona_g}
                   alt="unnamed"
@@ -54,12 +54,10 @@ export default function FacePage() {
         </div>
         <div className={css.main_top_item}>
           <div className={css.item_foto_container}>
-            <div className={css.item_foto}>
-              ФОТКИ
-            </div>
+            <div className={css.item_foto}>ФОТКИ</div>
           </div>
-          
-          {/* /* 123123123  */ }
+
+          {/* /* 123123123  */}
           {/* <div className={css.item_card_container}>
             <div className={css.cards_item}>
               <Link to="/yoga">
@@ -78,10 +76,20 @@ export default function FacePage() {
           <CaruselDoctors />
         </div>
       </div>
+
       <div className={css.main_bottom}>
-
+        <div>
+          <Map />
+        </div>
+        <div className={css.main_bottom_item}>
+          <div>
+            <h2>Улица Виноградная, 43/2, Сочи, Краснодарский край</h2>
+          </div>
+          <div className={css.main_bottom_item}>
+            <TelNumModal />
+          </div>
+        </div>
       </div>
-
     </div>
     // <div className={css.main_container}>
     //   <div className={css.main_container_item}>
