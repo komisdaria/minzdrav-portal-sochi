@@ -47,10 +47,11 @@ const Registration = () => {
 
   return (
     <div className="auth">
-      <Title type="success" level={3}>
-        Регистрация
-      </Title>
-
+      <div className="header">
+        <Title type="success" level={3}>
+          Регистрация
+        </Title>
+      </div>
       <Form
         name="basic"
         labelCol={{ span: 8 }}
