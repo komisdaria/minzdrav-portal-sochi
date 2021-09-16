@@ -13,10 +13,8 @@ code {
 }
 
 ul {
-  background-color: rgb(223, 215, 215);
   display: flex;
   justify-content: space-around;
-
 }
 
 header {
@@ -25,6 +23,8 @@ header {
 }
 
 .auth {
+  display: flex;
+  flex-direction: column;
   padding-top: 3rem;
 }
 
@@ -32,3 +32,19 @@ header {
   height: 17rem;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-dots li{
+  background-color: green;
+} 
+
+.slick-dots li.slick-active {
+  background-color: rgb(167, 29, 29);
+}
+
+li button{
+  background-color: rgb(6, 8, 99);
+} 

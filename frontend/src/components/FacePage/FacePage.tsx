@@ -54,9 +54,13 @@ export default function FacePage() {
         </div>
         <div className={css.main_top_item}>
           <div className={css.item_foto_container}>
-            <div className={css.item_foto}>
-              ФОТКИ
+            <div className={css.item_foto_left}>
+              <div className={css.item_foto}>ФОТКA1</div>
+              <div className={css.item_foto}>ФОТКA2</div>
+              <div className={css.item_foto}>ФОТКA3</div>
+              <div className={css.item_foto}>ФОТКA4</div>
             </div>
+            <div className={css.item_foto_right}>Фотка большая</div>
           </div>
 
           {/* /* 123123123  */}
@@ -78,10 +82,20 @@ export default function FacePage() {
           <CaruselDoctors />
         </div>
       </div>
-      <div className={css.main_bottom}>
-        <Map />
-      </div>
 
+      <div className={css.main_bottom}>
+        <div>
+          <Map />
+        </div>
+        <div className={css.main_bottom_item}>
+          <div>
+            <h2>Улица Виноградная, 43/2, Сочи, Краснодарский край</h2>
+          </div>
+          <div className={css.main_bottom_item}>
+            <TelNumModal />
+          </div>
+        </div>
+      </div>
     </div>
     // <div className={css.main_container}>
     //   <div className={css.main_container_item}>

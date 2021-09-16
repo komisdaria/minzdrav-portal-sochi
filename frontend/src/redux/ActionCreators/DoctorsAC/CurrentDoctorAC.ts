@@ -13,7 +13,6 @@ export const currentDoctorAC = (id: DoctorType["id"]) => async(dispach: AppDispa
     body: JSON.stringify({id}),
   })
   const result = await response.json();
-  // console.log('result AC RAITING', result);
   dispach({
     type: "FIND_CURRENT_DOCTOR",
     payload: result.currentModel,
