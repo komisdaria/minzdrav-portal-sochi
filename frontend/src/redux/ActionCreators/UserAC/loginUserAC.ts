@@ -17,7 +17,6 @@ export const LoginUserAC =
       }),
     });
     const result = await response.json();
-    console.log(response);
 
     if (response.ok) {
       dispatch({
@@ -32,21 +31,10 @@ export const LoginUserAC =
           dateBorn: result.user.dateBorn,
         },
       });
-      // dispatch({
-      //   type: "SET_LOGIN_ERROR",
-      //   payload: null,
-      // });
     } else {
       dispatch({
         type: "SET_LOGIN_ERROR",
         payload: result.message,
       });
     }
-
-    // console.log("result.message----->>>", result);
-    // if (result.message) {
-    //   // сделать нормальную проверку
-    //   alert(result.message);
-    //   return;
-    // }
   };

@@ -110,7 +110,7 @@
   min-height: fit-content;
   padding-top: 40px;
   padding-left: 40px;
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .item_foto_container {
@@ -138,21 +138,25 @@
 .Corona_g {
   width: 300px;
   height: 150px;
+  border-radius: 25px;
 }
 
 .donor {
   width: 300px;
   height: 150px;
+  border-radius: 25px;
 }
 
 .volunteer {
   width: 300px;
   height: 150px;
+  border-radius: 25px;
 }
 
 .work_out {
   width: 300px;
   height: 150px;
+  border-radius: 25px;
 }
 
 .doyoga {
@@ -201,7 +205,7 @@
 }
 
 .cards_item:hover {
-  opacity: 1;
+  opacity: 0.8;
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);

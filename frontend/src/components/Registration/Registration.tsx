@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "antd/dist/antd.css";
 import { Form, Input, Button, Typography } from "antd";
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { CreateUserAC } from "../../redux/ActionCreators/UserAC/createUserAC";
 import { useHistory } from "react-router";
+import { useMySelector } from "../../hooks/customHook";
 import css from "./registration.module.css";
 
 const Registration = () => {
@@ -12,6 +12,8 @@ const Registration = () => {
 
   const dispatch = useDispatch();
   const history = useHistory();
+  const UserState = useMySelector((state) => state.user);
+  const errorMessage = useMySelector((state) => state.RegErrorMessage);
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -55,11 +57,17 @@ const Registration = () => {
     dispatch(
       CreateUserAC(name, email, oms, password, repPassword, lastName, dateBorn)
     );
-    history.push("/");
   };
+
+  useEffect(() => {
+    if (UserState) {
+      history.push("/");
+    }
+  }, [UserState, history]);
 
   return (
     <div className={css.wrap}>
+      {errorMessage ? <div>{errorMessage}</div> : null}
       <div className="auth">
         <div className="header">
           <Title type="success" level={3}>
@@ -95,7 +103,12 @@ const Registration = () => {
             name="dateBorn"
             rules={[{ required: true, message: "Введите дату рождения" }]}
           >
-            <Input onChange={dateBornHandler} value={dateBorn} />
+            <Input
+              onChange={dateBornHandler}
+              value={dateBorn}
+              type="date"
+              max="2021-09-17"
+            />
           </Form.Item>
 
           <Form.Item

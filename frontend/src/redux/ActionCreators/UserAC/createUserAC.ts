@@ -30,22 +30,24 @@ export const CreateUserAC =
       }),
     });
     const result = await response.json();
-
-    if (result.message) {
-      alert(result.message); // сделать нормальную проверку
-      return; // пофиксить, если пользователь не заполняет какое-то поле
+    if (result.ok) {
+      dispatch({
+        type: "CREATE_USER",
+        payload: {
+          name: result.user.name,
+          email: result.user.email,
+          oms: result.user.oms,
+          id: result.user._id,
+          appoint: [],
+          lastName: result.user.lastName,
+          dateBorn: result.user.dateBorn,
+        },
+      });
+    } else {
+      console.log(result.message);
+      dispatch({
+        type: "CHECK_REG_ERROR",
+        payload: result.message,
+      });
     }
-
-    dispatch({
-      type: "CREATE_USER",
-      payload: {
-        name: result.user.name,
-        email: result.user.email,
-        oms: result.user.oms,
-        id: result.user._id,
-        appoint: [],
-        lastName: result.user.lastName,
-        dateBorn: result.user.dateBorn,
-      },
-    });
   };
