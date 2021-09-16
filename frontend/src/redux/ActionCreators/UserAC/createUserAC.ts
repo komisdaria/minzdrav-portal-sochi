@@ -7,7 +7,9 @@ export const CreateUserAC =
     email: UserType["email"],
     oms: UserType["oms"],
     password: string,
-    repeatPassword: string
+    repeatPassword: string,
+    lastName: UserType["lastName"],
+    dateBorn: UserType["dateBorn"]
   ) =>
   async (dispatch: AppDispatch) => {
     const response = await fetch("http://localhost:8080/register", {
@@ -23,6 +25,8 @@ export const CreateUserAC =
         password,
         repeatPassword,
         oms,
+        lastName,
+        dateBorn,
       }),
     });
     const result = await response.json();
@@ -40,6 +44,8 @@ export const CreateUserAC =
         oms: result.user.oms,
         id: result.user._id,
         appoint: [],
+        lastName: result.user.lastName,
+        dateBorn: result.user.dateBorn,
       },
     });
   };

@@ -18,6 +18,8 @@ const Registration = () => {
   const [oms, setOms] = useState(0); //!!!!
   const [password, setPassword] = useState("");
   const [repPassword, setRepPassword] = useState("");
+  const [lastName, setlastName] = useState("");
+  const [dateBorn, setDateBorn] = useState("");
 
   const emailHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
@@ -39,10 +41,20 @@ const Registration = () => {
     setName(event.target.value);
   };
 
+  const lastNameHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setlastName(event.target.value);
+  };
+
+  const dateBornHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setDateBorn(event.target.value);
+  };
+
   const onSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
 
-    dispatch(CreateUserAC(name, email, oms, password, repPassword));
+    dispatch(
+      CreateUserAC(name, email, oms, password, repPassword, lastName, dateBorn)
+    );
     history.push("/");
   };
 
@@ -65,9 +77,25 @@ const Registration = () => {
           <Form.Item
             label="Имя"
             name="name"
-            rules={[{ required: true, message: "Введите ФИО" }]}
+            rules={[{ required: true, message: "Введите Имя" }]}
           >
             <Input onChange={nameHandler} value={name} />
+          </Form.Item>
+
+          <Form.Item
+            label="Фамилия"
+            name="lastName"
+            rules={[{ required: true, message: "Введите Фамилию" }]}
+          >
+            <Input onChange={lastNameHandler} value={lastName} />
+          </Form.Item>
+
+          <Form.Item
+            label="Дата рождения"
+            name="dateBorn"
+            rules={[{ required: true, message: "Введите дату рождения" }]}
+          >
+            <Input onChange={dateBornHandler} value={dateBorn} />
           </Form.Item>
 
           <Form.Item
