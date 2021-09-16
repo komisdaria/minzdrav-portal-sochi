@@ -5,12 +5,8 @@ export default function Sport() {
   return (
     <div>
       <div className={css.main}>
-        <img src={"/img/gimn.jpg"} className={css.gimn} alt="gimn.jpg" />
-      </div>
-      <div className={css.main}>
         <h1 className={css.text_h1}>
-          О физической активности в период сохранения рисков распространения
-          новой коронавирусной инфекции.
+          О физической активности
         </h1>
         <p className={css.text}>
           Эпидемиологи напоминают, что физические упражнения имеют большое
@@ -53,7 +49,10 @@ export default function Sport() {
         </p>
       </div>
       <div className={css.main}>
-        <h1>Комплекс упражнений</h1>
+        <img src={"/img/sportgirl.jpg"} className={css.gimn} alt="sportgirl" />
+      </div>
+      <div className={css.main}>
+        <h1 className={css.text_h1}>Комплекс упражнений</h1>
         <img src={"/img/ex.jpg"} className={css.ex} alt="ex.jpg" />
       </div>
       <div className={css.main}>
@@ -65,7 +64,7 @@ export default function Sport() {
         ></iframe>
       </div>
       <div className={css.main}>
-        <h1>Противопоказания</h1>
+        <h1 className={css.text_h1}>Противопоказания</h1>
         <p className={css.text}>
           Если Вы себя хорошо чувствуете, у Вас нет никаких отклонений в
           физическом и психическом развитии, зарядку Вы можете смело делать, не
@@ -73,12 +72,13 @@ export default function Sport() {
           спиной, то необходимо проконсультироваться с врачом, на предмет того,
           какие упражнения Вам показаны, а какие пока лучше не практиковать.
         </p>
-        <h2>Перечень противопоказаний для выполнения утренней зарядки:</h2>
-        <div className={css.text}>1.Кровотечение;</div>
-        <div className={css.text}>2.Воспалительные процессы;</div>
-        <div className={css.text}>3.Нарушение давления;</div>
-        <div className={css.text}>4.Злокачественные опухоли;</div>
-        <div className={css.text}>5.Заболевания почек;</div>
+        <h2>Также перечень противопоказаний для выполнения утренней зарядки:</h2>
+        <div className={css.text}>1. Кровотечение</div>
+        <div className={css.text}>2. Воспалительные процессы</div>
+        <div className={css.text}>3. Нарушение давления</div>
+        <div className={css.text}>4. Злокачественные опухоли</div>
+        <div className={css.text}>5. Заболевания почек</div>
+        <div className={css.text}>5. Послеоперационный период</div>
       </div>
     </div>
   );

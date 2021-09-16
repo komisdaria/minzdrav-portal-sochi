@@ -5,7 +5,8 @@
 
 .text {
   width: 700px;
-  text-align: center;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 18px;
 }
 
 .main {
@@ -16,15 +17,18 @@
 }
 
 .gimn {
-  width: 800px;
+  height: 900px;
   padding-top: 30px;
 }
 
 .ex {
-  width: 800px;
+  width: 600px;
   padding-top: 30px;
 }
 
 .text_h1 {
-  width: 900px;
+  margin-top: 13px;
+  width: auto;
+  color: #1890ff;
+  font-family: 'Playfair Display', serif;
 }

@@ -24,6 +24,7 @@ type ActionTypes =
   | "ADD_TO_USER_APPOINTMENT"
   | "UPDATE_RAITING"
   | "FIND_CURRENT_DOCTOR"
+  | "FILTER_APPOINT"
   | "CHECK_REG_ERROR";
 
 export interface Action {
@@ -125,6 +126,11 @@ export interface FindCurrentDoctor extends Action {
   payload: DoctorType;
 }
 
+export interface FilterDoctors extends Action {
+  type: "FILTER_APPOINT";
+  payload: AppointmentType[];
+}
+
 export interface CheckErrorMessage extends Action {
   type: "CHECK_REG_ERROR";
   payload: string | null;
@@ -149,4 +155,5 @@ export type Actions =
   | getUserAppointment
   | UpdateRaiting
   | FindCurrentDoctor
+  | FilterDoctors
   | CheckErrorMessage;

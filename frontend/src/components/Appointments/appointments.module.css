@@ -13,6 +13,10 @@
   color: red;
 }
 
+.appoint_item_false{
+  color: green;
+}
+
 .wrap {
   min-height: 700px;
 }

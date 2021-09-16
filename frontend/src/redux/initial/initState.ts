@@ -10,5 +10,6 @@ export const initialState: State = {
   yandexmap: [],
   loginErrorMessage: null,
   currentDoctor: null,
+  FilterDoctors: [],
   RegErrorMessage: null,
 };

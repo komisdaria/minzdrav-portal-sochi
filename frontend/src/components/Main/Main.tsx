@@ -8,9 +8,7 @@ import Account from "../account/account";
 import NotFound from "../NotFound/NotFound";
 import Doctors from "../Doctors/Doctors";
 import { CovidInfo } from "../CovidInfo/CovidInfo";
-import { useMySelector } from "../../hooks/customHook";
 import Appointments from "../Appointments/Appointments";
-
 import css from "./main.module.css";
 import { DocInfo } from "../docInfo/docInfo";
 import { Map } from "../Map/Map";
@@ -20,7 +18,6 @@ import Sport from "../Sport/Sport";
 import Yoga from "../Yoga/Yoga";
 
 export default function Main() {
-  const state = useMySelector((state) => state);
 
   return (
     <div className={css.main}>

@@ -20,6 +20,7 @@
 .info {
   width: 600px;
   font-style: italic;
+  font-size: 15px;
 }
 
 .covid {
@@ -39,6 +40,7 @@
   justify-content: center;
   align-items: center;
   color: red;
+  
 }
 
 .Simptomy {
@@ -51,6 +53,20 @@
   flex-direction: row;
   justify-content: space-evenly;
   font-style: italic;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.signh3 {
+  font-family: 'Playfair Display', serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  color: rgb(255, 72, 0);
   text-decoration: underline;
 }
 
@@ -61,4 +77,10 @@
   font-family: "Times New Roman", Times, serif;
   font-weight: bold;
   font-size: 18px;
+}
+
+.h1 {
+  color: #1890ff;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
 }

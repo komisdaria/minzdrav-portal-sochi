@@ -122,17 +122,9 @@
   justify-content: space-evenly;
 }
 
-.item_foto {
-  /* height: 300px;
-  display: flex;
-  min-width: 300px;
-  margin: 10px; */
-}
-
 .item_foto_left {
   display: flex;
   align-content: center;
-  /* justify-content: center; */
   flex-wrap: wrap;
   max-width: 800px;
 }
@@ -140,7 +132,6 @@
 .item_foto_right {
   max-height: 651px;
   width: 800px;
-  /* margin: 10px; */
 }
 .foto {
   width: 400px;
