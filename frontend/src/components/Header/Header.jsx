@@ -8,7 +8,6 @@ import TelefonHeader from "../TelefonHeader/TelefonHeader";
 import css from "./Header.module.css";
 
 const Header = () => {
-  const { Title } = Typography;
   const isLogin = useMySelector((state) => state.user);
   const dispatch = useDispatch();
 
@@ -38,6 +37,13 @@ const Header = () => {
           {isLogin?.name ? (
             <>
               <div>
+                <NavLink activeClassName={css.selected}
+                 className={css.fontstyles}
+                exact to="/account">
+                    Личный кабинет
+                </NavLink>
+              </div>
+              <div>
                 <NavLink
                   activeClassName={css.selected}
                   className={css.fontstyles}
@@ -49,11 +55,7 @@ const Header = () => {
                 </NavLink>
               </div>
               <div>
-                <NavLink activeClassName={css.selected}
-                 className={css.fontstyles}
-                exact to="/account">
-                    Личный кабинет
-                </NavLink>
+              <TelefonHeader />
               </div>
             </>
           ) : (
