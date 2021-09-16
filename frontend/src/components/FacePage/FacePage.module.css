@@ -110,6 +110,7 @@
   min-height: fit-content;
   padding-top: 40px;
   padding-left: 40px;
+  opacity: 0.6;
 }
 
 .item_foto_container {
@@ -197,4 +198,11 @@
   max-height: 651px;
   width: 900px;
   margin: 10px;
+}
+
+.cards_item:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
 }
