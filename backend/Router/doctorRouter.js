@@ -27,7 +27,7 @@ router.route("/docInfo/:id").patch(async (req, res) => {
       { new: true },
     );
     const oldRaiting = currentModel.raiting;
-    const newCurrentRaiting = Math.floor(oldRaiting.reduce((acc, num) => acc + num, 0) / oldRaiting.length);
+    const newCurrentRaiting = (oldRaiting.reduce((acc, num) => acc + num, 0) / oldRaiting.length).toFixed(1);
     const updateRait = await doctorsModel.findByIdAndUpdate(
       { _id: id },
       { sumRaiting: newCurrentRaiting },

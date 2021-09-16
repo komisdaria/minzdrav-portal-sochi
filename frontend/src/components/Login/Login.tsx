@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { LoginUserAC } from "../../redux/ActionCreators/UserAC/loginUserAC";
 import { useHistory } from "react-router";
 import { useMySelector } from "../../hooks/customHook";
+import css from "./login.module.css";
 
 const Login = () => {
   const { Title } = Typography;
@@ -36,43 +37,45 @@ const Login = () => {
   }, [UserState, history]);
 
   return (
-    <div className="auth">
-      <div className="header">
-        <Title type="success" level={3}>
-          Вход в личный кабинет
-        </Title>
+    <div className={css.wrap}>
+      <div className="auth">
+        <div className="header">
+          <Title type="success" level={3}>
+            Вход в личный кабинет
+          </Title>
+        </div>
+        <Form
+          name="basic"
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 8 }}
+          initialValues={{ remember: true }}
+          autoComplete="off"
+          onSubmitCapture={onSubmit}
+        >
+          <Form.Item
+            label="Почта"
+            name="email"
+            rules={[{ required: true, message: "Введите электронную почту" }]}
+          >
+            <Input onChange={emailHandler} value={email} />
+          </Form.Item>
+
+          <Form.Item
+            label="Пароль"
+            name="password"
+            rules={[{ required: true, message: "Введите пароль" }]}
+          >
+            <Input.Password onChange={passwordHandler} value={password} />
+            {errorMessage && <div>{errorMessage}</div>}
+          </Form.Item>
+
+          <Form.Item wrapperCol={{ offset: 8, span: 8 }}>
+            <Button type="primary" htmlType="submit">
+              Войти
+            </Button>
+          </Form.Item>
+        </Form>
       </div>
-      <Form
-        name="basic"
-        labelCol={{ span: 8 }}
-        wrapperCol={{ span: 8 }}
-        initialValues={{ remember: true }}
-        autoComplete="off"
-        onSubmitCapture={onSubmit}
-      >
-        <Form.Item
-          label="Почта"
-          name="email"
-          rules={[{ required: true, message: "Введите электронную почту" }]}
-        >
-          <Input onChange={emailHandler} value={email} />
-        </Form.Item>
-
-        <Form.Item
-          label="Пароль"
-          name="password"
-          rules={[{ required: true, message: "Введите пароль" }]}
-        >
-          <Input.Password onChange={passwordHandler} value={password} />
-          {errorMessage && <div>{errorMessage}</div>}
-        </Form.Item>
-
-        <Form.Item wrapperCol={{ offset: 8, span: 8 }}>
-          <Button type="primary" htmlType="submit">
-            Войти
-          </Button>
-        </Form.Item>
-      </Form>
     </div>
   );
 };
