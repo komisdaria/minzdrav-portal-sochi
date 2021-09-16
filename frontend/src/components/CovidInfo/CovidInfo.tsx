@@ -23,10 +23,10 @@ export function CovidInfo() {
             <h3 className={css.covid}>Информация для граждан</h3>
           </div>
           <div className={css.date}>
-            <div>Данные на {new Date().toLocaleDateString()}</div>
+            <div>Данные на <strong>{new Date().toLocaleDateString()}</strong> </div>
             <div>
               {covidState ? (
-                <div>Общее количество зараженных : {covidState.confirmed} </div>
+                <div>Общее количество зараженных: <strong>{covidState.confirmed}</strong> </div>
               ) : (
                 <div>Загрузка...</div>
               )}
@@ -34,7 +34,7 @@ export function CovidInfo() {
 
             <div>
               {covidState ? (
-                <div>Общее количество смертей : {covidState.deaths} </div>
+                <div>Общее количество смертей: <strong>{covidState.deaths}</strong> </div>
               ) : (
                 <div>Загрузка...</div>
               )}
@@ -42,7 +42,7 @@ export function CovidInfo() {
             <div>
               {covidState ? (
                 <div>
-                  Количество смертей за последние сутки: {covidState.deathsInc}{" "}
+                  Количество смертей за последние сутки: <strong>{covidState.deathsInc}{" "}</strong> 
                 </div>
               ) : (
                 <div>Загрузка...</div>
@@ -51,8 +51,8 @@ export function CovidInfo() {
             <div>
               {covidState ? (
                 <div>
-                  Количество зараженных за последние сутки :{" "}
-                  {covidState.confirmedInc}{" "}
+                  Количество зараженных за последние сутки:{" "}
+                  <strong>  {covidState.confirmedInc}{" "}</strong>   
                 </div>
               ) : (
                 <div>Загрузка...</div>
@@ -61,10 +61,10 @@ export function CovidInfo() {
           </div>
         </div>
         <div className={css.telSk}>
-          <h3>Телефон для вызова скорой помощи: 103 (круглосуточно)</h3>
+          <h3>Телефон для вызова скорой помощи: <strong>103</strong> (круглосуточно)</h3>
         </div>
         <div className={css.telSk}>
-          <h3>Единая горячая линия: 8-800-2000-112</h3>
+          <h3>Единая горячая линия: <strong>8-800-2000-112</strong> </h3>
         </div>
         <div className={css.info}>
           Общие вопросы по коронавирусной инфекции, в том числе информация о
@@ -76,7 +76,7 @@ export function CovidInfo() {
         <div className={css.telSk}>
           <h3>
             Информационная линия Департамента здравоохранения города Сочи:
-            8-988-285-99-95 (круглосуточно)
+            <strong> 8-988-285-99-95</strong> (круглосуточно)
           </h3>
         </div>
         <div className={css.info}>
@@ -86,7 +86,7 @@ export function CovidInfo() {
         </div>
       </div>
       <div className={css.textSimptomy}>
-        <h1>Основные симптомы короновируса :</h1>
+        <h1 className={css.h1}>Основные симптомы короновируса :</h1>
       </div>
       <div className={css.Simptomy}>
         <img
@@ -104,7 +104,7 @@ export function CovidInfo() {
         <div>Вызовите врача</div>
         <div>Следуйте назначенному лечению</div>
       </div>
-      <div className={css.sign}>
+      <div className={css.signh3}>
         <h3>
           В подавляющем большинстве случаев данные симптомы связаны не с
           коронавирусом, а с обычной ОРВИ.
