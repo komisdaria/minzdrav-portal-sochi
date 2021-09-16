@@ -4,19 +4,10 @@
 }
 
 .border {
-  /* border: 4px outset #fc3;
-  padding: 10px;
-  width: 800px;
-  height: 400px; */
   display: flex;
   justify-content: space-evenly;
 }
 
-.info {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-evenly; */
-}
 
 .wrapper {
   display: flex;
@@ -46,6 +37,29 @@
   justify-content:start;
 }
 
+
+.stag {
+  margin-left: 60px;
+}
+
 .afterheader {
   padding-left: 6rem;
+}
+
+.rate {
+  display: flex;
+  cursor: pointer;
+}
+
+.star {
+  padding: 5px;
+}
+
+.sumrait {
+  padding-left: 5px;
+}
+
+.allstar {
+  display: flex;
+  margin-left: 120px;
 }
