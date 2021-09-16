@@ -52,17 +52,38 @@ export default function FacePage() {
             </div>
           </div>
         </div>
+        <div className={css.h1Foto}>
+          <h1>Мы используем самое передовое медицинское оборудование</h1>
+        </div>
+
         <div className={css.main_top_item}>
           <div className={css.item_foto_container}>
             <div className={css.item_foto_left}>
-              <div className={css.item_foto}>ФОТКA1</div>
-              <div className={css.item_foto}>ФОТКA2</div>
-              <div className={css.item_foto}>ФОТКA3</div>
-              <div className={css.item_foto}>ФОТКA4</div>
+              <div className={css.item_foto}>
+                <img
+                  src={"/img/med4.jpg"}
+                  className={css.fotoOneCol}
+                  alt="med"
+                />
+              </div>
+              <div className={css.item_foto}>
+                <img src={"/img/med7.jpg"} className={css.foto} alt="med" />
+              </div>
+              <div className={css.item_foto}>
+                <img
+                  src={"/img/med9.jpg"}
+                  className={css.fotoOneColTwo}
+                  alt="med"
+                />
+              </div>
+              <div className={css.item_foto}>
+                <img src={"/img/med11.jpg"} className={css.foto} alt="med" />
+              </div>
             </div>
-            <div className={css.item_foto_right}>Фотка большая</div>
+            <div className={css.item_foto_right}>
+              <img src={"/img/med14.jpg"} className={css.bigFoto} alt="med" />
+            </div>
           </div>
-
           {/* /* 123123123  */}
           {/* <div className={css.item_card_container}>
             <div className={css.cards_item}>
