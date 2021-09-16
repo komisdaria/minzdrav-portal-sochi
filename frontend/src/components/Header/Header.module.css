@@ -1,14 +1,18 @@
-.header{
+.header {
   display: flex;
   justify-content: space-around;
 }
 
 .selected {
-  color:darkorange;
+  color: darkorange;
 }
 
 .fontstyles {
   color: rgb(246, 239, 231);
   font-size: 1.8rem;
+}
 
+.telDiv {
+  display: flex;
+  align-items: center;
 }

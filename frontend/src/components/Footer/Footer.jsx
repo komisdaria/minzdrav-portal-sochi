@@ -8,22 +8,7 @@ const Footer = () => {
 
   return (
     <div className={styles.footer}>
-      <div className={styles.wrap}>
-        <div>
-          <NavLink to="/news">
-            <Title style={{ color: "white" }} level={4}>
-              Новости
-            </Title>
-          </NavLink>
-        </div>
-        <div>
-          <NavLink to="/communication">
-            <Title style={{ color: "white" }} level={4}>
-              Справочные телефоны
-            </Title>
-          </NavLink>
-        </div>
-      </div>
+      <div className={styles.wrap}></div>
       <div className={styles.text}>
         © 2021 ГОРЗДРАВ г.Сочи. Все права защищены
       </div>
