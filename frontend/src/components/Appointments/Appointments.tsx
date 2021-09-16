@@ -34,7 +34,7 @@ const Appointments = () => {
   //   (pageNumber - 1) * pageSize + pageSize
   // );
   useEffect(() => {
-    
+
   }, [appointmentsState])
 
   console.log("STATE=", appointmentsState);
@@ -69,7 +69,8 @@ const Appointments = () => {
   };
 
   return (
-    <>
+
+    <div className={styles.wrap}>
       {isLogin ?
         <div>
           <h1>Для вашего удобства выберите нужного специалиста</h1>
@@ -102,7 +103,7 @@ const Appointments = () => {
 
           <div className={styles.cardwrapper}>
             {currentPageData.length
-              ?  currentPageData.map(
+              ? currentPageData.map(
                 (appoint: {
                   id: string;
                   date: string;
@@ -143,10 +144,21 @@ const Appointments = () => {
             />
           </div>
         </div>
-        :
-        <div>Чтобы записаться нужно войти в аккаунт!</div>
-      }
-    </>
+        : (
+          <div>
+            <h1 className={styles.wrap_h1}>
+              Чтобы записаться нужно войти в аккаунт!
+            </h1>
+            <div className={styles.err403_main}>
+              <img
+                src={"/img/err403.png"}
+                className={styles.err403}
+                alt="err403"
+              />
+            </div>
+          </div>
+        )}
+    </div>
   );
 };
 

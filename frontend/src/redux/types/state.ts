@@ -16,4 +16,5 @@ export interface State {
   loginErrorMessage: string | null;
   currentDoctor : DoctorType | null;
   FilterDoctors: DoctorType[];
+  RegErrorMessage: string | null;
 }

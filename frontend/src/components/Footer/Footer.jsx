@@ -17,13 +17,6 @@ const Footer = () => {
           </NavLink>
         </div>
         <div>
-          <NavLink to="/doctors">
-            <Title style={{ color: "white" }} level={4}>
-              Запись к врачу
-            </Title>
-          </NavLink>
-        </div>
-        <div>
           <NavLink to="/communication">
             <Title style={{ color: "white" }} level={4}>
               Справочные телефоны

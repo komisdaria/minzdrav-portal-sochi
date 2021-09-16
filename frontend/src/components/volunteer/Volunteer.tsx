@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import css from "./volunteer.module.css";
 import { Modal, Button } from "antd";
+import { Link } from 'react-router-dom';
 
 export default function Volunteer() {
   const [social, setSocial] = useState(false);
@@ -51,8 +52,8 @@ export default function Volunteer() {
     <div>
       <div className={css.main}>
         <div className={css.main}>
-          <img src={"/img/vol.jpg"} alt="vol.jpg" />
-          <h1 className={css.text_h1}>1.Кто может стать волонтером?</h1>
+          <img className={css.tk} src={"/img/vol.jpg"} alt="vol.jpg" />
+          <h1 className={css.text_h1}>Кто может стать волонтером?</h1>
           <p className={css.text}>
             Волонтером может стать любой желающий. Для несовершеннолетних
             необходимо разрешение от родителей, а для ребят в возрасте до 14 лет
@@ -60,10 +61,12 @@ export default function Volunteer() {
           </p>
         </div>
         <div>
-          <h1 className={css.text_h1}>2.Где узнать о волонтерских проектах?</h1>
+          <h1 className={css.text_h1}>Где узнать о волонтерских проектах?</h1>
           <p className={css.text}>
             Для того чтобы вступить в ряды добровольческого движения города Сочи
-            вам необходимо: Позвонить по телефону 8-988-188-11-99 (Центр
+            вам необходимо: 
+            <br />
+            Позвонить по телефону 8-988-188-11-99 (Центр
             развития волонетерства города Сочи) и записаться на одну из встреч,
             которые проводятся для вновь вступивших волонтеров. Обычно они
             проходят по вторникам и четвергам. В рамках этой встречи вы
@@ -76,15 +79,10 @@ export default function Volunteer() {
             пометкой «Хочу быть волонтером» ваши Ф.И.О и контактные данные и
             наши специалисты с вами свяжутся.
           </p>{" "}
-          <p className={css.text}>
-            Либо Вы можете заполнить онлайн googlе-форму
-            https://forms.gle/qGzeyesktJe9RRgM8 , после чего наш специалист
-            свяжется с Вами.
-          </p>
         </div>
 
         <div className={css.direction_main}>
-          <h1 className={css.text_h1}>3.Направления деятельности</h1>
+          <h1 className={css.text_h1}>Направления деятельности</h1>
           <div className={css.direction}>
             <div>
               {" "}
@@ -228,7 +226,7 @@ export default function Volunteer() {
 
         <div>
           <h1 className={css.text_h1}>Как получить личную книжку волонтёра?</h1>
-          <img src={"/img/main_book.jpg"} alt="main_book.jpg" />
+          <img className={css.tk} src={"/img/main_book.jpg"} alt="main_book.jpg" />
           <p className={css.text}>
             Центром развития волонтерства города Сочи успешно реализуется проект
             «Волонтерская книжка». Волонтерская книжка – главный документ
@@ -237,13 +235,12 @@ export default function Volunteer() {
             добровольческих проектах, количестве часов работы, поощрениях, а
             также дополнительной подготовке.
           </p>
-          <h3>Для получения волонтерской книжки необходимо:</h3>
+          <h3><strong>Для получения волонтерской книжки необходимо:</strong></h3>
           <p className={css.text}>
-            - Зарегистрироваться на сайте https://dobro.ru/ (получить
+            - Зарегистрироваться на сайте <Link to='https://dobro.ru/'> сайте </Link>  (получить
             персональный ID номер) и присоединиться к нашей организации
             (управление молодежной политики администрации города Сочи) - кнопка
-            «готов помогать». Ссылка на организацию -
-            https://dobro.ru/organizations/193575/info
+            «готов помогать». Ссылка на <Link to='https://dobro.ru/organizations/193575/info'> организацию </Link>
           </p>
           <p className={css.text}>
             - Заполнить заявление о выдаче книжки и согласие на обработку
@@ -256,19 +253,14 @@ export default function Volunteer() {
           <h1 className={css.text_h1}>
             Контакты центра развития волонтерства города Сочи:
           </h1>
-          <p className={css.text}>Адрес: город Сочи ул. Первомайская 26/1</p>
-          <p className={css.text}>Телефон: 8-988-188-11-99</p>
-          <p className={css.text}>e-mail: ump-sochi@bk.ru</p>
+          <p className={css.text}><strong>Адрес:</strong> город Сочи ул. Первомайская 26/1</p>
+          <p className={css.text}><strong>Телефон:</strong> 8-988-188-11-99</p>
+          <p className={css.text}><strong>e-mail:</strong> ump-sochi@bk.ru</p>
           <p className={css.text}>
-            Официальная группа вконтакте: https://vk.com/sochi_volunteer
+            Официальная <Link to='https://vk.com/sochi_volunteer'>группа вконтакте</Link> 
           </p>
           <p className={css.text}>
-            Официальная страница в Инстаграмме:
-            https://www.instagram.com/volunteer__sochi/
-          </p>
-          <p className={css.text}>
-            Страница организации на dobro.ru -
-            https://dobro.ru/organizations/193575/info
+            Официальная страница в <Link to='https://www.instagram.com/volunteer__sochi/'>Инстаграмме</Link>
           </p>
         </div>
         <div>

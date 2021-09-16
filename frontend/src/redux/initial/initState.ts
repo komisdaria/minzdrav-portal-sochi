@@ -11,4 +11,5 @@ export const initialState: State = {
   loginErrorMessage: null,
   currentDoctor: null,
   FilterDoctors: [],
+  RegErrorMessage: null,
 };

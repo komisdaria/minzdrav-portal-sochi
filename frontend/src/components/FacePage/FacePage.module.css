@@ -98,8 +98,6 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
-  /* align-items: center;
-  margin-left: 100px; */
   width: 700px;
 }
 
@@ -110,19 +108,18 @@
   min-height: fit-content;
   padding-top: 40px;
   padding-left: 40px;
+  opacity: 1;
 }
 
 .item_foto_container {
   display: flex;
-  /* align-items: flex-start; */
-  justify-content: left;
-  /* align-items: center; */
-  /* align-self: center; */
-  background-color: khaki;
+  justify-content: center;
   min-width: 1500px;
   max-width: 1500px;
-  height: 700px;
-  /* margin-right: 100px; */
+  height: 600px;
+  background-color: rgb(102, 173, 227);
+  border-radius: 20px;
+  /* border: black solid 1px; */
 }
 
 .main_middle {
@@ -137,21 +134,25 @@
 .Corona_g {
   width: 300px;
   height: 150px;
+  border-radius: 25px;
 }
 
 .donor {
   width: 300px;
   height: 150px;
+  border-radius: 25px;
 }
 
 .volunteer {
   width: 300px;
   height: 150px;
+  border-radius: 25px;
 }
 
 .work_out {
   width: 300px;
   height: 150px;
+  border-radius: 25px;
 }
 
 .doyoga {
@@ -172,29 +173,59 @@
 
 .main_bottom_item {
   display: flex;
-  align-content: flex-end;
+  align-content: center;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
 .item_foto {
-  border: 1px solid black;
-  height: 300px;
+  /* height: 300px;
   display: flex;
   min-width: 300px;
-  margin: 10px;
+  margin: 10px; */
 }
 
 .item_foto_left {
   display: flex;
-  justify-content: center;
+  align-content: center;
+  /* justify-content: center; */
   flex-wrap: wrap;
-  max-width: 700px;
+  max-width: 800px;
 }
 
 .item_foto_right {
-  border: 1px solid black;
   max-height: 651px;
-  width: 900px;
-  margin: 10px;
+  width: 800px;
+  /* margin: 10px; */
+}
+.foto {
+  width: 400px;
+  height: 300px;
+}
+.bigFoto {
+  width: 600px;
+  height: 600px;
+}
+.h1Foto {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-size: large;
+}
+.fotoOneCol {
+  width: 400px;
+  height: 300px;
+  border-top-left-radius: 20px;
+}
+.fotoOneColTwo {
+  width: 400px;
+  height: 300px;
+  border-bottom-left-radius: 20px;
+}
+
+.cards_item:hover {
+  opacity: 0.8;
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
 }

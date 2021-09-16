@@ -19,6 +19,8 @@ export const getUserAC = () => async (dispatch: AppDispatch) => {
         oms: result.user.oms,
         id: result.user._id,
         appoint: result.appoint,
+        lastName: result.user.lastName,
+        dateBorn: result.user.dateBorn,
       },
     });
   }
