@@ -23,7 +23,8 @@ type ActionTypes =
   | "SET_LOGIN_ERROR"
   | "ADD_TO_USER_APPOINTMENT"
   | "UPDATE_RAITING"
-  | "FIND_CURRENT_DOCTOR";
+  | "FIND_CURRENT_DOCTOR"
+  | "CHECK_REG_ERROR";
 
 export interface Action {
   type: ActionTypes;
@@ -49,12 +50,12 @@ export interface UpdateUserAction extends Action {
 }
 
 export interface ShowAppointInAccount extends Action {
-  type: "SHOW_APPOINT_IN_ACCOUNT"
+  type: "SHOW_APPOINT_IN_ACCOUNT";
   payload: AppointmentType[];
 }
 
 export interface updateStatusAppointment extends Action {
-  type: "UPDATE_STATUS_APPOINTMENT"
+  type: "UPDATE_STATUS_APPOINTMENT";
   payload: AppointmentType;
 }
 
@@ -124,6 +125,10 @@ export interface FindCurrentDoctor extends Action {
   payload: DoctorType;
 }
 
+export interface CheckErrorMessage extends Action {
+  type: "CHECK_REG_ERROR";
+  payload: string | null;
+}
 
 export type Actions =
   | CreateUserAction
@@ -143,4 +148,5 @@ export type Actions =
   | SetErrorMessage
   | getUserAppointment
   | UpdateRaiting
-  | FindCurrentDoctor;
+  | FindCurrentDoctor
+  | CheckErrorMessage;
