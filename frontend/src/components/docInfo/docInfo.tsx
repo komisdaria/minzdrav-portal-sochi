@@ -3,12 +3,7 @@ import { useMySelector } from "../../hooks/customHook";
 import { useParams } from "react-router-dom";
 import css from "./docInfo.module.css";
 import Spinner from "../Spinner/Spinner";
-<<<<<<< HEAD
 import { Typography, Rate } from 'antd';
-=======
-import { Button } from "antd";
-import { Typography, Rate } from "antd";
->>>>>>> 93b43512c82ec4f02e8f07523130ea72a587f982
 import { RaitingUpdatedAC } from "../../redux/ActionCreators/RaitingUpdateAC";
 import { useDispatch } from "react-redux";
 import { currentDoctorAC } from "../../redux/ActionCreators/DoctorsAC/CurrentDoctorAC";
@@ -35,7 +30,7 @@ export function DocInfo() {
     dispatch(RaitingUpdatedAC(doctorId, rait));
   };
 
-  useEffect(() => {}, [dispatch]);
+  useEffect(() => { }, [dispatch]);
 
   return (
     <div className={css.wrap}>

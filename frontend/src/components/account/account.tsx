@@ -10,14 +10,7 @@ export default function Account() {
   const userState = useMySelector((state) => state.user);
   const appointAccount = useMySelector((state) => state.userAppoints);
 
-<<<<<<< HEAD
-  const userState = useMySelector(state => state.user)
-  const appointAccount = useMySelector(state => state.userAppoints)
-  
-  const dispatch = useDispatch()
-=======
   const dispatch = useDispatch();
->>>>>>> 93b43512c82ec4f02e8f07523130ea72a587f982
 
   useEffect(() => {
     dispatch(getAppoinmentAccountAC());
@@ -46,26 +39,26 @@ export default function Account() {
             <div className={css.right_item}>
               {userState
                 ? appointAccount.map(
-                    (appoint: {
-                      id: string;
-                      date: string;
-                      time: string;
-                      doctorSpecialization: string;
-                    }) => (
-                      <div key={appoint.id} className={css.appoint_item}>
-                        <Card
-                          title={`Запись к врачу: ${appoint.doctorSpecialization}`}
-                          bordered={true}
-                          style={{ width: 300 }}
-                        >
-                          <p>Дата: {appoint.date}</p>
-                          <p>Время: {appoint.time}</p>
-                          {/* <p>Статус приема: {appoint.status ? "Прием завершен" : "прием предстоит"}</p>
+                  (appoint: {
+                    id: string;
+                    date: string;
+                    time: string;
+                    doctorSpecialization: string;
+                  }) => (
+                    <div key={appoint.id} className={css.appoint_item}>
+                      <Card
+                        title={`Запись к врачу: ${appoint.doctorSpecialization}`}
+                        bordered={true}
+                        style={{ width: 300 }}
+                      >
+                        <p>Дата: {appoint.date}</p>
+                        <p>Время: {appoint.time}</p>
+                        {/* <p>Статус приема: {appoint.status ? "Прием завершен" : "прием предстоит"}</p>
                 <p className={styles.comments}>{appoint.comments.length >=1 ? `Назначения врача: ${appoint.comments}` : null}</p> */}
-                        </Card>
-                      </div>
-                    )
+                      </Card>
+                    </div>
                   )
+                )
                 : "Пользователь не найден"}
             </div>
             <div className={css.right_item}>Архив приемов и вся инфа о них</div>
