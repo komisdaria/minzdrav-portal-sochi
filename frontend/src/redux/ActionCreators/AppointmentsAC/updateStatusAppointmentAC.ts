@@ -2,8 +2,7 @@ import { AppointmentType } from "../../../userTypes/appointmentType";
 import { AppDispatch } from "../../store/store";
 
 export const updateStatusAppoinmentAC = (id : AppointmentType['id']) => async (dispatch: AppDispatch) => {
-  console.log('HELLO!');
-  
+
   const response = await fetch("http://localhost:8080/updateStatus", {
     method: "PUT",
     credentials: "include",

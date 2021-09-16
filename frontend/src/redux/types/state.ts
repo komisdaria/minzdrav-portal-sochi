@@ -15,4 +15,5 @@ export interface State {
   userAppoints: AppointmentType[];
   loginErrorMessage: string | null;
   currentDoctor : DoctorType | null;
+  FilterDoctors: DoctorType[];
 }

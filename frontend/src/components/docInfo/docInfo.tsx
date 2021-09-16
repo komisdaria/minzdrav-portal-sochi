@@ -3,7 +3,6 @@ import { useMySelector } from "../../hooks/customHook";
 import { useParams } from "react-router-dom";
 import css from "./docInfo.module.css";
 import Spinner from "../Spinner/Spinner";
-import { Button } from 'antd';
 import { Typography, Rate } from 'antd';
 import { RaitingUpdatedAC } from "../../redux/ActionCreators/RaitingUpdateAC";
 import { useDispatch } from "react-redux";

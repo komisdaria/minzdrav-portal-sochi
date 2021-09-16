@@ -1,5 +1,4 @@
 import { AppDispatch } from "../../store/store";
-import { UserType } from "../../../userTypes/userType";
 
 export const getUserAC = () => async (dispatch: AppDispatch) => {
   const response = await fetch("http://localhost:8080/checkUser", {

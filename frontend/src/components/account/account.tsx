@@ -10,7 +10,6 @@ export default function Account() {
 
   const userState = useMySelector(state => state.user)
   const appointAccount = useMySelector(state => state.userAppoints)
-  console.log(appointAccount);
   
   const dispatch = useDispatch()
 

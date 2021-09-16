@@ -1,6 +1,5 @@
 import { State } from '../types/state';
 import { Actions } from '../types/Action';
-import { AppointmentType } from '../../userTypes/appointmentType';
 
 export const appointmentsReducer = (
   state: State['appointments'] = [],
@@ -11,6 +10,10 @@ export const appointmentsReducer = (
       return action.payload.appointments;
     case "UPDATE_STATUS_APPOINTMENT":
       return state.map((appoint) => appoint.id === action.payload.id ? { ...appoint, status: action.payload.status } : appoint)
+    case "FILTER_APPOINT":
+      console.log('FILTER', action.payload);
+      
+      return action.payload
     default:
       return state;
   }

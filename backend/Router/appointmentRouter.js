@@ -97,6 +97,7 @@ router.route("/:id/edit").put(async (req, res) => {
 router.route("/updateStatus").put(async (req, res) => {
   try {
     const { id } = req.body;
+    console.log('ID',id);
     const appointment = await Appointment.findByIdAndUpdate(
       { _id: id },
       { status: true },
@@ -104,6 +105,18 @@ router.route("/updateStatus").put(async (req, res) => {
     );
     console.log("appointment back edit", appointment);
     res.json({ appointment });
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
+
+router.route("/appoint/filter").post(async (req, res) => {
+  try {
+    const { specialization } = req.body;
+    console.log(specialization);
+    const currentsModel = await Appointment.find({doctorSpecialization: specialization})
+    res.json({ currentsModel });
   } catch (error) {
     console.log(error);
     res.sendStatus(500);

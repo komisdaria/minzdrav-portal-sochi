@@ -12,3 +12,7 @@
 .appoint_item{
   color: red;
 }
+
+.appoint_item_false{
+  color: green;
+}
