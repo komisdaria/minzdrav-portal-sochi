@@ -1,20 +1,17 @@
 .footer {
   background-color: #1890ff;
-  position: absolute;
   height: 80px;
-  /* top: 110%; */
   width: 100%;
+  position: absolute;
+  /* bottom: 0; */
 }
 
-li {
-  list-style-type: none;
-  font-size: larger;
-  color: aliceblue;
-  cursor: pointer;
-}
-
-ul {
+.wrap {
   display: flex;
-  justify-content: space-around;
-  padding-top: 25px;
+  justify-content: space-evenly;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
 }
