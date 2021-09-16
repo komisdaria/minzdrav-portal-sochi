@@ -8,7 +8,6 @@
   justify-content: space-evenly;
 }
 
-
 .wrapper {
   display: flex;
   align-items: center;
@@ -16,7 +15,6 @@
   margin-top: 170px;
   margin-left: 170px;
   margin-right: 170px;
-
 }
 
 .spin {
@@ -34,9 +32,8 @@
 .content {
   margin-left: 15px;
   display: flex;
-  justify-content:start;
+  justify-content: start;
 }
-
 
 .stag {
   margin-left: 60px;
@@ -62,4 +59,23 @@
 .allstar {
   display: flex;
   margin-left: 120px;
+}
+
+.wrap {
+  min-height: 700px;
+}
+
+.wrap_h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.err403_main {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.err403 {
+  width: 800px;
 }
