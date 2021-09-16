@@ -9,6 +9,25 @@
   text-overflow: clip;
 }
 
-.appoint_item{
+.appoint_item {
   color: red;
+}
+
+.wrap {
+  min-height: 700px;
+}
+
+.wrap_h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.err403_main {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.err403 {
+  width: 800px;
 }

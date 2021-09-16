@@ -4,13 +4,15 @@ const userModel = require("../db/models/userModel");
 const appointsmentModel = require("../db/models/appointmentModel");
 router.route("/register").post(async (req, res) => {
   try {
-    const { name, email, password, repeatPassword, oms } = req.body;
-    console.log("oms ===>", oms.length);
-    console.log("name ===>", name.length);
+    const { name, email, password, repeatPassword, oms, lastName, dateBorn } =
+      req.body;
 
     const userCreated = await userModel.findOne({ email });
     if (name.length === 0) {
       return res.status(500).json({ message: "Заполните имя" });
+    }
+    if (lastName.length === 0) {
+      return res.status(500).json({ message: "Заполните фамилию" });
     }
     if (email.length === 0) {
       return res.status(500).json({ message: "Заполните почту" });
@@ -34,10 +36,11 @@ router.route("/register").post(async (req, res) => {
       password,
       repeatPassword,
       oms,
+      lastName,
+      dateBorn,
     });
 
     const userId = user._id.toString();
-    console.log(user);
     req.session.user = user;
     res.status(200).json({ user });
   } catch (error) {
@@ -110,8 +113,8 @@ router.post("/update", async (req, res) => {
 router.post("/account", async (req, res) => {
   try {
     const { _id } = req.session.user;
-    const populateUser = await userModel.findById(_id).populate('appoint');
-    console.log(populateUser.appoint)
+    const populateUser = await userModel.findById(_id).populate("appoint");
+    console.log(populateUser.appoint);
     return res.json(populateUser.appoint);
   } catch (error) {
     console.error(error);

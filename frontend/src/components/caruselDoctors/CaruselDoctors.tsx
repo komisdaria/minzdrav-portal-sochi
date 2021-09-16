@@ -35,12 +35,16 @@ export function CaruselDoctors() {
                     />
 
                     <div className={css.content}>
-                      <div><span className={css.specialization}>{doctor.specialization} </span>
-                      <br/><strong> {doctor.name}</strong></div>
+                      <div>
+                        <span className={css.specialization}>
+                          {doctor.specialization}{" "}
+                        </span>
+                        <br />
+                        <strong> {doctor.name}</strong>
+                      </div>
                       <br />
-                      <div className={css.function}> {doctor.function}
-                       </div>
-                       <div className={css.aboute}>Подробнее</div>
+                      <div className={css.function}> {doctor.function}</div>
+                      <div className={css.aboute}>Подробнее</div>
                     </div>
                   </div>
                 </div>
