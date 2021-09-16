@@ -22,7 +22,8 @@ type ActionTypes =
   | "UPDATE_STATUS_APPOINTMENT"
   | "SET_LOGIN_ERROR"
   | "ADD_TO_USER_APPOINTMENT"
-  | "UPDATE_RAITING";
+  | "UPDATE_RAITING"
+  | "FIND_CURRENT_DOCTOR";
 
 export interface Action {
   type: ActionTypes;
@@ -118,6 +119,12 @@ export interface UpdateRaiting extends Action {
   payload: DoctorType;
 }
 
+export interface FindCurrentDoctor extends Action {
+  type: "FIND_CURRENT_DOCTOR";
+  payload: DoctorType;
+}
+
+
 export type Actions =
   | CreateUserAction
   | LoginUserAction
@@ -135,4 +142,5 @@ export type Actions =
   | updateStatusAppointment
   | SetErrorMessage
   | getUserAppointment
-  | UpdateRaiting;
+  | UpdateRaiting
+  | FindCurrentDoctor;

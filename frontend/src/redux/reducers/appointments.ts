@@ -10,8 +10,6 @@ export const appointmentsReducer = (
     case 'GET_APPOINTMENTS':
       return action.payload.appointments;
     case "UPDATE_STATUS_APPOINTMENT":
-      console.log('STATExxxx>',state);
-      console.log('action.payYxxxx>',action.payload);
       return state.map((appoint) => appoint.id === action.payload.id ? { ...appoint, status: action.payload.status } : appoint)
     default:
       return state;

@@ -12,12 +12,6 @@ code {
     monospace;
 }
 
-li {
-  list-style-type: none;
-  background-color: black;
-  min-height: 5px;
-}
-
 ul {
   display: flex;
   justify-content: space-around;
@@ -37,7 +31,20 @@ header {
 .notfound {
   height: 17rem;
 }
+
 .header {
   display: flex;
   justify-content: center;
 }
+
+.slick-dots li{
+  background-color: green;
+} 
+
+.slick-dots li.slick-active {
+  background-color: rgb(167, 29, 29);
+}
+
+li button{
+  background-color: rgb(6, 8, 99);
+} 
