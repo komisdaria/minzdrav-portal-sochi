@@ -6,7 +6,6 @@ import { getAppointmentsAC } from "../../redux/ActionCreators/AppointmentsAC/App
 const OldAppointments = () => {
   const appointmentsState = useMySelector((state) => state.appointments);
   const dispatch = useDispatch();
-  console.log('appointmentsState', appointmentsState);
 
   useEffect(() => {
     dispatch(getAppointmentsAC());

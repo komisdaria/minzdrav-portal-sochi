@@ -1,18 +1,11 @@
 import { Carousel } from "antd";
-import React, { useEffect } from "react";
+import React from "react";
 import { useMySelector } from "../../hooks/customHook";
-import { useDispatch } from "react-redux";
-
 import css from "./caruselDocrot.module.css";
 import { NavLink } from "react-router-dom";
 
 export function CaruselDoctors() {
   const doctorsState = useMySelector((state) => state.doctors);
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(getDoctorAC());
-  // }, [dispatch]);
 
   return (
     <div>
