@@ -12,8 +12,6 @@ code {
     monospace;
 }
 
-
-
 li {
   list-style-type: none;
   background-color: black;
@@ -23,7 +21,6 @@ li {
 ul {
   display: flex;
   justify-content: space-around;
-
 }
 
 header {
@@ -32,10 +29,15 @@ header {
 }
 
 .auth {
+  display: flex;
+  flex-direction: column;
   padding-top: 3rem;
 }
 
 .notfound {
   height: 17rem;
 }
-
+.header {
+  display: flex;
+  justify-content: center;
+}

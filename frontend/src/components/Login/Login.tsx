@@ -39,9 +39,11 @@ const Login = () => {
   return (
     <div className={css.wrap}>
       <div className="auth">
-        <Title type="success" level={3}>
-          Вход в личный кабинет
-        </Title>
+        <div className="header">
+          <Title type="success" level={3}>
+            Вход в личный кабинет
+          </Title>
+        </div>
         <Form
           name="basic"
           labelCol={{ span: 8 }}
