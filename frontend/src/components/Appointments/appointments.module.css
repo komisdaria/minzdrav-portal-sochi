@@ -35,3 +35,9 @@
 .err403 {
   width: 800px;
 }
+
+.form {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
