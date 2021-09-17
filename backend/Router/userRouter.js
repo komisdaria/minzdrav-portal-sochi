@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const userModel = require("../db/models/userModel");
 const appointsmentModel = require("../db/models/appointmentModel");
+
 router.route("/register").post(async (req, res) => {
   try {
     const { name, email, password, repeatPassword, oms, lastName, dateBorn } =

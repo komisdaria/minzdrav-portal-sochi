@@ -29,8 +29,11 @@ export const CreateUserAC =
         dateBorn,
       }),
     });
+
     const result = await response.json();
-    if (result.ok) {
+    console.log("result.ok------->", result);
+
+    if (response.ok) {
       dispatch({
         type: "CREATE_USER",
         payload: {
@@ -44,7 +47,7 @@ export const CreateUserAC =
         },
       });
     } else {
-      console.log(result.message);
+      console.log("_____-------->", result.message);
       dispatch({
         type: "CHECK_REG_ERROR",
         payload: result.message,
