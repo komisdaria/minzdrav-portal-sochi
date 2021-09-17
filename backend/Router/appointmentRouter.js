@@ -29,7 +29,6 @@ router
         comments,
         patientsOms,
       });
-      console.log("appointmentMy post router /", appointmentMy);
       res.json({ appointmentMy });
     } catch (error) {
       console.log("smthg wrong with router / post", error);
@@ -40,9 +39,7 @@ router
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    // console.log(id);
     await Appointment.findOneAndDelete(id);
-    // console.log('deletedAppointment', deletedAppointment);
     res.json({ removed: true });
   } catch (error) {
     console.log("smthg wrong with del router ", error);
@@ -61,7 +58,7 @@ router.put("/status/:id", async (req, res) => {
       { status },
       { new: true }
     );
-    console.log("appointment from back", appointment);
+  
     res.json({ appointment });
   } catch (error) {
     console.log(error);
@@ -86,7 +83,7 @@ router.route("/:id/edit").put(async (req, res) => {
       { comments },
       { new: true }
     );
-    console.log("appointment back edit", appointment);
+  
     res.json({ appointment });
   } catch (error) {
     console.log(error);
@@ -103,7 +100,6 @@ router.route("/updateStatus").put(async (req, res) => {
       { status: true },
       { new: true }
     );
-    console.log("appointment back edit", appointment);
     res.json({ appointment });
   } catch (error) {
     console.log(error);
@@ -114,7 +110,6 @@ router.route("/updateStatus").put(async (req, res) => {
 router.route("/appoint/filter").post(async (req, res) => {
   try {
     const { specialization } = req.body;
-    console.log(specialization);
     const currentsModel = await Appointment.find({doctorSpecialization: specialization})
     res.json({ currentsModel });
   } catch (error) {
@@ -123,4 +118,20 @@ router.route("/appoint/filter").post(async (req, res) => {
   }
 });
 
+
+router.route("/returnAppoint").put(async (req, res) => {
+  try {
+    const { id } = req.body; 
+    const appointment = await Appointment.findByIdAndUpdate(
+      { _id: id },
+      { status: false },
+      { new: true }
+    );
+    console.log('--->',appointment)
+    res.json({ appointment });
+  } catch (error) {
+    console.log(error);
+    res.sendStatus(500);
+  }
+});
 module.exports = router;

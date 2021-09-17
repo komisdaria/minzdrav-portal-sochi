@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { Button } from 'antd';
 import { useDispatch } from "react-redux";
 import { useMySelector } from "../../hooks/customHook";
 import { getAppointmentsAC } from "../../redux/ActionCreators/AppointmentsAC/AppointmentsAC";
-import { Card, Pagination } from "antd";
+import { Button, Card, Pagination } from "antd";
 import styles from "./appointments.module.css";
 import { Select } from "antd";
 import { AppointmentType } from "../../userTypes/appointmentType";
@@ -62,9 +61,7 @@ const Appointments = () => {
   }, [dispatch]);
 
   const reservedAppoint = (id: AppointmentType["id"]) => {
-    console.log('12312312312');
     dispatch(addToUserAppointmentAC(id));
-    console.log('333333333');
     dispatch(updateStatusAppoinmentAC(id));
   };
 

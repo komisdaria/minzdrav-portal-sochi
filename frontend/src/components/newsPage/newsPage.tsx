@@ -22,14 +22,12 @@ export const OurNews = () => {
       { 
         newsState.length ? newsState.map((el) => (
           <div key={el.title} className='news_item' style={{margin: "0 0 20px 0"}}>
-            <a href={`${el.url}`} style={{color:'black' }}>
+            <a href={`${el.url}`} target='_blank' rel="noreferrer" style={{color:'black' }}>
               <div className='news_links'>
               {el.title}
               </div>
               </a>
             <hr></hr>
-            {/* .slice(0, 50)}... */}
-            {/* <div>{el.description.slice(0, 50)}</div> */}
           </div>
         )) : <Spinner />
       }

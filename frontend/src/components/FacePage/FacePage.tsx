@@ -55,7 +55,7 @@ export default function FacePage() {
           <h1>Мы используем самое передовое медицинское оборудование</h1>
         </div>
 
-        <div className={css.main_top_item}>
+        <div className={css.main_top_item_bot}>
           <div className={css.item_foto_container}>
             <div className={css.item_foto_left}>
               <div className={css.item_foto}>

@@ -11,9 +11,10 @@ export const appointmentsReducer = (
     case "UPDATE_STATUS_APPOINTMENT":
       return state.map((appoint) => appoint.id === action.payload.id ? { ...appoint, status: action.payload.status } : appoint)
     case "FILTER_APPOINT":
-      console.log('FILTER', action.payload);
-      
       return action.payload
+    case "RETURN_APPOINT":
+      return state.map((appoint) => appoint.id === action.payload.id ? { ...appoint, status: action.payload.status } : appoint)
+
     default:
       return state;
   }

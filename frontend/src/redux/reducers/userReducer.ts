@@ -21,6 +21,7 @@ export const userReducer = (
         return null
       }
       return { ...state, appoint: [...(state.appoint ?? []), action.payload] }
+      
     default:
       return state;
   }

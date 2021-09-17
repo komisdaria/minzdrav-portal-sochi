@@ -125,7 +125,7 @@ const Registration = () => {
             rules={[
               {
                 required: true,
-                message: "Введите номер полиса ОМС",
+                message: "Длинна полиса ОМС должна быть 16 символов",
                 min: 16,
                 max: 16,
               },

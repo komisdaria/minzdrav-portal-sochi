@@ -8,12 +8,10 @@
 .contentStyle {
   height: 400px;
   color: rgb(0, 0, 0);
-  /* line-height: 160px; */
-  /* text-align: center; */
-  /* background: #afd1f0; */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  
 }
 
 .link {
