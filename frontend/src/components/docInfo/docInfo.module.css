@@ -41,6 +41,8 @@
 
 .afterheader {
   padding-left: 6rem;
+  min-width: 120px;
+
 }
 
 .rate {
@@ -58,7 +60,7 @@
 
 .allstar {
   display: flex;
-  margin-left: 120px;
+  padding-left: 95px;
 }
 
 .wrap {
@@ -78,4 +80,8 @@
 
 .err403 {
   width: 800px;
+}
+
+.fortitle {
+  min-width: 120px;
 }

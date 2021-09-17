@@ -14,7 +14,6 @@ export const OurNews = () => {
     dispatch(getNewsAc())
   }, [dispatch]);
 
-  // console.log('news',newsState);
   
   return (
   <> 
@@ -22,7 +21,7 @@ export const OurNews = () => {
     <div className={css.newsblock}>
       { 
         newsState.length ? newsState.map((el) => (
-          <div className='news_item' style={{margin: "0 0 20px 0"}}>
+          <div key={el.title} className='news_item' style={{margin: "0 0 20px 0"}}>
             <a href={`${el.url}`} style={{color:'black' }}>
               <div className='news_links'>
               {el.title}
