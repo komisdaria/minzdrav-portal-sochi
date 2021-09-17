@@ -17,9 +17,9 @@ const Header = () => {
   return (
     <div>
       <header className={css.header}>
-        <div activeClassName={css.selected}>
+        <div>
           <NavLink
-            activeClassName={css.selected}
+           
             className={css.fontstyles}
             exact
             to="/"
@@ -29,7 +29,7 @@ const Header = () => {
         </div>
         <div>
           <NavLink
-            activeClassName={css.selected}
+           
             className={css.fontstyles}
             exact
             to="/appointments"
@@ -42,7 +42,17 @@ const Header = () => {
           <>
             <div>
               <NavLink
-                activeClassName={css.selected}
+               
+                className={css.fontstyles}
+                exact
+                to="/account"
+              >
+                Личный кабинет
+              </NavLink>
+            </div>
+            <div>
+              <NavLink
+               
                 className={css.fontstyles}
                 exact
                 to="/"
@@ -51,23 +61,13 @@ const Header = () => {
                 Выход
               </NavLink>
             </div>
-            <div>
-              <NavLink
-                activeClassName={css.selected}
-                className={css.fontstyles}
-                exact
-                to="/account"
-              >
-                Личный кабинет
-              </NavLink>
-            </div>
           </>
         ) : (
           <>
             <div>
               <NavLink
                 className={css.fontstyles}
-                activeClassName={css.selected}
+               
                 exact
                 to="/login"
               >
@@ -76,7 +76,7 @@ const Header = () => {
             </div>
             <div>
               <NavLink
-                activeClassName={css.selected}
+               
                 className={css.fontstyles}
                 exact
                 to="/registration"

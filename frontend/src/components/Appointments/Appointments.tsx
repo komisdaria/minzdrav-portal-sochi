@@ -7,7 +7,6 @@ import styles from "./appointments.module.css";
 import { Select } from "antd";
 import { AppointmentType } from "../../userTypes/appointmentType";
 import { addToUserAppointmentAC } from "../../redux/ActionCreators/AppointmentsAC/addToUserAppointmentAC";
-import { idText } from "typescript";
 import { updateStatusAppoinmentAC } from "../../redux/ActionCreators/AppointmentsAC/updateStatusAppointmentAC";
 import { FilterDoctorsAC } from "../../redux/ActionCreators/DoctorsAC/FilterDoctorsAC";
 

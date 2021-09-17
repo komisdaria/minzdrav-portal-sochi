@@ -12,14 +12,14 @@ export function CaruselDoctors() {
       <Carousel autoplay>
         {doctorsState.length ? (
           doctorsState.map((doctor) => (
-            <NavLink
+            <NavLink key={doctor.id} 
               exact
               to={`/docInfo/${doctor.id}`}
               className={css.link}
               activeClassName={css.activeLink}
             >
-              <div>
-                <div>
+              <div  >
+                <div >
                   <div className={css.contentStyle}>
                     <img
                       src={`./img/${doctor.img}`}

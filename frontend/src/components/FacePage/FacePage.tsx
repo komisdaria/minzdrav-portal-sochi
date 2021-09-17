@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { OurNews } from "../newsPage/newsPage";
 import css from "./FacePage.module.css";
 import { CaruselDoctors } from "../caruselDoctors/CaruselDoctors";
-import ModalAppointments from "../Appointments/ModalAppointment";
 import { TelNumModal } from "../TelNumbersModal/TelNumModal";
 import { Map } from "../Map/Map";
 
