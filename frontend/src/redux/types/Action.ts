@@ -25,7 +25,9 @@ type ActionTypes =
   | "UPDATE_RAITING"
   | "FIND_CURRENT_DOCTOR"
   | "FILTER_APPOINT"
-  | "CHECK_REG_ERROR";
+  | "CHECK_REG_ERROR"
+  | "REMOVE_APPOIN"
+  | "RETURN_APPOINT"
 
 export interface Action {
   type: ActionTypes;
@@ -59,6 +61,13 @@ export interface updateStatusAppointment extends Action {
   type: "UPDATE_STATUS_APPOINTMENT";
   payload: AppointmentType;
 }
+
+
+export interface ReturnAppoint extends Action {
+  type: "RETURN_APPOINT";
+  payload: AppointmentType;
+}
+
 
 export interface DownloadNewsAction extends Action {
   type: "DOWNLOAD_NEWS";
@@ -136,6 +145,11 @@ export interface CheckErrorMessage extends Action {
   payload: string | null;
 }
 
+export interface removeAppoinfromUser extends Action {
+  type: "REMOVE_APPOIN";
+  payload: AppointmentType["id"];
+}
+
 export type Actions =
   | CreateUserAction
   | LoginUserAction
@@ -156,4 +170,6 @@ export type Actions =
   | UpdateRaiting
   | FindCurrentDoctor
   | FilterDoctors
-  | CheckErrorMessage;
+  | CheckErrorMessage
+  | removeAppoinfromUser
+  | ReturnAppoint;

@@ -22,6 +22,17 @@
   min-height: 100px;
 }
 
+.main_top_item_bot{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  min-width: 1500px;
+  max-width: 1500px;
+  min-height: 100px;
+}
+
 .news_container {
   display: flex;
   width: 700px;
@@ -144,7 +155,7 @@
 .h1Foto {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 110px;
   font-size: large;
 }
 .fotoOneCol {

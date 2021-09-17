@@ -1,20 +1,56 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import css from "./account.module.css";
-import { CalendarForUser } from "../Calendar/Calendar";
 import { useMySelector } from "../../hooks/customHook";
 import { useDispatch } from "react-redux";
 import { getAppoinmentAccountAC } from "../../redux/ActionCreators/UserAC/getAppointAccount";
-import { Card } from "antd";
+import { Card, } from "antd";
+import { Select, Button } from "antd";
+import { AppointmentType } from "../../userTypes/appointmentType";
+import { returnAppointToBaseAC } from "../../redux/ActionCreators/AppointmentsAC/returnAppointToBaseAC";
+import { removeAppoinfromUserAC } from "../../redux/ActionCreators/UserAC/removeAppoinfromUserAC";
+
 
 export default function Account() {
   const userState = useMySelector((state) => state.user);
   const appointAccount = useMySelector((state) => state.userAppoints);
+  const { Option } = Select;
+  const [search, setSearch] = useState("");
+  const [state, setState] = useState<AppointmentType[]>([])
 
+
+  let currentAppoints;
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAppoinmentAccountAC());
-  }, [dispatch]);
+    setState(appointAccount)
+  }, []);
+
+  function onChange(value: string) {
+    setSearch(value);
+  }
+
+  const handleKey = (event: { key: string }) => {
+    if (event.key === "Enter") {
+      currentAppoints = appointAccount.filter((appoint) => appoint.doctorSpecialization === search)
+      setState(currentAppoints)
+    }
+  };
+
+  const onFilter = (event: { preventDefault: () => void; }) => {
+    currentAppoints = appointAccount.filter((appoint) => appoint.doctorSpecialization === search)
+    setState(currentAppoints)
+  }
+
+  const deleteFilter = () => {
+    setState(appointAccount)
+  }
+
+  const removeAppoint = (id: AppointmentType["id"]) => {
+    console.log('xxxxxxx', id);
+    dispatch(returnAppointToBaseAC(id))
+    dispatch(removeAppoinfromUserAC(id))
+  }
 
   return (
     <>
@@ -22,9 +58,10 @@ export default function Account() {
         <div className={css.account_container_item}>
           <div className={css.left_column}>
             <div className={css.left_item}>
-              Информация о пользователе:
               {userState ? (
-                <div>
+                <div className={css.char_user}>
+                  <img src={"/img/user_photo.png"} alt='UserPhoto' className={css.user_photo} />
+                  <hr />
                   <div> Имя: {userState.name}</div>
                   <div> Фамилия: {userState.lastName}</div>
                   <div> Дата Рождения: {userState.dateBorn}</div>
@@ -36,11 +73,42 @@ export default function Account() {
             </div>
           </div>
           <div className={css.container_right_items}>
+
             <div className={css.right_item}>
+              {/* ZDES' */}
+              <form className={css.form} onKeyDown={handleKey} >
+                <Select
+                  showSearch
+                  style={{ width: 350 }}
+                  placeholder="Специальность врача"
+                  optionFilterProp="children"
+                  onChange={onChange}
+                  // onSearch={onSearch}
+                  filterOption={(input, option: any) => {
+                    if (typeof option.value === "string") {
+                      return (
+                        option.value.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                      );
+                    }
+                    return false;
+                  }}
+                >
+                  <Option value="Терапевт">Терапевт</Option>
+                  <Option value="Ортопед">Ортопед</Option>
+                  <Option value="Психотерапевт">Психотерапевт</Option>
+                  <Option value="Хирург">Хирург</Option>
+                  <Option value="Офтальмолог">Офтальмолог</Option>
+                  <Option value="Акушер - гинеколог">Акушер - гинеколог</Option>
+                </Select>
+                <Button onClick={onFilter}>Найти</Button>
+                <Button onClick={deleteFilter}>Сброс</Button>
+              </form>
+              {/* ZDES' */}
               {userState
                 ? appointAccount.map(
                   (appoint: {
                     id: string;
+                    _id: string;
                     date: string;
                     time: string;
                     doctorSpecialization: string;
@@ -53,17 +121,16 @@ export default function Account() {
                       >
                         <p>Дата: {appoint.date}</p>
                         <p>Время: {appoint.time}</p>
-                        {/* <p>Статус приема: {appoint.status ? "Прием завершен" : "прием предстоит"}</p>
-                <p className={styles.comments}>{appoint.comments.length >=1 ? `Назначения врача: ${appoint.comments}` : null}</p> */}
+                        <Button onClick={() => removeAppoint(appoint._id)}>
+                          Не смогу посетить
+                        </Button>
                       </Card>
                     </div>
                   )
                 )
                 : "Пользователь не найден"}
             </div>
-            <div className={css.right_item}>Архив приемов и вся инфа о них</div>
           </div>
-          <CalendarForUser />
         </div>
       </div>
     </>

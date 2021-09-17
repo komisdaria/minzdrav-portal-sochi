@@ -61,9 +61,7 @@ const Appointments = () => {
   }, [dispatch]);
 
   const reservedAppoint = (id: AppointmentType["id"]) => {
-    console.log('12312312312');
     dispatch(addToUserAppointmentAC(id));
-    console.log('333333333');
     dispatch(updateStatusAppoinmentAC(id));
   };
 
@@ -73,7 +71,7 @@ const Appointments = () => {
       {isLogin ?
         <div>
           <h1>Для вашего удобства выберите нужного специалиста</h1>
-          <form onKeyDown={handleKey} onSubmit={onFilter}>
+          <form className={styles.form} onKeyDown={handleKey} onSubmit={onFilter}>
             <Select
               showSearch
               style={{ width: 350 }}
@@ -97,8 +95,7 @@ const Appointments = () => {
               <Option value="Офтальмолог">Офтальмолог</Option>
               <Option value="Акушер - гинеколог">Акушер - гинеколог</Option>
             </Select>
-            <Button> </Button>
-            <button type='submit'>Найти</button>
+            <Button onClick={onFilter}>Найти</Button>
           </form>
 
           <div className={styles.cardwrapper}>

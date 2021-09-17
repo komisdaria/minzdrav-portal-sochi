@@ -131,8 +131,29 @@ router.post("/account", async (req, res) => {
   try {
     const { _id } = req.session.user;
     const populateUser = await userModel.findById(_id).populate("appoint");
-    console.log(populateUser.appoint);
     return res.json(populateUser.appoint);
+  } catch (error) {
+    console.error(error);
+    res.sendStatus(500).json({ message: "Ошибка " });
+  }
+});
+
+router.put("/deleteAppoint", async (req, res) => {
+  try {
+    const { _id } = req.session.user;
+    const { id } = req.body;
+
+    const populateUser = await userModel.findById(_id);
+    console.log('_id, id', _id, id);
+    const newAppoints = populateUser.appoint.filter((appId) => appId.toString() !== id)
+    console.log('old=>',populateUser);
+    console.log('new=>',newAppoints);
+    const newUser = await userModel.findByIdAndUpdate( 
+      _id,
+      { appoint: newAppoints },
+      { new: true }
+    )
+    return res.json({ message: "Выполнено" });
   } catch (error) {
     console.error(error);
     res.sendStatus(500).json({ message: "Ошибка " });

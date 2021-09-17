@@ -1,7 +1,8 @@
 .right_item{
   margin: 10px;
-  background-color: rgb(216, 159, 159);
-  border: solid;
+  background-color: #accddf;
+  border-radius: 25px;
+  justify-content: center;
   width: 800px;
   height: fit-content;
   display: flex;
@@ -14,10 +15,20 @@
 
 .left_item{
   margin: 10px;
-  background-color: rgb(219, 157, 157);
-  border: solid;
+  background-color: #accddf;
   width: 300px;
-  min-height: inherit;
+  min-height: 350px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.user_photo{
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+.char_user{
+  padding-top: 20px;
 }
 
 .account_container_item{
@@ -41,5 +52,5 @@
 }
 
 .account_container{
-  min-height: 600px;
+  min-height: 750px;
 }
