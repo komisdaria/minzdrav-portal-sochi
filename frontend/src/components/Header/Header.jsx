@@ -19,7 +19,6 @@ const Header = () => {
       <header className={css.header}>
         <div>
           <NavLink
-           
             className={css.fontstyles}
             exact
             to="/"
@@ -28,8 +27,7 @@ const Header = () => {
           </NavLink>
         </div>
         <div>
-          <NavLink
-           
+          <NavLink      
             className={css.fontstyles}
             exact
             to="/appointments"
@@ -52,7 +50,6 @@ const Header = () => {
             </div>
             <div>
               <NavLink
-               
                 className={css.fontstyles}
                 exact
                 to="/"
@@ -61,13 +58,15 @@ const Header = () => {
                 Выход
               </NavLink>
             </div>
+            <div className={css.telDiv}>
+              <TelefonHeader />
+            </div>
           </>
         ) : (
           <>
             <div>
               <NavLink
                 className={css.fontstyles}
-               
                 exact
                 to="/login"
               >
@@ -76,7 +75,6 @@ const Header = () => {
             </div>
             <div>
               <NavLink
-               
                 className={css.fontstyles}
                 exact
                 to="/registration"

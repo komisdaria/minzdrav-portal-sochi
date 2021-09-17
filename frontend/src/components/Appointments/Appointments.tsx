@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Button } from 'antd';
 import { useDispatch } from "react-redux";
 import { useMySelector } from "../../hooks/customHook";
 import { getAppointmentsAC } from "../../redux/ActionCreators/AppointmentsAC/AppointmentsAC";
@@ -73,7 +74,7 @@ const Appointments = () => {
       {isLogin ?
         <div>
           <h1>Для вашего удобства выберите нужного специалиста</h1>
-          <form onKeyDown={handleKey} onSubmit={onFilter}>
+          <form className={styles.form} onKeyDown={handleKey} onSubmit={onFilter}>
             <Select
               showSearch
               style={{ width: 350 }}
@@ -97,7 +98,7 @@ const Appointments = () => {
               <Option value="Офтальмолог">Офтальмолог</Option>
               <Option value="Акушер - гинеколог">Акушер - гинеколог</Option>
             </Select>
-            <button type='submit'>Найти</button>
+            <Button onClick={onFilter}>Найти</Button>
           </form>
 
           <div className={styles.cardwrapper}>
