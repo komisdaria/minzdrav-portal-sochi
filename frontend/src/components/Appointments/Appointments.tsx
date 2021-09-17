@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useMySelector } from "../../hooks/customHook";
 import { getAppointmentsAC } from "../../redux/ActionCreators/AppointmentsAC/AppointmentsAC";
-import { Card, Pagination } from "antd";
+import { Button, Card, Pagination } from "antd";
 import styles from "./appointments.module.css";
 import { Select } from "antd";
 import { AppointmentType } from "../../userTypes/appointmentType";
@@ -97,6 +97,7 @@ const Appointments = () => {
               <Option value="Офтальмолог">Офтальмолог</Option>
               <Option value="Акушер - гинеколог">Акушер - гинеколог</Option>
             </Select>
+            <Button> </Button>
             <button type='submit'>Найти</button>
           </form>
 

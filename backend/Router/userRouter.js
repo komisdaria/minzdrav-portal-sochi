@@ -1,7 +1,9 @@
+const mailer = require('./mailRouter')
 const express = require("express");
 const router = express.Router();
 const userModel = require("../db/models/userModel");
 const appointsmentModel = require("../db/models/appointmentModel");
+
 
 router.route("/register").post(async (req, res) => {
   try {
@@ -104,6 +106,20 @@ router.post("/update", async (req, res) => {
       { $push: { appoint: id } },
       { new: true }
     );
+    const findAppoint = await appointsmentModel.findById(id)
+    const message = {
+      to: updateUser.email,
+      subject: `Запись в клинику Сочи`,
+      html: `
+      <h3>Уважаемый,${updateUser.name} ${updateUser.lastName}</h3>
+          <ul>
+          <li>Вы записались к ${findAppoint.doctorSpecialization}!</li>
+          <li>Дата: ${findAppoint.date},</li>
+          <li>Время: ${findAppoint.time}.</li>
+          </ul>
+          <h4>Желаем вам здоровья!</h4>`,
+    };
+    mailer(message);
     return res.json({ updateUser });
   } catch (error) {
     console.error(error);
