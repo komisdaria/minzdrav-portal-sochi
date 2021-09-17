@@ -3,7 +3,7 @@ import { useMySelector } from "../../hooks/customHook";
 import { useParams } from "react-router-dom";
 import css from "./docInfo.module.css";
 import Spinner from "../Spinner/Spinner";
-import { Typography, Rate } from 'antd';
+import { Typography } from 'antd';
 import { RaitingUpdatedAC } from "../../redux/ActionCreators/RaitingUpdateAC";
 import { useDispatch } from "react-redux";
 import { currentDoctorAC } from "../../redux/ActionCreators/DoctorsAC/CurrentDoctorAC";
@@ -51,7 +51,7 @@ export function DocInfo() {
                     </div>
                     <div className={css.content}>
                       <div>
-                        <Title level={5}>Специализация</Title>
+                        <Title className={css.fortitle} level={5}>Специализация</Title>
                       </div>{" "}
                       <div className={css.afterheader}>
                         {FinddoctorsState.specialization}
@@ -59,7 +59,7 @@ export function DocInfo() {
                     </div>
                     <div className={css.content}>
                       <div>
-                        <Title level={5}>Стаж</Title>
+                        <Title  className={css.fortitle} level={5}>Стаж</Title>
                       </div>{" "}
                       <div className={css.afterheader}>
                         {FinddoctorsState.experience}
@@ -68,7 +68,7 @@ export function DocInfo() {
                     <br />
                     <div className={css.content}>
                       <div>
-                        <Title level={5}>Образование</Title>
+                        <Title  className={css.fortitle} level={5}>Образование</Title>
                       </div>{" "}
                       <div className={css.afterheader}>
                         {FinddoctorsState.education}
@@ -77,21 +77,19 @@ export function DocInfo() {
                     <br />
                     <div className={css.content}>
                       <div>
-                        <Title level={5}>Функционал работ</Title>
+                        <Title  className={css.fortitle} level={5}>Функционал работ</Title>
                       </div>{" "}
                       <div className={css.afterheader}>
                         {FinddoctorsState.function}
                       </div>{" "}
                     </div>
                     <br />
-                    <div className={css.sumrait}>
-                      <Rate allowHalf /> {FinddoctorsState.sumRaiting}
-                    </div>
+
 
                     <div className={css.rate}>
                       <div className={css.content}>
                         {" "}
-                        <Title level={5}>Рейтинг</Title>
+                        <Title  className={css.fortitle} level={5}>Рейтинг</Title>
                         <div className={css.allstar}>
                           <div
                             className={css.star}
@@ -123,7 +121,7 @@ export function DocInfo() {
                           >
                             <h2>⭐</h2>
                           </div>
-                          <div></div>
+                          <div className={css.star}><h2>{FinddoctorsState.sumRaiting}</h2> </div>
                         </div>
                       </div>
                     </div>

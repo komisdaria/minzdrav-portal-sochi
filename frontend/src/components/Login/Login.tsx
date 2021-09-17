@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "antd/dist/antd.css";
-import { Form, Input, Button, Typography, Result } from "antd";
+import { Form, Input, Button, Typography } from "antd";
 import { useDispatch } from "react-redux";
 import { LoginUserAC } from "../../redux/ActionCreators/UserAC/loginUserAC";
 import { useHistory } from "react-router";
