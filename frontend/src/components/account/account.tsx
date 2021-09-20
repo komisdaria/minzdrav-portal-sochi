@@ -3,27 +3,25 @@ import css from "./account.module.css";
 import { useMySelector } from "../../hooks/customHook";
 import { useDispatch } from "react-redux";
 import { getAppoinmentAccountAC } from "../../redux/ActionCreators/UserAC/getAppointAccount";
-import { Card, } from "antd";
+import { Card } from "antd";
 import { Select, Button } from "antd";
 import { AppointmentType } from "../../userTypes/appointmentType";
 import { returnAppointToBaseAC } from "../../redux/ActionCreators/AppointmentsAC/returnAppointToBaseAC";
 import { removeAppoinfromUserAC } from "../../redux/ActionCreators/UserAC/removeAppoinfromUserAC";
-
 
 export default function Account() {
   const userState = useMySelector((state) => state.user);
   const appointAccount = useMySelector((state) => state.userAppoints);
   const { Option } = Select;
   const [search, setSearch] = useState("");
-  const [state, setState] = useState<AppointmentType[]>([])
-
+  const [state, setState] = useState<AppointmentType[]>([]);
 
   let currentAppoints;
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAppoinmentAccountAC());
-    setState(appointAccount)
+    setState(appointAccount);
   }, []);
 
   function onChange(value: string) {
@@ -32,25 +30,29 @@ export default function Account() {
 
   const handleKey = (event: { key: string }) => {
     if (event.key === "Enter") {
-      currentAppoints = appointAccount.filter((appoint) => appoint.doctorSpecialization === search)
-      setState(currentAppoints)
+      currentAppoints = appointAccount.filter(
+        (appoint) => appoint.doctorSpecialization === search
+      );
+      setState(currentAppoints);
     }
   };
 
-  const onFilter = (event: { preventDefault: () => void; }) => {
-    currentAppoints = appointAccount.filter((appoint) => appoint.doctorSpecialization === search)
-    setState(currentAppoints)
-  }
+  const onFilter = (event: { preventDefault: () => void }) => {
+    currentAppoints = appointAccount.filter(
+      (appoint) => appoint.doctorSpecialization === search
+    );
+    setState(currentAppoints);
+  };
 
   const deleteFilter = () => {
-    setState(appointAccount)
-  }
+    setState(appointAccount);
+  };
 
   const removeAppoint = (id: AppointmentType["id"]) => {
-    console.log('xxxxxxx', id);
-    dispatch(returnAppointToBaseAC(id))
-    dispatch(removeAppoinfromUserAC(id))
-  }
+    console.log("xxxxxxx", id);
+    dispatch(returnAppointToBaseAC(id));
+    dispatch(removeAppoinfromUserAC(id));
+  };
 
   return (
     <>
@@ -60,7 +62,11 @@ export default function Account() {
             <div className={css.left_item}>
               {userState ? (
                 <div className={css.char_user}>
-                  <img src={"/img/user_photo.png"} alt='UserPhoto' className={css.user_photo} />
+                  <img
+                    src={"/img/user_photo.png"}
+                    alt="UserPhoto"
+                    className={css.user_photo}
+                  />
                   <hr />
                   <div> Имя: {userState.name}</div>
                   <div> Фамилия: {userState.lastName}</div>
@@ -73,10 +79,9 @@ export default function Account() {
             </div>
           </div>
           <div className={css.container_right_items}>
-
             <div className={css.right_item}>
               {/* ZDES' */}
-              <form className={css.form} onKeyDown={handleKey} >
+              {/* <form className={css.form} onKeyDown={handleKey} >
                 <Select
                   showSearch
                   style={{ width: 350 }}
@@ -102,32 +107,32 @@ export default function Account() {
                 </Select>
                 <Button onClick={onFilter}>Найти</Button>
                 <Button onClick={deleteFilter}>Сброс</Button>
-              </form>
+              </form> */}
               {/* ZDES' */}
               {userState
                 ? appointAccount.map(
-                  (appoint: {
-                    id: string;
-                    _id: string;
-                    date: string;
-                    time: string;
-                    doctorSpecialization: string;
-                  }) => (
-                    <div key={appoint.id} className={css.appoint_item}>
-                      <Card
-                        title={`Запись к врачу: ${appoint.doctorSpecialization}`}
-                        bordered={true}
-                        style={{ width: 300 }}
-                      >
-                        <p>Дата: {appoint.date}</p>
-                        <p>Время: {appoint.time}</p>
-                        <Button onClick={() => removeAppoint(appoint._id)}>
-                          Не смогу посетить
-                        </Button>
-                      </Card>
-                    </div>
+                    (appoint: {
+                      id: string;
+                      _id: string;
+                      date: string;
+                      time: string;
+                      doctorSpecialization: string;
+                    }) => (
+                      <div key={appoint.id} className={css.appoint_item}>
+                        <Card
+                          title={`Запись к врачу: ${appoint.doctorSpecialization}`}
+                          bordered={true}
+                          style={{ width: 300 }}
+                        >
+                          <p>Дата: {appoint.date}</p>
+                          <p>Время: {appoint.time}</p>
+                          <Button onClick={() => removeAppoint(appoint._id)}>
+                            Не смогу посетить
+                          </Button>
+                        </Card>
+                      </div>
+                    )
                   )
-                )
                 : "Пользователь не найден"}
             </div>
           </div>
