@@ -14,6 +14,7 @@
 * TypeScript
 * Express
 * Node JS
+* Mongo DB
 * React
 * Redux Thunk
 
