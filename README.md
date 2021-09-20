@@ -27,7 +27,7 @@
 * AntDisign
 
 ## Команда:
-* [Roman] (https://github.com/KRomanV)
-* [Daria] (https://github.com/komisdaria)
-* Alexey (https://github.com/Zlus95)
-* Yuriy (https://github.com/maver176005) 
+* [Roman](https://github.com/KRomanV)
+* [Daria](https://github.com/komisdaria)
+* [Alexey](https://github.com/Zlus95)
+* [Yuriy](https://github.com/maver176005) 
