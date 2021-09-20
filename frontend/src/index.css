@@ -18,7 +18,7 @@ ul {
 }
 
 header {
-  background-color: #4cab57;
+  background-color: #1b5f9e;
   height: 3rem;
 }
 
@@ -37,14 +37,14 @@ header {
   justify-content: center;
 }
 
-.slick-dots li{
+.slick-dots li {
   background-color: green;
-} 
+}
 
 .slick-dots li.slick-active {
   background-color: rgb(167, 29, 29);
 }
 
-li button{
+li button {
   background-color: rgb(6, 8, 99);
-} 
+}
